@@ -1,0 +1,978 @@
+[
+    {
+        "name": "168F ENGINE - RAPL - GE - 168F",
+        "folder": "Parani - 43 Products/168F ENGINE - RAPL - GE - 168F",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "196 CC / 4KW",
+            "RPM": "3600 RPM",
+            "FUEL": "PETROL",
+            "WEIGHT": "16 KG"
+        }
+    },
+    {
+        "name": "AIR COMPRESSOR - MY-8PRO-30L",
+        "folder": "Parani - 43 Products/AIR COMPRESSOR - MY-8PRO-30L",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "VOLTAGE": "220V",
+            "POWER": "2.5 HP",
+            "PRESSURE": "8 BAR / 115 PSI",
+            "TANK": "30 L"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER - 2S - RAPL - PCHS - 52S",
+        "folder": "Parani - 43 Products/BRUSH CUTTER - 2S - RAPL - PCHS - 52S",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "52CC",
+            "ENGINE POWER": "2HP",
+            "ATTACHMENT": "TAP & GO, 2T, 80T",
+            "ENGINE TYPE": "2 STROKE"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER - DX-PCH - 35SP",
+        "folder": "Parani - 43 Products/BRUSH CUTTER - DX-PCH - 35SP",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "35CC",
+            "ENGINE POWER": "1.25 HP",
+            "CARRY TYPE": "SIDEPACK",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER - RAPL - PCHS - 35K",
+        "folder": "Parani - 43 Products/BRUSH CUTTER - RAPL - PCHS - 35K",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "35CC",
+            "ENGINE POWER": "1.25 HP",
+            "ENGINE TYPE": "4 STROKE",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER - RAPL - PCHS - 35S",
+        "folder": "Parani - 43 Products/BRUSH CUTTER - RAPL - PCHS - 35S",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "35CC",
+            "ENGINE POWER": "1.25 HP",
+            "ENGINE TYPE": "4 STROKE",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER 2S - DX-PCH 52SP",
+        "folder": "Parani - 43 Products/BRUSH CUTTER 2S - DX-PCH 52SP",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "52 CC PETROL",
+            "ENGINE POWER": "2HP",
+            "CARRY TYPE": "SIDE PACK",
+            "ATTACHMENTS": "TAP & GO, 2T, 80T"
+        }
+    },
+    {
+        "name": "BRUSH CUTTER 2S - MY-BC-45G",
+        "folder": "Parani - 43 Products/BRUSH CUTTER 2S - MY-BC-45G",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "41.5 CC PETROL",
+            "ENGINE POWER": "1.75 HP",
+            "CARRY TYPE": "SIDE PACK",
+            "ATTACHMENTS": "TAP & GO, 2T"
+        }
+    },
+    {
+        "name": "CHAFF CUTTER - MY-CC-0.4",
+        "folder": "Parani - 43 Products/CHAFF CUTTER - MY-CC-0.4",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "REQUIRED POWER": "3 HP SINGLE PHASE",
+            "SPEED OF MOTOR": "2800 R / MIN",
+            "NO. OF BLADE": "4 PCS (MANGANESE STEEL)",
+            "WEIGHT": "70 KGS (WITH MOTOR)"
+        }
+    },
+    {
+        "name": "CHAFF CUTTER MACHINE - RAPL-CC-9ZP-1.0",
+        "folder": "Parani - 43 Products/CHAFF CUTTER MACHINE - RAPL-CC-9ZP-1.0",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "REQUIRED POWER": "3 HP",
+            "SPEED OF MOTOR": "2800 R / MIN",
+            "NO. OF BLADE": "4 PCS",
+            "WEIGHT": "44 KG"
+        }
+    },
+    {
+        "name": "CHAINSAW - MY-CS-6010-18in-ECO",
+        "folder": "Parani - 43 Products/CHAINSAW - MY-CS-6010-18in-ECO",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "DISPLACEMENT": "58CC",
+            "GUIDE BAR": "18 INCH",
+            "IDLE SPEED": "3200+200 RPM",
+            "OIL MIX RATIO": "1:25"
+        }
+    },
+    {
+        "name": "EARTH AUGER - RAPL - EA - 6310",
+        "folder": "Parani - 43 Products/EARTH AUGER - RAPL - EA - 6310",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "63CC",
+            "ENGINE POWER": "3HP",
+            "ENGINE TYPE": "2 STROKE",
+            "FUEL": "OIL MIX PETROL"
+        }
+    },
+    {
+        "name": "ELECTRIC HTP SET - RAPL-PS-26A",
+        "folder": "Parani - 43 Products/ELECTRIC HTP SET - RAPL-PS-26A",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "PUMP": "22MM",
+            "PISTON": "3",
+            "SUCTION": "14-26L/MIN",
+            "RPM": "1000 TO 1200 RPM"
+        }
+    },
+    {
+        "name": "FOGGING MACHINE - RAPL-W80",
+        "folder": "Parani - 43 Products/FOGGING MACHINE - RAPL-W80",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "DISPLACEMENT": "48 CC",
+            "FLOW RATE": "10 - 35 L/HR",
+            "FRAME MATERIAL": "8K SS",
+            "WEIGHT": "9.5 KG"
+        }
+    },
+    {
+        "name": "GASOLINE HTP SPRAYER SET - RAPL-PS-168F-22B",
+        "folder": "Parani - 43 Products/GASOLINE HTP SPRAYER SET - RAPL-PS-168F-22B",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "168F, 6.5 HP",
+            "SPRAYER MODEL": "22 MM / 30 MM",
+            "SPEED": "800-1200 RPM",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "HIGH PRESSURE WASHER - MY - HPW - 1450",
+        "folder": "Parani - 43 Products/HIGH PRESSURE WASHER - MY - HPW - 1450",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "WORKING PRESSURE": "UPTO 90 BAR",
+            "POWER": "1500 W",
+            "VOLTAGE": "220V",
+            "AUTO STOP (YES/NO)": "YES"
+        }
+    },
+    {
+        "name": "HONDA OEM BRUSH CUTTER - HONDA GX35-GX50",
+        "folder": "Parani - 43 Products/HONDA OEM BRUSH CUTTER - HONDA GX35-GX50",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "35 CC / 50 CC",
+            "FUEL TANK CAPACITY": "0.63 LIT",
+            "OIL CAPACITY": "100 ML",
+            "ATTACHMENT": "5 PCS",
+            "CARRY MODEL": "SIDE PACK",
+            "WARRANTY": "6 MONTHS",
+            "WEIGHT": "6 KG"
+        }
+    },
+    {
+        "name": "J52 BRUSH CUTTER ENGINE - RAPL - BC - 52E",
+        "folder": "Parani - 43 Products/J52 BRUSH CUTTER ENGINE - RAPL - BC - 52E",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "52CC",
+            "ENGINE POWER": "2 HP / 7000 RPM",
+            "FUEL": "PETROL + 2T OIL",
+            "ENGINE TYPE": "2 STROKE"
+        }
+    },
+    {
+        "name": "JX35 BRUSH CUTTER ENGINE - RAPL - BC - 35E",
+        "folder": "Parani - 43 Products/JX35 BRUSH CUTTER ENGINE - RAPL - BC - 35E",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "35CC",
+            "ENGINE POWER": "1.25 HP / 7000 RPM",
+            "FUEL": "PETROL",
+            "ENGINE TYPE": "4 STROKE"
+        }
+    },
+    {
+        "name": "KNAPSACK POWER SPRAYER - RAPL-KS-3416",
+        "folder": "Parani - 43 Products/KNAPSACK POWER SPRAYER - RAPL-KS-3416",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "35 CC / 2 STROKE",
+            "ENGINE POWER": "1.25 HP / 3000 RPM",
+            "PRESSURE": "1.5 - 2.5 MPA",
+            "WATER FLOW": "3 - 8 LTR MIN",
+            "PUMP": "HEAVY BRASS",
+            "BELT": "LEATHER BELT",
+            "TANK CAPACITY": "15 LITER"
+        }
+    },
+    {
+        "name": "KNAPSACK POWER SPRAYER - RAPL-KS-4131",
+        "folder": "Parani - 43 Products/KNAPSACK POWER SPRAYER - RAPL-KS-4131",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "31CC, 4 STROKE",
+            "ENGINE POWER": "1.25 HP",
+            "TANK CAPACITY": "20L",
+            "PUMP": "ABS PUMP"
+        }
+    },
+    {
+        "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG",
+        "folder": "Parani - 43 Products/LONG TEETH SEEDER - RAPL-MS-12T LONG",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "MODEL NO.": "RAPL-MS-12T LONG"
+        }
+    },
+    {
+        "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG - DETAIL",
+        "folder": "Parani - 43 Products/LONG TEETH SEEDER - RAPL-MS-12T LONG - DETAIL",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "MODEL NO.": "RAPL-MS-12T LONG"
+        }
+    },
+    {
+        "name": "MINI TILLER - MY - 300G",
+        "folder": "Parani - 43 Products/MINI TILLER - MY - 300G",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "63 CC PETROL",
+            "ENGINE POWER": "3HP",
+            "CARRY TYPE": "TROLLY",
+            "RPM": "7000 RPM"
+        }
+    },
+    {
+        "name": "MINI TILLER - RAPL-RH-3800G",
+        "folder": "Parani - 43 Products/MINI TILLER - RAPL-RH-3800G",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "170F PETROL",
+            "ENGINE POWER": "212CC",
+            "WEEDING BLADES": "7",
+            "PUSH TYPE": "SELF PROPELLED"
+        }
+    },
+    {
+        "name": "PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
+        "folder": "Parani - 43 Products/PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "BATTERY": "12V 16AH",
+            "TYPE": "BATTERY OPERATED",
+            "SPEED CONTROLLER": "YES",
+            "CHARGER": "1.7A"
+        }
+    },
+    {
+        "name": "PORTABLE SPRAYER - RAPL-POPS-35G",
+        "folder": "Parani - 43 Products/PORTABLE SPRAYER - RAPL-POPS-35G",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE": "35CC, 1 KW",
+            "PRESSURE": "2.5 MPA",
+            "FLOW RATE": "3-8 L/MIN",
+            "PUMP": "ABS BRASS PUMP"
+        }
+    },
+    {
+        "name": "POWER WEEDER - COVER",
+        "folder": "Parani - 43 Products/POWER WEEDER - COVER",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "Varies",
+            "ENGINE POWER": "Varies",
+            "ENGINE TYPE": "4 Stroke",
+            "FUEL": "PETROL / DIESEL"
+        }
+    },
+    {
+        "name": "POWER WEEDER - MY-370G",
+        "folder": "Parani - 43 Products/POWER WEEDER - MY-370G",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "212CC / PETROL",
+            "ENGINE POWER": "4 KW 3600 RPM",
+            "TYRE": "4.0 - 8",
+            "BLADES (DRY LAND)": "32 PCS"
+        }
+    },
+    {
+        "name": "POWER WEEDER - MY-380G DOUBLE SUSPENSION",
+        "folder": "Parani - 43 Products/POWER WEEDER - MY-380G DOUBLE SUSPENSION",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "212CC / PETROL",
+            "ENGINE POWER": "4 KW / 3600 RPM",
+            "TYRE": "ATV TYRE 19*7*8",
+            "BLADES (DRY LAND)": "32 PCS"
+        }
+    },
+    {
+        "name": "POWER WEEDER - MY-470G (UPGRADED)",
+        "folder": "Parani - 43 Products/POWER WEEDER - MY-470G (UPGRADED)",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT/FUEL": "212CC / PETROL",
+            "ENGINE MODEL": "170F PETROL",
+            "TRANSMISSION": "GEAR",
+            "BLADES (DRY LAND)": "32 PCS"
+        }
+    },
+    {
+        "name": "POWER WEEDER - RAPL-RH-700G PREMIUM",
+        "folder": "Parani - 43 Products/POWER WEEDER - RAPL-RH-700G PREMIUM",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "212CC",
+            "ENGINE MODEL": "170F PETROL",
+            "TRANSMISSION": "GEAR",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "POWER WEEDER ENGINE - RAPL - RA170",
+        "folder": "Parani - 43 Products/POWER WEEDER ENGINE - RAPL - RA170",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "DISPLACEMENT": "212 CC / 7HP",
+            "RPM": "3600 RPM",
+            "FUEL": "PETROL / 3.5 L",
+            "WEIGHT": "16 KG"
+        }
+    },
+    {
+        "name": "RICE MILL - RAPL - RM - 6N40",
+        "folder": "Parani - 43 Products/RICE MILL - RAPL - RM - 6N40",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "PRODUCT NAME": "RICE MILL",
+            "POWER (KW)": "1.8",
+            "GRINDING CAPACITY": "120 - 150 KG",
+            "WEIGHT": "50 KG"
+        }
+    },
+    {
+        "name": "STUBBLE MOVER - RAPL-SM-G50",
+        "folder": "Parani - 43 Products/STUBBLE MOVER - RAPL-SM-G50",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "170F, 4 STROKE",
+            "NO OF BLADES": "36 PCS",
+            "CUTTING WIDTH": "50 CM",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "TEA LEAF HARVESTER - RAPL-TH-2105",
+        "folder": "Parani - 43 Products/TEA LEAF HARVESTER - RAPL-TH-2105",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "BATTERY": "DC 21V, 5.2AH",
+            "RUNNING TIME": "3-4 HOURS",
+            "MOTOR POWER": "300 W",
+            "BLADE LENGTH": "300 MM"
+        }
+    },
+    {
+        "name": "TROLLY BRUSH CUTTER - RAPL-TB-52",
+        "folder": "Parani - 43 Products/TROLLY BRUSH CUTTER - RAPL-TB-52",
+        "thumbnail": "thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "2 Stroke",
+        "specs": {
+            "DISPLACEMENT": "52 CC",
+            "ENGINE POWER": "2 HP / 7000 RPM",
+            "ATTACHMENT": "TAP & GO, 2T",
+            "FUEL": "OIL MIX PETROL"
+        }
+    },
+    {
+        "name": "VACCUM CLEANER - MY-AC-20L",
+        "folder": "Parani - 43 Products/VACCUM CLEANER - MY-AC-20L",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "POWER": "1200W",
+            "VOLTAGE": "240V-50Hz",
+            "VACUUM": "300mbr",
+            "CAPACITY": "20L"
+        }
+    },
+    {
+        "name": "WATER PUMP - RAPL-WP-30R",
+        "folder": "Parani - 43 Products/WATER PUMP - RAPL-WP-30R",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE": "170F, 4 STROKE",
+            "ENGINE POWER": "4 KW / PETROL",
+            "MAX HEAD / SUCTION": "22M / 8M",
+            "INLET / OUTLET": "3 INCH"
+        }
+    },
+    {
+        "name": "WATER PUMP - WA20 - WA30",
+        "folder": "Parani - 43 Products/WATER PUMP - WA20 - WA30",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE": "170F PETROL",
+            "MAX HEAD": "22M",
+            "INLET / OUTLET": "2 INCH & 3 INCH",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "WOOD CHIPPER - RA-WC-192G-ES",
+        "folder": "Parani - 43 Products/WOOD CHIPPER - RA-WC-192G-ES",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "LC192F",
+            "DISPLACEMENT": "459 CC",
+            "MAX POWER": "10 KW",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "WOOD CHIPPER - RA-WC-192G-ES - COVER",
+        "folder": "Parani - 43 Products/WOOD CHIPPER - RA-WC-192G-ES - COVER",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE MODEL": "LC192F",
+            "DISPLACEMENT": "459 CC",
+            "MAX POWER": "10 KW",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "WOOD CHIPPER - WC-205G-ES",
+        "folder": "Parani - 43 Products/WOOD CHIPPER - WC-205G-ES",
+        "thumbnail": "Thumbnail.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "ENGINE": "LC192F 459CC",
+            "CAPACITY": "150 MM",
+            "BLADE": "2+1",
+            "WEIGHT": "165 KG"
+        }
+    }
+]

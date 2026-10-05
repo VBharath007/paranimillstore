@@ -1,0 +1,50 @@
+[
+    {
+        "name": "CV40-80 Concrete Vibrator",
+        "folder": "Construction Equipments/CV40-80 Concrete Vibrator",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "PRODUCT TYPE": "CONCRETE VIBRATOR",
+            "ENGINE": "HONDA GX ENGINE (4 STROKE)",
+            "STARTING": "EASY RECOIL START",
+            "FUEL": "PETROL",
+            "FEATURES": "HEAVY DUTY & FUEL-EFFICIENT"
+        }
+    },
+    {
+        "name": "CV60-160 Concrete Vibrator",
+        "folder": "Construction Equipments/CV60-160 Concrete Vibrator",
+        "thumbnail": "thumbnail.png",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "stroke": "4 Stroke",
+        "specs": {
+            "PRODUCT TYPE": "CONCRETE VIBRATOR",
+            "ENGINE": "HONDA GX ENGINE (4 STROKE)",
+            "STARTING": "EASY RECOIL START",
+            "FUEL": "PETROL",
+            "FEATURES": "HEAVY DUTY & FUEL-EFFICIENT"
+        }
+    }
+]
