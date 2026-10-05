@@ -160,7 +160,7 @@ const Products = () => {
         <div className="marquee-track">
           <span className="marquee-item"><Package size={18}/> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across Tamil Nadu</span>
+          <span className="marquee-item"><Truck size={18}/> Madurai & Nearby Districts</span>
           <span className="marquee-divider">•</span>
           <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
           <span className="marquee-divider">•</span>
@@ -168,7 +168,7 @@ const Products = () => {
           {/* Set 2 */}
           <span className="marquee-item"><Package size={18}/> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across Tamil Nadu</span>
+          <span className="marquee-item"><Truck size={18}/> Madurai & Nearby Districts</span>
           <span className="marquee-divider">•</span>
           <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
           <span className="marquee-divider">•</span>
@@ -176,7 +176,7 @@ const Products = () => {
           {/* Set 3 */}
           <span className="marquee-item"><Package size={18}/> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across Tamil Nadu</span>
+          <span className="marquee-item"><Truck size={18}/> Madurai & Nearby Districts</span>
           <span className="marquee-divider">•</span>
           <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
           <span className="marquee-divider">•</span>
@@ -184,7 +184,7 @@ const Products = () => {
           {/* Set 4 to ensure smooth scroll on ultrawide */}
           <span className="marquee-item"><Package size={18}/> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across Tamil Nadu</span>
+          <span className="marquee-item"><Truck size={18}/> Madurai & Nearby Districts</span>
           <span className="marquee-divider">•</span>
           <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
           <span className="marquee-divider">•</span>
