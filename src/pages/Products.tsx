@@ -7,17 +7,6 @@ import productsData from '../products.json';
 import gensetsData from '../gensets.json';
 import constructionData from '../construction.json';
 
-const getDeterministicRating = (name: string) => {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const rating = 4.0 + (Math.abs(hash) % 10) / 10;
-  const ratingsCount = 50 + (Math.abs(hash) % 400);
-  const reviewsCount = Math.floor(ratingsCount * 0.3) + (Math.abs(hash) % 20);
-  return { rating: rating.toFixed(1), ratingsCount, reviewsCount };
-};
-
 const Products = () => {
   const location = useLocation();
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -232,7 +221,16 @@ const Products = () => {
                     )}
                   </div>
                   <div className="card-content-wrapper">
-                    <h3 className="card-title" title={prod.name}>{prod.name}</h3>
+                    <h3 className="card-title" title={prod.name}>
+                      {prod.name.includes(' - ') ? (
+                        <>
+                          <span style={{ color: '#0B6A38', fontWeight: 800 }}>{prod.name.split(' - ')[0].trim()}</span>
+                          <span style={{ color: '#333' }}>{' - '}{prod.name.split(' - ').slice(1).join(' - ').trim()}</span>
+                        </>
+                      ) : (
+                        <span style={{ color: '#0B6A38', fontWeight: 800 }}>{prod.name}</span>
+                      )}
+                    </h3>
                     <div className="card-footer">
                       <button className="catchy-explore-btn">
                         Explore <ArrowRight size={16} strokeWidth={3} />
@@ -347,18 +345,18 @@ const Products = () => {
                     {selectedProduct.stroke}
                   </div>
                 )}
-                <h2 className="product-title">{selectedProduct.name}</h2>
+                <h2 className="product-title">
+                  {selectedProduct.name.includes(' - ') ? (
+                    <>
+                      <span style={{ color: '#0B6A38', fontWeight: 800 }}>{selectedProduct.name.split(' - ')[0].trim()}</span>
+                      <span style={{ color: '#333' }}>{' - '}{selectedProduct.name.split(' - ').slice(1).join(' - ').trim()}</span>
+                    </>
+                  ) : (
+                    <span style={{ color: '#0B6A38', fontWeight: 800 }}>{selectedProduct.name}</span>
+                  )}
+                </h2>
                 
                 <div className="product-rating-emi-row">
-                  {(() => {
-                    const { rating, ratingsCount, reviewsCount } = getDeterministicRating(selectedProduct.name);
-                    return (
-                      <div className="product-rating">
-                        <span className="rating-badge">{rating} <Star size={12} fill="white" /></span>
-                        <span className="rating-count">{ratingsCount} Ratings & {reviewsCount} Reviews</span>
-                      </div>
-                    );
-                  })()}
 
                   <div className="emi-info-catchy">
                     <div className="emi-icon-wrapper"><Tag size={20} color="white" /></div>
