@@ -14,11 +14,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "-",
+            "ENGINE POWER": "5.0 KW / 5.5 KW",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -36,11 +37,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "-",
+            "ENGINE POWER": "8.0 KW / 8.5 KW",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -58,11 +60,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "-",
+            "ENGINE POWER": "10 KW / 10.5 KW",
+            "ENGINE TYPE": "4-Stroke OHV Air Cooled",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -80,77 +83,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
-        "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
-        }
-    },
-    {
-        "name": "MITSUYAMA POWER WEEDER - MY-360G",
-        "folder": "Genset/MITSUYAMA POWER WEEDER - MY-360G",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
-        }
-    },
-    {
-        "name": "MITSUYAMA POWER WEEDER - MY-380G",
-        "folder": "Genset/MITSUYAMA POWER WEEDER - MY-380G",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
+        "stroke": "4 Stroke",
         "specs": {
             "DISPLACEMENT": "212 CC",
-            "ENGINE POWER": "4 KW",
-            "ENGINE TYPE": "Varies",
+            "ENGINE POWER": "2800 W / 3000 W",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
             "FUEL": "PETROL"
-        }
-    },
-    {
-        "name": "MITSUYAMA POWER WEEDER - MY-470G",
-        "folder": "Genset/MITSUYAMA POWER WEEDER - MY-470G",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
         }
     },
     {
@@ -168,11 +106,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "212 CC",
+            "ENGINE POWER": "2700 VA / 3000 VA",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -190,11 +129,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "420 CC",
+            "ENGINE POWER": "5000 VA / 5500 VA",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -212,11 +152,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "Inverter",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "56 CC",
+            "ENGINE POWER": "800 VA / 900 VA",
+            "ENGINE TYPE": "4-Stroke Inverter",
+            "FUEL": "PETROL"
         }
     },
     {
@@ -234,10 +175,11 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
             "DISPLACEMENT": "196 CC",
-            "ENGINE POWER": "6.5 HP",
-            "ENGINE TYPE": "Varies",
+            "ENGINE POWER": "4.3 KW",
+            "ENGINE TYPE": "4-Stroke Air Cooled",
             "FUEL": "PETROL"
         }
     },
@@ -256,11 +198,12 @@
             "product top view.webp",
             "product types of views.webp"
         ],
+        "stroke": "4 Stroke",
         "specs": {
-            "DISPLACEMENT": "Varies",
-            "ENGINE POWER": "Varies",
-            "ENGINE TYPE": "Varies",
-            "FUEL": "PETROL / DIESEL"
+            "DISPLACEMENT": "170F (7 HP)",
+            "ENGINE POWER": "3.5 KW",
+            "ENGINE TYPE": "4-Stroke OHV Engine",
+            "FUEL": "PETROL"
         }
     }
 ]

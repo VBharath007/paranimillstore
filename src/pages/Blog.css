@@ -382,8 +382,25 @@
   transition: color 0.2s;
 }
 
-.category-list a:hover {
+.category-list a:hover, .category-list a.active-topic {
   color: var(--primary-green);
+}
+
+.category-list a.active-topic {
+  font-weight: 700;
+}
+
+.category-list a span {
+  background: #e2e8f0;
+  color: #64748b;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.category-list a.active-topic span {
+  background: var(--primary-green);
+  color: white;
 }
 
 .category-list a span {

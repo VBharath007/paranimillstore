@@ -11,6 +11,22 @@ const Products = () => {
   const location = useLocation();
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
   const [activeCategory, setActiveCategory] = useState<'agri' | 'genset' | 'construction'>('agri');
+  const [backendProducts, setBackendProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchBackendProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/api/products');
+        const data = await response.json();
+        if (data && data.success && data.data) {
+          setBackendProducts(data.data);
+        }
+      } catch (error) {
+        console.error("Error fetching products from backend API:", error);
+      }
+    };
+    fetchBackendProducts();
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -34,6 +50,7 @@ const Products = () => {
   // Filter images to create a 4-point rotation sequence if available
   const rotationSequence = React.useMemo(() => {
     if (!selectedProduct) return null;
+    if (!selectedProduct.images) return null; // Backend products might not have 'images' initially for 360 view
     const front = selectedProduct.images.findIndex((img: string) => img.includes('front'));
     const right = selectedProduct.images.findIndex((img: string) => img.includes('right'));
     const back = selectedProduct.images.findIndex((img: string) => img.includes('back'));
@@ -42,6 +59,29 @@ const Products = () => {
     const seq = [front, right, back, left].filter(idx => idx !== -1);
     return seq.length >= 2 ? seq : null;
   }, [selectedProduct]);
+
+  const renderProductTitle = (name: string) => {
+    if (!name) return null;
+    if (name.includes(' - ')) {
+      const parts = name.split(' - ');
+      return (
+        <>
+          <span style={{ color: '#0B6A38', fontWeight: 800 }}>{parts[0].trim()}</span>
+          <span style={{ color: '#333' }}>{' - '}{parts.slice(1).join(' - ').trim()}</span>
+        </>
+      );
+    } else if (name.includes(',')) {
+      const parts = name.split(',');
+      return (
+        <>
+          <span style={{ color: '#0B6A38', fontWeight: 800 }}>{parts[0].trim()}</span>
+          <span style={{ color: '#333' }}>{', '}{parts.slice(1).join(',').trim()}</span>
+        </>
+      );
+    } else {
+      return <span style={{ color: '#0B6A38', fontWeight: 800 }}>{name}</span>;
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -131,13 +171,13 @@ const Products = () => {
   const getWhatsappLink = (productName: string, productImage: string) => {
     const liveDomain = "https://paranimill.com"; // Add your actual website domain here when going live
     const text = encodeURIComponent(`Hello Parani Mill Stores,\n\nI am interested in your product: *${productName}*.\n\nCould you please provide more details, pricing information, and availability?\n\nThank you!`);
-    return `https://wa.me/919003584191?text=${text}`;
+    return `https://wa.me/917094341807?text=${text}`;
   };
 
   return (
     <div className="products-page">
       <Helmet>
-        <title>Our Products | Agriculture, Gensets & Construction Equipment | Parani Mill Stores</title>
+        <title>Our Products | Agricultural Machinery, Power Generators & Construction Equipment | Parani Mill Stores</title>
         <meta name="description" content="Explore our premium range of products including agricultural sprayers, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, and car washers with 100% genuine spares from reputed brands like Jawan, Really and Perfect Equipments." />
       </Helmet>
       <section className="products-hero-image">
@@ -189,14 +229,14 @@ const Products = () => {
               className={`subnav-btn ${activeCategory === 'agri' ? 'active' : ''}`}
               onClick={() => setActiveCategory('agri')}
             >
-              Agricultural Products
+              Agricultural Machinery
               {activeCategory !== 'agri' && <ArrowRight size={18} className="switch-arrow" />}
             </button>
             <button 
               className={`subnav-btn ${activeCategory === 'genset' ? 'active' : ''}`}
               onClick={() => setActiveCategory('genset')}
             >
-              Gensets
+              Power Generators
               {activeCategory !== 'genset' && <ArrowRight size={18} className="switch-arrow" />}
             </button>
             <button 
@@ -209,27 +249,31 @@ const Products = () => {
           </div>
 
           <div className="categories-grid">
-            {(activeCategory === 'agri' ? productsData : activeCategory === 'genset' ? gensetsData : constructionData).map((prod, index) => {
-              const cardImage = prod.thumbnail || prod.images[0];
+            {(() => {
+              let localData = activeCategory === 'agri' ? productsData : activeCategory === 'genset' ? gensetsData : constructionData;
+              let apiData = backendProducts.filter(p => {
+                const cat = (p.category || '').toLowerCase();
+                if (activeCategory === 'agri') return cat.includes('agri');
+                if (activeCategory === 'genset') return cat.includes('genset');
+                if (activeCategory === 'construction') return cat.includes('construction');
+                return false;
+              });
+              return [...apiData, ...localData];
+            })().map((prod, index) => {
+              const thumbnailVal = prod.thumbnail || (prod.images && prod.images[0]);
+              const cardImageSrc = thumbnailVal?.startsWith('http') ? thumbnailVal : `/${prod.folder}/${thumbnailVal}`;
               
               return (
                 <div className="premium-product-card" key={index} onClick={() => openProductModal(prod)}>
                   <div className="card-image-wrapper">
-                    <img src={`/${prod.folder}/${cardImage}`} alt={prod.name} loading="lazy" />
+                    <img src={cardImageSrc} alt={prod.name} loading="lazy" />
                     {('stroke' in prod) && (
                       <span className="stroke-badge">{(prod as any).stroke}</span>
                     )}
                   </div>
                   <div className="card-content-wrapper">
                     <h3 className="card-title" title={prod.name}>
-                      {prod.name.includes(' - ') ? (
-                        <>
-                          <span style={{ color: '#0B6A38', fontWeight: 800 }}>{prod.name.split(' - ')[0].trim()}</span>
-                          <span style={{ color: '#333' }}>{' - '}{prod.name.split(' - ').slice(1).join(' - ').trim()}</span>
-                        </>
-                      ) : (
-                        <span style={{ color: '#0B6A38', fontWeight: 800 }}>{prod.name}</span>
-                      )}
+                      {renderProductTitle(prod.name)}
                     </h3>
                     <div className="card-footer">
                       <button className="catchy-explore-btn">
@@ -273,17 +317,19 @@ const Products = () => {
                   {!is360View && (
                     <div className="thumbnails-sidebar">
                       <div className="thumbnails-scroll-area">
-                        {selectedProduct.images.map((img: string, idx: number) => (
+                        {(selectedProduct.images || []).map((img: string, idx: number) => (
                           <div 
                             key={idx} 
                             className={`thumb-item ${activeImageIndex === idx ? 'active' : ''}`}
                             onClick={() => setActiveImageIndex(idx)}
                           >
-                            <img src={`/${selectedProduct.folder}/${img}`} alt={`view ${idx}`} />
+                            <img src={img?.startsWith('http') ? img : `/${selectedProduct.folder}/${img}`} alt={`view ${idx}`} />
                           </div>
                         ))}
                       </div>
-                      <button className="thumb-scroll-down"><ChevronDown size={20}/></button>
+                      {(selectedProduct.images || []).length > 4 && (
+                        <button className="thumb-scroll-down"><ChevronDown size={20}/></button>
+                      )}
                     </div>
                   )}
 
@@ -305,7 +351,11 @@ const Products = () => {
                       )}
                       
                       <img 
-                        src={`/${selectedProduct.folder}/${selectedProduct.images[currentDisplayIndex]}`} 
+                        src={
+                          selectedProduct.images && selectedProduct.images[currentDisplayIndex]?.startsWith('http')
+                            ? selectedProduct.images[currentDisplayIndex]
+                            : `/${selectedProduct.folder}/${selectedProduct.images?.[currentDisplayIndex]}`
+                        } 
                         alt={selectedProduct.name} 
                         className="main-display-image"
                         draggable="false"
@@ -329,7 +379,7 @@ const Products = () => {
 
                     {!is360View && (
                       <div className="image-dots">
-                        {selectedProduct.images.map((_: any, idx: number) => (
+                        {(selectedProduct.images || []).map((_: any, idx: number) => (
                           <div key={idx} className={`dot ${activeImageIndex === idx ? 'active' : ''}`} onClick={() => setActiveImageIndex(idx)} />
                         ))}
                       </div>
@@ -346,14 +396,7 @@ const Products = () => {
                   </div>
                 )}
                 <h2 className="product-title">
-                  {selectedProduct.name.includes(' - ') ? (
-                    <>
-                      <span style={{ color: '#0B6A38', fontWeight: 800 }}>{selectedProduct.name.split(' - ')[0].trim()}</span>
-                      <span style={{ color: '#333' }}>{' - '}{selectedProduct.name.split(' - ').slice(1).join(' - ').trim()}</span>
-                    </>
-                  ) : (
-                    <span style={{ color: '#0B6A38', fontWeight: 800 }}>{selectedProduct.name}</span>
-                  )}
+                  {renderProductTitle(selectedProduct.name)}
                 </h2>
                 
                 <div className="product-rating-emi-row">
@@ -361,8 +404,8 @@ const Products = () => {
                   <div className="emi-info-catchy">
                     <div className="emi-icon-wrapper"><Tag size={20} color="white" /></div>
                     <div className="emi-text-wrapper">
-                      <strong>EMI Option Available</strong>
-                      <span>Easy installments at checkout</span>
+                      <strong>EMI Options Available</strong>
+                      <span>Contact us for EMI details</span>
                     </div>
                   </div>
                 </div>
@@ -372,22 +415,49 @@ const Products = () => {
                     <Settings size={20} />
                     Specifications
                   </h3>
-                  {selectedProduct.specs ? (
-                    <table className="product-specs-table">
-                      <tbody>
-                        {Object.entries(selectedProduct.specs).map(([key, value]) => (
-                          <tr key={key}>
-                            <td className="spec-key">{key}</td>
-                            <td className="spec-value">{value as string}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  ) : (
-                    <div style={{padding: '20px', color: '#cc3f45', fontWeight: 'bold'}}>
-                      No specifications data found for this product. Please check products.json.
-                    </div>
-                  )}
+                  {(() => {
+                    let specsToRender: Record<string, string> | null = null;
+                    if (selectedProduct.specs && Object.keys(selectedProduct.specs).length > 0) {
+                      specsToRender = selectedProduct.specs;
+                    } else if (selectedProduct.description) {
+                      specsToRender = {};
+                      const lines = selectedProduct.description.split('\n');
+                      lines.forEach((line: string) => {
+                        if (!line.trim() || !specsToRender) return;
+                        if (line.includes('\t')) {
+                          const parts = line.split('\t');
+                          if (parts.length >= 2) {
+                            specsToRender[parts[0].trim()] = parts.slice(1).join(' ').trim();
+                          }
+                        } else {
+                          const parts = line.split(/\s{2,}/);
+                          if (parts.length >= 2) {
+                            specsToRender[parts[0].trim()] = parts.slice(1).join(' ').trim();
+                          } else {
+                            specsToRender[line.trim()] = "-";
+                          }
+                        }
+                      });
+                      if (Object.keys(specsToRender).length === 0) specsToRender = null;
+                    }
+
+                    return specsToRender ? (
+                      <table className="product-specs-table">
+                        <tbody>
+                          {Object.entries(specsToRender).map(([key, value]) => (
+                            <tr key={key}>
+                              <td className="spec-key">{key}</td>
+                              <td className="spec-value">{value as string}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <div style={{padding: '20px', color: '#cc3f45', fontWeight: 'bold'}}>
+                        No specifications data found for this product.
+                      </div>
+                    );
+                  })()}
                 </div>
 
                 <div className="flipkart-actions" style={{ justifyContent: 'center' }}>

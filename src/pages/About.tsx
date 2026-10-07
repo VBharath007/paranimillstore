@@ -87,7 +87,7 @@ const About = () => {
                 What began as a humble business has grown alongside our customers, adapting to technological advancements and modern requirements. Throughout our evolution, we have stayed true to the core values instilled by our founder.
               </p>
               <p className="history-highlight-text">
-                We are a trusted wholesaler and supplier across Tamil&nbsp;Nadu, offering quality products at&nbsp;<span className="price-highlight">fair market prices.</span>
+                We are a trusted wholesaler and supplier across Tamil&nbsp;Nadu, offering quality products at&nbsp;<span className="price-highlight">Fair Market Prices.</span>
               </p>
               
             </div>

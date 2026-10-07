@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2 } from 'lucide-react';
 import { blogPosts } from './Blog';
@@ -7,10 +7,51 @@ import './BlogPost.css';
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const post = blogPosts.find(p => p.id === Number(id));
+  const [backendPost, setBackendPost] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // First try to find it locally
+  const localPost = blogPosts.find(p => p.id === Number(id));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    
+    if (localPost) {
+      setIsLoading(false);
+      return;
+    }
+
+    const fetchBackendPost = async () => {
+      try {
+        const res = await fetch(`http://localhost:5001/api/blogs/${id}`);
+        const data = await res.json();
+        if (data && data.success && data.data) {
+          const b = data.data;
+          setBackendPost({
+            id: b._id,
+            title: b.title,
+            excerpt: b.excerpt,
+            content: b.content,
+            category: b.category,
+            author: b.author,
+            date: new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+            readTime: "5 min read",
+            image: b.coverImage || '/Blogherodummy.webp',
+          });
+        }
+      } catch (err) {
+        console.error("Error fetching blog from backend API:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchBackendPost();
+  }, [id, localPost]);
+
+  const post = localPost || backendPost;
 
   // Split content into sentences
-  const contentSentences = post ? post.content.split('. ').filter(s => s.trim().length > 0).map(s => s.trim() + (s.endsWith('.') ? '' : '.')) : [];
+  const contentSentences = post ? post.content.split('. ').filter((s: string) => s.trim().length > 0).map((s: string) => s.trim() + (s.endsWith('.') ? '' : '.')) : [];
   const halfPoint = Math.ceil(contentSentences.length / 2);
   const leftContent = contentSentences.slice(0, halfPoint);
   const rightContent = contentSentences.slice(halfPoint);
@@ -36,9 +77,9 @@ const BlogPost = () => {
     }
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
+  if (isLoading) {
+    return <div style={{ padding: '100px', textAlign: 'center' }}>Loading Article...</div>;
+  }
 
   if (!post) {
     return (
@@ -84,7 +125,7 @@ const BlogPost = () => {
             <article className="article-body">
               <p className="article-lead">{post.excerpt}</p>
               <div className="article-content">
-                {leftContent.map((sentence, i) => (
+                {leftContent.map((sentence: string, i: number) => (
                   <p key={i}>{sentence}</p>
                 ))}
               </div>
@@ -109,7 +150,7 @@ const BlogPost = () => {
             </div>
             
             <div className="article-content right-side-content" style={{ marginTop: '30px' }}>
-              {rightContent.map((sentence, i) => (
+              {rightContent.map((sentence: string, i: number) => (
                 <p key={i}>{sentence}</p>
               ))}
             </div>

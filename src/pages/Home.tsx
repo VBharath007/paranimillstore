@@ -149,7 +149,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Parani Mill Stores | Best Agricultural Machinery & Gensets in Madurai</title>
+        <title>Parani Mill Stores | Best Agricultural Machinery & Power Generators in Madurai</title>
         <meta name="description" content="Parani Mill Stores, established in 1960, is a trusted supplier of agricultural and construction equipment in Madurai, Tamil Nadu. We deal in agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, agricultural hand tools, car washers and related equipment." />
         <script type="application/ld+json">
           {`
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
                 { "@type": "City", "name": "Ramanathapuram" }
               ],
               "knowsAbout": [
-                "Agricultural Sprayers", "Petrol Brush Cutters", "Earth Augers", "Power Weeders", "Petrol Gensets", "Construction Equipment"
+                "Agricultural Sprayers", "Petrol Brush Cutters", "Earth Augers", "Power Weeders", "Power Generators", "Construction Equipment"
               ]
             }
           `}
@@ -239,10 +239,10 @@ const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Card 3: Engine */}
+            {/* Card 3: Gensets */}
             <div className="category-card card-gen">
               <div className="category-card-content">
-                <h3 className="category-title">Engine</h3>
+                <h3 className="category-title">Power<br/>Generators</h3>
                 <p className="category-subtitle">Reliable power for continuous performance.</p>
               </div>
               <div className="lightning-icon">
@@ -251,7 +251,7 @@ const Home: React.FC = () => {
                  </svg>
               </div>
               <div className="category-image-wrapper wrapper-gen">
-                <img loading="lazy" src="/parani products webp/168F ENGINE - RAPL - GE - 168F.webp" alt="Gensets" className="category-image image-gen" />
+                <img loading="lazy" src="/parani products webp/168F ENGINE - RAPL - GE - 168F.webp" alt="Power Generators" className="category-image image-gen" />
               </div>
             </div>
             

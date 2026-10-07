@@ -20,6 +20,13 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handlePhoneChange = (e: any) => {
+    const val = e.target.value.replace(/\D/g, ''); // Allow only digits
+    if (val.length <= 10) {
+      setFormData({ ...formData, phone: val });
+    }
+  };
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const text = `Hello Parani Mill Stores,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`;
@@ -61,7 +68,16 @@ const Contact = () => {
             <div className="flat-form-row">
               <div className="flat-input-group">
                 <label>Phone *</label>
-                <input type="tel" name="phone" required placeholder="Enter Phone Number" onChange={handleChange} />
+                <input 
+                  type="tel" 
+                  name="phone" 
+                  required 
+                  placeholder="Enter 10-digit Mobile Number" 
+                  pattern="[0-9]{10}"
+                  title="Please enter exactly 10 digits"
+                  value={formData.phone}
+                  onChange={handlePhoneChange} 
+                />
               </div>
               <div className="flat-input-group">
                 <label>Service *</label>
@@ -69,7 +85,7 @@ const Contact = () => {
                   <option value="" disabled>Select Services</option>
                   <option value="Agricultural Machinery">Agricultural Machinery</option>
                   <option value="Power Generators">Power Generators</option>
-                  <option value="Construction Tools">Construction Tools</option>
+                  <option value="Construction Equipment">Construction Equipment</option>
                   <option value="Bulk Order">Bulk Order</option>
                 </select>
               </div>

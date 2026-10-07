@@ -103,8 +103,8 @@ function App() {
                       <span className="nav-chevron hide-on-desktop"><ChevronRight size={18}/></span>
                     </NavLink>
                     <ul className="dropdown-menu">
-                      <li><NavLink to="/products?category=agri" onClick={() => setIsMobileMenuOpen(false)}>Agricultural Products</NavLink></li>
-                      <li><NavLink to="/products?category=genset" onClick={() => setIsMobileMenuOpen(false)}>Gensets</NavLink></li>
+                      <li><NavLink to="/products?category=agri" onClick={() => setIsMobileMenuOpen(false)}>Agricultural Machinery</NavLink></li>
+                      <li><NavLink to="/products?category=genset" onClick={() => setIsMobileMenuOpen(false)}>Power Generators</NavLink></li>
                       <li><NavLink to="/products?category=construction" onClick={() => setIsMobileMenuOpen(false)}>Construction Equipment</NavLink></li>
                     </ul>
                   </li>

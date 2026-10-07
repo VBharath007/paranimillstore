@@ -974,5 +974,71 @@
             "BLADE": "2+1",
             "WEIGHT": "165 KG"
         }
+    },
+    {
+        "name": "MITSUYAMA POWER WEEDER - MY-360G",
+        "folder": "Parani - 43 Products/MITSUYAMA POWER WEEDER - MY-360G",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "DISPLACEMENT": "Varies",
+            "ENGINE POWER": "Varies",
+            "ENGINE TYPE": "Varies",
+            "FUEL": "PETROL / DIESEL"
+        }
+    },
+    {
+        "name": "MITSUYAMA POWER WEEDER - MY-380G",
+        "folder": "Parani - 43 Products/MITSUYAMA POWER WEEDER - MY-380G",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "DISPLACEMENT": "212 CC",
+            "ENGINE POWER": "4 KW",
+            "ENGINE TYPE": "Varies",
+            "FUEL": "PETROL"
+        }
+    },
+    {
+        "name": "MITSUYAMA POWER WEEDER - MY-470G",
+        "folder": "Parani - 43 Products/MITSUYAMA POWER WEEDER - MY-470G",
+        "thumbnail": "product raw image.webp",
+        "images": [
+            "person using.webp",
+            "product back view.webp",
+            "product explode view.webp",
+            "product front view.webp",
+            "product left side view.webp",
+            "product raw image.webp",
+            "product right side view.webp",
+            "product top view.webp",
+            "product types of views.webp"
+        ],
+        "specs": {
+            "DISPLACEMENT": "Varies",
+            "ENGINE POWER": "Varies",
+            "ENGINE TYPE": "Varies",
+            "FUEL": "PETROL / DIESEL"
+        }
     }
 ]

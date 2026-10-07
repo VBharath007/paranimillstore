@@ -756,7 +756,8 @@
 
 .emi-text-wrapper span {
   color: #15803d;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .features-grid {
@@ -1308,3 +1309,20 @@
   100% { transform: translateX(-25%); }
 }
 
+
+.shimmer-green-text {
+  background: linear-gradient(110deg, #0B6A38 20%, #4ae58f 50%, #0B6A38 80%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine-green 3s linear infinite;
+  font-weight: 800;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
+
+@keyframes shine-green {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Calendar, User, Clock, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -8,8 +8,8 @@ export const blogPosts = [
   {
     id: 1,
     title: "The Future of Agricultural Machinery: Automation and Efficiency",
-    excerpt: "Discover how modern automated tillers and smart irrigation systems are revolutionizing crop yields while significantly reducing manual labor costs.",
-    content: "Discover how modern automated tillers and smart irrigation systems are revolutionizing crop yields while reducing manual labor costs. With advancements in precision agriculture, farmers can optimize resources efficiently. Automated equipment ensures consistent soil preparation, and intelligent irrigation adapts to real-time weather patterns, conserving water and improving plant health. By investing in this modern machinery, agricultural businesses can streamline operations, cut operational expenses, and achieve much higher profitability.",
+    excerpt: "Learn how modern agricultural machinery can help you increase your crop yield while reducing your daily labor costs.",
+    content: "Farming is changing, and modern machinery makes it easier than ever to get the best out of your land. Today's equipment helps you save water, prepare soil faster, and keep your plants healthy without the back-breaking manual work. Whether it's a smart irrigation system or an advanced tiller, these tools do the heavy lifting for you. By upgrading to the right machinery, you can cut down on daily expenses, finish your work faster, and ultimately increase your farm's profit.",
     category: "Agriculture",
     author: "K. Ramesh",
     date: "Sep 20, 2026",
@@ -19,9 +19,9 @@ export const blogPosts = [
   },
   {
     id: 2,
-    title: "Choosing the Right Genset for Your Farm",
-    excerpt: "A comprehensive guide to selecting reliable backup power for continuous agricultural operations.",
-    content: "A comprehensive guide to selecting reliable backup power for continuous agricultural operations. Power outages can severely disrupt farm activities and lead to significant losses. Choosing the right generator involves understanding your power requirements, fuel preferences, and budget constraints. Diesel generators offer durability for heavy-duty tasks, while petrol variants provide portability. Assess your total essential wattage to ensure seamless load handling, and prioritize regular maintenance to maintain uninterrupted farm productivity.",
+    title: "How to Choose the Right Generator for Your Farm",
+    excerpt: "A simple guide to picking the perfect backup power so your farm operations never stop.",
+    content: "Unexpected power cuts can bring farm work to a halt and cause unnecessary losses. Picking the right generator ensures your equipment keeps running smoothly, no matter what. Diesel generators are tough and great for heavy, long-term tasks, while petrol generators are easy to move around for quick fixes. Start by calculating how much power your most important machines need. By matching the generator's size to your daily farm needs, you can guarantee a steady, reliable power supply all year round.",
     category: "Power Generation",
     author: "S. Kumar",
     date: "Sep 15, 2026",
@@ -32,8 +32,8 @@ export const blogPosts = [
   {
     id: 3,
     title: "Top 5 Maintenance Tips for Honda Power Weeder",
-    excerpt: "Extend the lifespan of your power weeder with these essential pre-monsoon and post-harvest maintenance routines.",
-    content: "Extend the lifespan of your power weeder with essential pre-monsoon and post-harvest maintenance routines. Proper care ensures peak efficiency and prevents costly breakdowns. Start by thoroughly cleaning the blades and checking for damage. Lubricate moving parts regularly to reduce friction and prevent rust. Always inspect the engine oil and air filters, replacing them as recommended. Consistent maintenance enhances daily performance and maximizes your valuable equipment investment's overall longevity.",
+    excerpt: "Keep your power weeder running like new with these simple pre-season and post-harvest maintenance tips.",
+    content: "Taking good care of your power weeder saves you money and prevents sudden breakdowns in the middle of the field. After every use, make sure to clean the blades and remove stuck mud or weeds. Keep all moving parts well-oiled to stop them from rusting. Don't forget to check the engine oil and clean the air filter regularly—just like you would for your bike or tractor. A little bit of daily care ensures your weeder gives you peak performance for years to come.",
     category: "Maintenance",
     author: "Tech Team",
     date: "Sep 10, 2026",
@@ -44,8 +44,8 @@ export const blogPosts = [
   {
     id: 4,
     title: "Understanding High Pressure Washers for Commercial Use",
-    excerpt: "Why upgrading to a commercial-grade high-pressure washer can save your business hours of cleaning time every week.",
-    content: "Why upgrading to a commercial-grade high-pressure washer saves your business hours of cleaning time. These washers deliver powerful streams that effortlessly remove stubborn dirt, grease, and grime. Built with robust components for heavy use, commercial models feature higher pressure ratings enabling faster cleaning of large areas and heavy machinery. With adjustable settings and versatile attachments, investing in a professional washer improves hygiene standards and significantly boosts operational efficiency.",
+    excerpt: "Find out how a commercial high-pressure washer can save you hours of cleaning time every single week.",
+    content: "Cleaning heavy machinery, tractors, and large farm areas can take hours of hard work. A commercial high-pressure washer changes all that by easily washing away stubborn dirt, hard mud, and thick grease in minutes. These machines are built tough to handle daily use and offer strong water pressure to cover large spaces quickly. With adjustable nozzles and powerful sprays, investing in a good pressure washer keeps your equipment shining and saves your valuable time and energy.",
     category: "Commercial",
     author: "P. Muthu",
     date: "Sep 05, 2026",
@@ -55,9 +55,9 @@ export const blogPosts = [
   },
   {
     id: 5,
-    title: "Maximizing Efficiency with Professional Engines",
-    excerpt: "Simple load-balancing strategies to ensure your backup systems provide maximum runtime using minimal fuel.",
-    content: "Simple load-balancing strategies ensure your backup systems provide maximum runtime using minimal fuel. Efficient power management is critical during extended outages. By distributing the electrical load evenly, you prevent engine overload, premature wear, and excessive fuel consumption. Prioritize essential equipment and avoid starting all heavy machinery simultaneously to manage surge currents. These smart strategies ensure your farm operations run smoothly, economically, and maximize the lifespan of your power equipment.",
+    title: "How to Save Fuel and Maximize Your Engine's Efficiency",
+    excerpt: "Simple tips to get the most runtime out of your backup engines while spending less on fuel.",
+    content: "Fuel costs can add up quickly, but smart power management can save you a lot of money. To get the best mileage out of your engines and generators, avoid turning on all heavy machines at the exact same time—this prevents sudden overloads and wasted fuel. Make a habit of balancing your power usage by running only what you absolutely need during long power cuts. Following these simple steps will not only reduce your fuel bills but also protect your engine from wearing out too fast.",
     category: "Power",
     author: "Engineering",
     date: "Aug 28, 2026",
@@ -69,16 +69,53 @@ export const blogPosts = [
 
 const Blog = () => {
   const navigate = useNavigate();
+  const [backendBlogs, setBackendBlogs] = useState<any[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const fetchBackendBlogs = async () => {
+      try {
+        const res = await fetch('http://localhost:5001/api/blogs');
+        const data = await res.json();
+        if (data && data.success && data.data) {
+          setBackendBlogs(data.data);
+        }
+      } catch (err) {
+        console.error("Error fetching blogs from backend API:", err);
+      }
+    };
+    fetchBackendBlogs();
   }, []);
 
-  const featuredPost = blogPosts.find(p => p.featured);
-  const regularPosts = blogPosts.filter(p => !p.featured);
+  const allBlogs = [
+    ...backendBlogs.map(b => ({
+      id: b._id,
+      title: b.title,
+      excerpt: b.excerpt,
+      content: b.content,
+      category: b.category,
+      author: b.author,
+      date: new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+      readTime: "5 min read",
+      image: b.coverImage || '/Blogherodummy.webp',
+      featured: false 
+    })),
+    ...blogPosts
+  ];
 
-  const categoryCounts = blogPosts.reduce((acc, post) => {
-    acc[post.category] = (acc[post.category] || 0) + 1;
+  const displayBlogs = selectedCategory 
+    ? allBlogs.filter(p => p.category === selectedCategory) 
+    : allBlogs;
+
+  // If filtering, don't show a huge featured post, just show them all in the grid.
+  // Otherwise, pick the featured post for the main view.
+  const featuredPost = selectedCategory ? null : (displayBlogs.find(p => p.featured) || displayBlogs[0]);
+  const regularPosts = selectedCategory ? displayBlogs : displayBlogs.filter(p => p.id !== featuredPost?.id);
+
+  const categoryCounts = allBlogs.reduce((acc, post) => {
+    const cat = post.category || 'General';
+    acc[cat] = (acc[cat] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
@@ -121,12 +158,14 @@ const Blog = () => {
           {/* Latest Articles */}
           <div className="articles-feed">
             <div className="feed-header">
-              <h3 className="section-heading">Latest Articles</h3>
+              <h3 className="section-heading">
+                {selectedCategory ? `${selectedCategory} Articles` : 'Latest Articles'}
+              </h3>
               <div className="heading-line"></div>
             </div>
             
             <div className="article-cards">
-              {regularPosts.map(post => (
+              {regularPosts.length > 0 ? regularPosts.map(post => (
                 <article className="article-card" key={post.id} onClick={() => navigate(`/blog/${post.id}`)} style={{ cursor: 'pointer' }}>
                   <div className="card-image-box">
                     <img loading="lazy" src={post.image} alt={post.title} />
@@ -143,7 +182,11 @@ const Blog = () => {
                     </div>
                   </div>
                 </article>
-              ))}
+              )) : (
+                <div style={{ gridColumn: '1 / -1', padding: '40px 0', textAlign: 'center', color: '#64748b' }}>
+                  No extra articles found for this category.
+                </div>
+              )}
             </div>
           </div>
 
@@ -158,8 +201,25 @@ const Blog = () => {
             <div className="sidebar-widget categories-widget">
               <h4>Topics</h4>
               <ul className="category-list">
+                <li>
+                  <a 
+                    href="#" 
+                    onClick={(e) => { e.preventDefault(); setSelectedCategory(null); }}
+                    className={!selectedCategory ? 'active-topic' : ''}
+                  >
+                    All Topics <span>({allBlogs.length})</span>
+                  </a>
+                </li>
                 {categories.map(([name, count]) => (
-                  <li key={name}><a href="#">{name} <span>({count})</span></a></li>
+                  <li key={name}>
+                    <a 
+                      href="#" 
+                      onClick={(e) => { e.preventDefault(); setSelectedCategory(name); }}
+                      className={selectedCategory === name ? 'active-topic' : ''}
+                    >
+                      {name} <span>({count})</span>
+                    </a>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -170,7 +230,15 @@ const Blog = () => {
               <img loading="lazy" src="/parani products webp/MINI TILLER - MY - 300G.webp" alt="Mini Tiller" className="widget-product-img" />
               <h4 className="widget-product-title">Mitsuyama Mini Tiller 300G</h4>
               <p className="widget-product-desc">Perfect for small farms and gardens. High efficiency with low fuel consumption.</p>
-              <button className="widget-cta-btn" onClick={() => navigate('/contact')}>Enquire Now</button>
+              <button 
+                className="widget-cta-btn" 
+                onClick={() => {
+                  const text = encodeURIComponent(`Hello Parani Mill Stores,\n\nI saw the "Product of the Month" (Mitsuyama Mini Tiller 300G) on your blog page.\n\nCould you please provide more details and pricing?`);
+                  window.open(`https://wa.me/917094341807?text=${text}`, '_blank');
+                }}
+              >
+                Enquire Now
+              </button>
             </div>
           </aside>
         </div>
