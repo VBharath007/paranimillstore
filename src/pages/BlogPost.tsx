@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2 } from 'lucide-react';
+import { ArrowLeft, Share2, User, Calendar } from 'lucide-react';
 import { blogPosts } from './Blog';
 import './BlogPost.css';
 
@@ -108,10 +108,12 @@ const BlogPost = () => {
           <h1 className="article-title">{post.title}</h1>
           <div className="article-meta">
             <div className="meta-author">
-              <div className="author-info">
-                <span className="author-name" style={{ color: 'var(--primary-green)' }}>{post.author}</span>
-                <div className="author-date">
-                  <span>{post.date}</span>
+              <div className="author-info" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <span className="author-name" style={{ color: 'var(--primary-green)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <User size={18} /> Author: {post.author}
+                </span>
+                <div className="author-date" style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#64748b' }}>
+                  <Calendar size={18} /> Published: {post.date}
                 </div>
               </div>
             </div>

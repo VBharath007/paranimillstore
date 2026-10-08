@@ -258,7 +258,16 @@ const Products = () => {
                 if (activeCategory === 'construction') return cat.includes('construction');
                 return false;
               });
-              return [...apiData, ...localData];
+              let combined = [...apiData, ...localData];
+              let uniqueMap = new Map();
+              combined.forEach(p => {
+                if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
+                  uniqueMap.set(p.name.toLowerCase(), p);
+                }
+              });
+              let finalArray = Array.from(uniqueMap.values());
+              finalArray.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+              return finalArray;
             })().map((prod, index) => {
               const thumbnailVal = prod.thumbnail || (prod.images && prod.images[0]);
               const cardImageSrc = thumbnailVal?.startsWith('http') ? thumbnailVal : `/${prod.folder}/${thumbnailVal}`;

@@ -10,7 +10,7 @@ export const blogPosts = [
     title: "The Future of Agricultural Machinery: Automation and Efficiency",
     excerpt: "Learn how modern agricultural machinery can help you increase your crop yield while reducing your daily labor costs.",
     content: "Farming is changing, and modern machinery makes it easier than ever to get the best out of your land. Today's equipment helps you save water, prepare soil faster, and keep your plants healthy without the back-breaking manual work. Whether it's a smart irrigation system or an advanced tiller, these tools do the heavy lifting for you. By upgrading to the right machinery, you can cut down on daily expenses, finish your work faster, and ultimately increase your farm's profit.",
-    category: "Agriculture",
+    category: "Agricultural Machinery",
     author: "K. Ramesh",
     date: "Sep 20, 2026",
     readTime: "5 min read",
@@ -22,7 +22,7 @@ export const blogPosts = [
     title: "How to Choose the Right Generator for Your Farm",
     excerpt: "A simple guide to picking the perfect backup power so your farm operations never stop.",
     content: "Unexpected power cuts can bring farm work to a halt and cause unnecessary losses. Picking the right generator ensures your equipment keeps running smoothly, no matter what. Diesel generators are tough and great for heavy, long-term tasks, while petrol generators are easy to move around for quick fixes. Start by calculating how much power your most important machines need. By matching the generator's size to your daily farm needs, you can guarantee a steady, reliable power supply all year round.",
-    category: "Power Generation",
+    category: "Power Generators",
     author: "S. Kumar",
     date: "Sep 15, 2026",
     readTime: "4 min read",
@@ -34,7 +34,7 @@ export const blogPosts = [
     title: "Top 5 Maintenance Tips for Honda Power Weeder",
     excerpt: "Keep your power weeder running like new with these simple pre-season and post-harvest maintenance tips.",
     content: "Taking good care of your power weeder saves you money and prevents sudden breakdowns in the middle of the field. After every use, make sure to clean the blades and remove stuck mud or weeds. Keep all moving parts well-oiled to stop them from rusting. Don't forget to check the engine oil and clean the air filter regularly—just like you would for your bike or tractor. A little bit of daily care ensures your weeder gives you peak performance for years to come.",
-    category: "Maintenance",
+    category: "Agricultural Machinery",
     author: "Tech Team",
     date: "Sep 10, 2026",
     readTime: "3 min read",
@@ -46,7 +46,7 @@ export const blogPosts = [
     title: "Understanding High Pressure Washers for Commercial Use",
     excerpt: "Find out how a commercial high-pressure washer can save you hours of cleaning time every single week.",
     content: "Cleaning heavy machinery, tractors, and large farm areas can take hours of hard work. A commercial high-pressure washer changes all that by easily washing away stubborn dirt, hard mud, and thick grease in minutes. These machines are built tough to handle daily use and offer strong water pressure to cover large spaces quickly. With adjustable nozzles and powerful sprays, investing in a good pressure washer keeps your equipment shining and saves your valuable time and energy.",
-    category: "Commercial",
+    category: "Construction Equipment",
     author: "P. Muthu",
     date: "Sep 05, 2026",
     readTime: "6 min read",
@@ -58,7 +58,7 @@ export const blogPosts = [
     title: "How to Save Fuel and Maximize Your Engine's Efficiency",
     excerpt: "Simple tips to get the most runtime out of your backup engines while spending less on fuel.",
     content: "Fuel costs can add up quickly, but smart power management can save you a lot of money. To get the best mileage out of your engines and generators, avoid turning on all heavy machines at the exact same time—this prevents sudden overloads and wasted fuel. Make a habit of balancing your power usage by running only what you absolutely need during long power cuts. Following these simple steps will not only reduce your fuel bills but also protect your engine from wearing out too fast.",
-    category: "Power",
+    category: "Power Generators",
     author: "Engineering",
     date: "Aug 28, 2026",
     readTime: "4 min read",
@@ -88,21 +88,51 @@ const Blog = () => {
     fetchBackendBlogs();
   }, []);
 
-  const allBlogs = [
-    ...backendBlogs.map(b => ({
-      id: b._id,
-      title: b.title,
-      excerpt: b.excerpt,
-      content: b.content,
-      category: b.category,
-      author: b.author,
-      date: new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-      readTime: "5 min read",
-      image: b.coverImage || '/Blogherodummy.webp',
-      featured: false 
-    })),
-    ...blogPosts
+  const PRODUCT_CATEGORIES = [
+    "Agricultural Machinery",
+    "Power Generators",
+    "Construction Equipment",
+    "Maintenance & Service"
   ];
+
+  const rawBlogs = [
+    ...blogPosts.map(p => {
+       let cat = p.category;
+       if (cat === 'Agriculture') cat = 'Agricultural Machinery';
+       else if (cat === 'Power Generation' || cat === 'Power') cat = 'Power Generators';
+       else if (cat === 'Commercial') cat = 'Maintenance & Service';
+       else if (cat === 'Maintenance') cat = 'Maintenance & Service';
+       return { ...p, category: cat };
+    }),
+    ...backendBlogs.map(b => {
+      let cat = b.category || 'General';
+      if (cat === 'Agriculture') cat = 'Agricultural Machinery';
+      else if (cat === 'Power Generation' || cat === 'Power') cat = 'Power Generators';
+      else if (cat === 'Commercial') cat = 'Maintenance & Service';
+      else if (cat === 'Maintenance') cat = 'Maintenance & Service';
+
+      return {
+        id: b._id,
+        title: b.title,
+        excerpt: b.excerpt,
+        content: b.content,
+        category: cat,
+        author: b.author,
+        date: new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        readTime: "5 min read",
+        image: b.coverImage || '/Blogherodummy.webp',
+        featured: false 
+      };
+    })
+  ];
+
+  const uniqueBlogsMap = new Map();
+  rawBlogs.forEach(blog => {
+    if (!uniqueBlogsMap.has(blog.title)) {
+      uniqueBlogsMap.set(blog.title, blog);
+    }
+  });
+  const allBlogs = Array.from(uniqueBlogsMap.values());
 
   const displayBlogs = selectedCategory 
     ? allBlogs.filter(p => p.category === selectedCategory) 
@@ -119,7 +149,7 @@ const Blog = () => {
     return acc;
   }, {} as Record<string, number>);
 
-  const categories = Object.entries(categoryCounts);
+  const categories = PRODUCT_CATEGORIES.map(name => [name, categoryCounts[name] || 0]);
 
   return (
     <div className="blog-page">
@@ -142,8 +172,8 @@ const Blog = () => {
             <div className="featured-content">
               <div className="category-badge-inline">{featuredPost.category}</div>
               <div className="meta-info">
-                <span className="meta-item"><User size={14} /> {featuredPost.author}</span>
-                <span className="meta-item"><Calendar size={14} /> {featuredPost.date}</span>
+                <span className="meta-item"><User size={14} /> Author: {featuredPost.author}</span>
+                <span className="meta-item"><Calendar size={14} /> Published: {featuredPost.date}</span>
               </div>
               <h2 className="featured-title">{featuredPost.title}</h2>
               <p className="featured-excerpt">{featuredPost.excerpt}</p>
@@ -175,8 +205,9 @@ const Blog = () => {
                     <h4 className="card-title">{post.title}</h4>
                     <p className="card-excerpt">{post.excerpt}</p>
                     <div className="card-footer">
-                      <div className="card-meta">
-                        <span>{post.date}</span>
+                      <div className="card-meta" style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem' }}>
+                        <span>Author: {post.author}</span>
+                        <span>Published: {post.date}</span>
                       </div>
                       <span className="read-more-text">Read Article <ArrowRight size={16} /></span>
                     </div>
