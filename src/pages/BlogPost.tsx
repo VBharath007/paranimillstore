@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, User, Calendar, Check } from 'lucide-react';
 import './BlogPost.css';
+import fallbackBlogs from '../blogs.json';
 
 const BlogPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,12 +34,44 @@ const BlogPost: React.FC = () => {
             readTime: "5 min read",
             image: b.coverImage || b.image || '/Blogherodummy.webp',
           });
+
+        } else {
+          const fb = (fallbackBlogs as any[]).find((b: any) => b.id === id || b._id === id || b.slug === id);
+          if (fb) {
+            setBackendPost({
+              id: fb._id || fb.id,
+              title: fb.title,
+              excerpt: fb.excerpt,
+              content: fb.content,
+              category: fb.category || 'General',
+              author: fb.author || 'Admin',
+              date: fb.createdAt ? new Date(fb.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
+              readTime: "5 min read",
+              image: fb.coverImage || fb.image || '/Blogherodummy.webp',
+            });
+          } else {
+            setBackendPost(null);
+          }
+        }
+
+      } catch (err) {
+        console.error("Error fetching blog from backend API:", err);
+        const fb = (fallbackBlogs as any[]).find((b: any) => b.id === id || b._id === id || b.slug === id);
+        if (fb) {
+          setBackendPost({
+            id: fb._id || fb.id,
+            title: fb.title,
+            excerpt: fb.excerpt,
+            content: fb.content,
+            category: fb.category || 'General',
+            author: fb.author || 'Admin',
+            date: fb.createdAt ? new Date(fb.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
+            readTime: "5 min read",
+            image: fb.coverImage || fb.image || '/Blogherodummy.webp',
+          });
         } else {
           setBackendPost(null);
         }
-      } catch (err) {
-        console.error("Error fetching blog from backend API:", err);
-        setBackendPost(null);
       } finally {
         setIsLoading(false);
         setHasFetched(true);

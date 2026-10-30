@@ -1,105 +1,71 @@
 [
   {
-    "name": "REALLY 168F ENGINE",
-    "folder": "Parani - 43 Products/ENGINE/REALLY 168F ENGINE",
-    "thumbnail": "OG.webp",
+    "_id": "5EDQ9OZFlHtbHAY12XDG",
+    "id": "5EDQ9OZFlHtbHAY12XDG",
     "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
     ],
+    "thumbnail": "thumbnail.png",
+    "isActive": true,
     "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
     "specs": {
-      "DISPLACEMENT": "196 CC / 4KW",
-      "RPM": "3600 RPM",
+      "ENGINE POWER": "1.25 HP/ 7000 RPM",
       "FUEL": "PETROL",
-      "WEIGHT": "16 KG"
+      "DISPLACEMENT": "35 CC  4 STROKE",
+      "CARRY TYPE": "SIDE PACK"
     },
-    "slug": "really-168f-engine",
-    "category": "Engines"
-  },
-  {
-    "name": "AIR COMPRESSOR - MY-8PRO-30L",
-    "folder": "Parani - 43 Products/AIR COMPRESSOR - MY-8PRO-30L",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "VOLTAGE": "220V",
-      "POWER": "2.5 HP",
-      "PRESSURE": "8 BAR / 115 PSI",
-      "TANK": "30 L"
-    },
-    "slug": "air-compressor-my-8pro-30l",
-    "category": "Engines"
-  },
-  {
-    "name": "BRUSH CUTTER 2S - MY-BC-45G",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/BRUSH CUTTER 2S - MY-BC-45G",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "41.5 CC",
-      "ENGINE POWER": "1.75 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "PETROL + 2T OIL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "brush-cutter-2s-my-bc-45g",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "MITSUYAMA 2S 52CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/MITSUYAMA  2S  52CC",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "52 CC",
-      "ENGINE POWER": "2 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "PETROL + 2T OIL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T, 80T"
-    },
-    "slug": "mitsuyama-2s-52cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "MITSUYAMA 4S 35CC",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 4S 35CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "mitsuyama-4s-35cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
     "folder": "Parani - 43 Products/BRUSH CUTTER/MITSUYAMA  4S  35CC",
-    "thumbnail": "thumbnail.png",
+    "updatedAt": "2026-10-28T05:37:12.261Z"
+  },
+  {
+    "_id": "5KdBDU7jn92jO8pqXWTr",
+    "id": "5KdBDU7jn92jO8pqXWTr",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE MODEL": "168F / 4 STROKE",
+      "ENGINE POWER": "196CC / 4.3 KW",
+      "FUEL": "PETROL",
+      "STARTING SYSTEM": "RECOIL START"
+    },
+    "folder": "Parani - 43 Products/ENGINE/REALLY 168F ENGINE",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 168F ENGINE",
+    "category": "Engines",
+    "stock": 15,
+    "slug": "really-168f-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp"
+    ],
+    "description": "",
+    "updatedAt": "2026-10-28T11:19:52.931Z"
+  },
+  {
+    "_id": "5c1m3aZgUpu35Y8jZASg",
+    "id": "5c1m3aZgUpu35Y8jZASg",
     "images": [
       "product front view.webp",
       "product right side view.webp",
@@ -111,187 +77,30 @@
       "product raw image.webp",
       "product types of views.webp"
     ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "35 CC",
-      "ENGINE POWER": "1.25 HP",
-      "ENGINE TYPE": "4 STROKE",
-      "FUEL": "PETROL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "mitsuyama-4s-35cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY 2S 52CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY  2S  52CC",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "52 CC",
-      "ENGINE POWER": "2 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "PETROL + 2T OIL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T, 80T"
-    },
-    "slug": "really-2s-52cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY 4S 35 CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY  4S  35 CC",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "35 CC",
-      "ENGINE POWER": "1.25 HP",
-      "ENGINE TYPE": "4 STROKE",
-      "FUEL": "PETROL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "really-4s-35-cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY 2S 43 CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY 2S 43 CC",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "43 CC",
-      "ENGINE POWER": "1.7 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "PETROL + 2T OIL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "really-2s-43-cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY 4S 50CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY 4S 50CC",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "50 CC",
-      "ENGINE POWER": "2 HP",
-      "ENGINE TYPE": "4 STROKE",
-      "FUEL": "PETROL",
-      "CARRY TYPE": "SIDE PACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "really-4s-50cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY BACK PACK 4S 35 CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY BACK PACK 4S 35 CC",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "35 CC",
-      "ENGINE POWER": "1.25 HP",
-      "ENGINE TYPE": "4 STROKE",
-      "FUEL": "PETROL",
-      "CARRY TYPE": "BACKPACK",
-      "ATTACHMENTS": "TAP & GO, 2T"
-    },
-    "slug": "really-back-pack-4s-35-cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY BACKPACK 2S 52 CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY BACKPACK 2S 52 CC",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "52 CC",
-      "ENGINE POWER": "2 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "PETROL + 2T OIL",
-      "CARRY TYPE": "BACKPACK",
-      "ATTACHMENTS": "TAP & GO, 2T, 80T"
-    },
-    "slug": "really-backpack-2s-52-cc",
-    "category": "Brush Cutter"
-  },
-  {
-    "name": "REALLY TROLLEY 2S 52CC",
-    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY TROLLEY 2S 52CC",
     "thumbnail": "thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
     "specs": {
-      "DISPLACEMENT": "52 CC",
-      "ENGINE POWER": "2 HP / 7000 RPM",
-      "ENGINE TYPE": "2 STROKE",
-      "FUEL": "OIL MIX PETROL",
-      "CARRY TYPE": "TROLLEY",
-      "ATTACHMENT": "TAP & GO, 2T"
+      "BATTERY": "12V 16AH",
+      "CHARGER": "1.7A",
+      "SPEED CONTROLLER": "YES",
+      "TYPE": "BATTERY OPERATED"
     },
-    "slug": "really-trolley-2s-52cc",
-    "category": "Brush Cutter"
+    "folder": "Parani - 43 Products/SPRAYER/PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
+    "price": 0,
+    "imageUrls": [],
+    "name": "PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "portable-battery-sprayer-rapl-ps-1216",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.879Z"
   },
   {
-    "name": "MITSUYAMA 3HP 0.4 CHAFFCUTTER",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/MITSUYAMA 3HP 0.4 CHAFFCUTTER",
-    "thumbnail": "Thumbnail.webp",
+    "_id": "67rlAo0qwMC60bYRiAYi",
+    "id": "67rlAo0qwMC60bYRiAYi",
     "images": [
       "product front view.webp",
       "product right side view.webp",
@@ -303,1126 +112,1771 @@
       "product raw image.webp",
       "product types of views.webp"
     ],
+    "thumbnail": "thumbnail.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
     "specs": {
+      "CAPACITY": "400-1200 KG/HR",
+      "REQUIRED POWER": "2.3KW",
+      "FINAL SIZE CUTTING": "10-35MM",
+      "SPEED OF MOTOR": "2800 RPM/MIN",
+      "BLADE": "4 PCS MANGANESE STEEL",
+      "SHAFT DIAMETER": "24MM"
+    },
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/REALLY 3HP 1.0 CHAFFCUTTER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 3HP 1.0 CHAFFCUTTER",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "really-3hp-10-chaffcutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.879Z"
+  },
+  {
+    "_id": "7w4dB6ZfZtJ27VJQXvQn",
+    "id": "7w4dB6ZfZtJ27VJQXvQn",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "PULLEY SIZE": "5 INCH",
+      "WEIGHT": "22 KGS",
+      "SUCTION": "55 - 80 L(MIN)",
+      "PRODUCT  TYPE": "CAST IRON"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 80",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Sprayer",
+    "stock": 15,
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "name": "REALLY HTP 80 PUMP",
+    "description": "",
+    "slug": "really-htp-80-pump",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp"
+    ],
+    "updatedAt": "2026-10-29T06:46:32.436Z"
+  },
+  {
+    "_id": "BqyNjEqG7kyWhdwHH6d3",
+    "id": "BqyNjEqG7kyWhdwHH6d3",
+    "images": [
+      "Raw image.webp",
+      "HUMAN.webp"
+    ],
+    "thumbnail": "Raw image.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "100 CM EXTENSION LENGTH": "39 INCHES",
+      "DRILL BIT DIAMETER": "60-300 MM",
+      "DRILL BIT LENGTH": "32 INCHES",
+      "70CM EXTENSION LENGTH": "27 INCHES"
+    },
+    "folder": "Parani - 43 Products/EARTH AUGUR/BITS AND EXTENSION ROD",
+    "price": 0,
+    "imageUrls": [],
+    "name": "BITS AND EXTENSION ROD",
+    "category": "Earth Augur",
+    "stock": 15,
+    "slug": "bits-and-extension-rod",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.880Z"
+  },
+  {
+    "_id": "CBz2gltUIun1EPQ0yBF4",
+    "id": "CBz2gltUIun1EPQ0yBF4",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "Thumbnail.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "CAPACITY": "0.4 TON / HR",
+      "NO. OF BLADE": "4 PCS (MANGANESE STEEL)",
       "REQUIRED POWER": "3 HP SINGLE PHASE",
       "SPEED OF MOTOR": "2800 R / MIN",
-      "NO. OF BLADE": "4 PCS (MANGANESE STEEL)",
-      "CAPACITY": "0.4 TON / HR",
       "WEIGHT": "70 KGS (WITH MOTOR)"
     },
-    "slug": "mitsuyama-3hp-0-4-chaffcutter",
-    "category": "Chaff Cutter & Wood Chipper"
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/MITSUYAMA 3HP 0.4 CHAFFCUTTER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 3HP 0.4 CHAFFCUTTER",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "mitsuyama-3hp-04-chaffcutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.880Z"
   },
   {
-    "name": "MITSUYAMA 3HP 0.8 CHAFFCUTTER",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/MITSUYAMA 3HP 0.8 CHAFFCUTTER",
-    "thumbnail": "og.png",
+    "_id": "CtHpKPkHSVa3guf5bNVl",
+    "id": "CtHpKPkHSVa3guf5bNVl",
+    "images": [
+      "product raw image.webp",
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "product raw image.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "WATER FLOW": "3 - 8  LTR MIN",
+      "PRESSURE": "1.5 - 2.5 MPA",
+      "BELT": "LEATHER BELT",
+      "ENGINE POWER": "1 .25 HP / 3000 RPM",
+      "TANK CAPACITY": "15 LITER",
+      "DISPLACEMENT": "35 CC / 2 STROKE",
+      "PUMP": "HEAVY BRASS"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY 2S SPRAYER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 2S SPRAYER",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-2s-sprayer",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.881Z"
+  },
+  {
+    "_id": "EqcNfufWiWxHQrtYpS5Z",
+    "id": "EqcNfufWiWxHQrtYpS5Z",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793087935/parani_mill_stores/products/v14xdlt5x08oshih2ucb.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2 HP/ 7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "50 CC",
+      "ENGINE TYPE": "4 STROKE",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY 4S 50CC",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 4S 50CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-4s-50cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.881Z"
+  },
+  {
+    "_id": "FaJheQE0x9GgmMgyFpfs",
+    "id": "FaJheQE0x9GgmMgyFpfs",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793108732/parani_mill_stores/products/jrigh4qihvdxrtgeth3n.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793108732/parani_mill_stores/products/zjt5fav462avyqtooujh.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793108731/parani_mill_stores/products/rzzlg3sggklcm0zloguf.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793108719/parani_mill_stores/thumbnails/oearyg8qpllczxwwc9lk.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T13:49:01.671Z",
+    "specs": {
+      "ENGINE MODEL": "GX 160",
+      "FUEL TYPE": "UNLEADED PETROL",
+      "FUEL TANK CAPACITY": "3.1",
+      "ENGINE TYPE": "4 STROKE  SINGLE CYLINDER",
+      "NET POWER KW (HP) @ RPM": "3.6( 4.8)@3600"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA  GX 160 ENGINE",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-gx-160-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.881Z"
+  },
+  {
+    "_id": "FzlN2m6MkrWe7b1a1S31",
+    "id": "FzlN2m6MkrWe7b1a1S31",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "exploded.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2.2 KW",
+      "DRILL BIT RANGE": "40 MM - 300 MM",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "63 CC",
+      "ENGINE TYPE": "2 STROKE",
+      "HANDLING  TYPE": "ONE MAN OPERATED"
+    },
+    "folder": "Parani - 43 Products/EARTH AUGUR/MITSUYAMA 63 CC EARTH AUGUR",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 63CC EARTH AUGUR",
+    "category": "Earth Augur",
+    "stock": 15,
+    "slug": "mitsuyama-63cc-earth-augur",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.881Z"
+  },
+  {
+    "_id": "IsMR3Rq9Mzyb3xL6ASFz",
+    "id": "IsMR3Rq9Mzyb3xL6ASFz",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "800 -1200 RPM",
+      "WEIGHT": "10.5 KGS",
+      "SUCTION": "32-46 L/MIN"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 22",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Sprayer",
+    "stock": 15,
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "name": "REALLY HTP 22 PUMP",
+    "description": "",
+    "slug": "really-htp-22-pump",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp"
+    ],
+    "updatedAt": "2026-10-29T06:45:53.030Z"
+  },
+  {
+    "_id": "OMWTvZyebQfkgfUlKe8X",
+    "id": "OMWTvZyebQfkgfUlKe8X",
+    "thumbnail": "Thumbnail.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "MAX HEAD": "22M",
+      "FUEL": "PETROL",
+      "ENGINE": "170F",
+      "MAX SUCTION": "8M",
+      "INLET / OUTLET": "3 INCH",
+      "FLOW": "750L  MIN"
+    },
+    "folder": "Parani - 43 Products/WATER PUMP/MITSUYAMA  3X3 INCH   WA 30 WATERPUMP",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Water Pump",
+    "stock": 15,
+    "slug": "mitsuyama-3x3-inch-water-pump",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product raw image.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793191347/parani_mill_stores/products/h2yogmk1biuxhvvyxgn8.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793191551/parani_mill_stores/products/cdakk3hff2wdto5edpbs.webp"
+    ],
+    "name": "MITSUYAMA  3X3 INCH WATER PUMP",
+    "description": "",
+    "updatedAt": "2026-10-28T12:46:08.885Z"
+  },
+  {
+    "_id": "OqHsdcj1dpiKnzVBeUiX",
+    "id": "OqHsdcj1dpiKnzVBeUiX",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "PRESSURE": "1.5 - 2.5 MPA",
+      "ENGINE POWER": "4 STROKE",
+      "FUEL": "PETROL",
+      "ENGINE": "35 CC, 1 KW",
+      "FLOW RATE": "3 - 8 L /MIN",
+      "PUMP": "ABS PUMP"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY 4S PORTABLE SPRAYER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 4S PORTABLE  SPRAYER",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-4s-portable-sprayer",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.882Z"
+  },
+  {
+    "_id": "P5DuepIgNbA1vdmzLErT",
+    "id": "P5DuepIgNbA1vdmzLErT",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "BRASS PUMP": "HEAVY",
+      "WATER FLOW": "3 - 8 L /MIN",
+      "PRESSURE": "1.5 - 2.5 MPA",
+      "TANK CAPACITY": "20 L",
+      "POWER": "1 KW",
+      "DISPLACEMENT": "35 CC"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY 4S SPRAYER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 4S  SPRAYER",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-4s-sprayer",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.882Z"
+  },
+  {
+    "_id": "PKw30Dm6UjUQhJbrADez",
+    "id": "PKw30Dm6UjUQhJbrADez",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "thumbnail.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SUITABLE FOR": "GRASS CUTTING /TILLING WEDING",
+      "ENGINE POWER": "2 HP / 7000 RPM",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "52 CC",
+      "ENGINE TYPE": "2 STROKE",
+      "CARRY TYPE": "TROLLEY"
+    },
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY TROLLEY 2S 52CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-trolley-2s-52cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY TROLLEY 2S 52CC",
+    "updatedAt": "2026-10-28T05:37:12.263Z"
+  },
+  {
+    "_id": "PZ7ckBzlarhxweWhSqYg",
+    "id": "PZ7ckBzlarhxweWhSqYg",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T14:00:33.616Z",
+    "specs": {
+      "ENGINE MODEL": "GX 80",
+      "FUEL TYPE": "UN LEADED PETROL",
+      "COMPRESSION RATIO": "9.0:1",
+      "ENGINE TYPE": "4 STROKE",
+      "ENGINE OIL CAPACITY(L)": "0.36"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA VIBRATOR WITH GX 80 ENGINE",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-vibrator-with-gx-80-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/md0ocz0i0xcvpbf5akjo.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/zqyrqhvf6zubxdzucxqi.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/yyge2endgd8cxvctdvef.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190702/parani_mill_stores/thumbnails/vszaqnrj501bcgzbl1am.webp",
+    "description": "",
+    "updatedAt": "2026-10-28T12:32:13.915Z"
+  },
+  {
+    "_id": "Q6XaJfiAgPDmGHXmrWDj",
+    "id": "Q6XaJfiAgPDmGHXmrWDj",
+    "thumbnail": "thumbnail.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "1.25 HP / 7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "35CC",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "Parani - 43 Products/ENGINE/JONATHAN 35CC ENGINE",
+    "price": 0,
+    "imageUrls": [],
+    "name": "JONATHAN 35CC ENGINE",
+    "category": "Engines",
+    "stock": 15,
+    "slug": "jonathan-35cc-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "person using.webp",
+      "product back view.webp",
+      "product front view.webp",
+      "product left side view.webp",
+      "product raw image.webp",
+      "product right side view.webp",
+      "product top view.webp",
+      "product types of views.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793186710/parani_mill_stores/products/roqmspwoc9ydbfoohw4t.webp"
+    ],
+    "description": "",
+    "updatedAt": "2026-10-28T11:25:22.922Z"
+  },
+  {
+    "_id": "SKCz7zXE6R2pfiZ9RxT8",
+    "id": "SKCz7zXE6R2pfiZ9RxT8",
+    "images": [
+      "OG.png",
+      "HUMAN.png",
+      "EXPLODED.png"
+    ],
+    "thumbnail": "OG.png",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "PULLEY DIAMETER": "80 MM",
+      "FINAL SIZE CUTTING": "10-35MM",
+      "SPEED OF MOTOR": "2800  RPM/MIN",
+      "BLADE": "4 PCS  MANGANESE STEEL",
+      "SHAFT DIAMETER": "24 MM"
+    },
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/REALLY 3HP 2.0 CHAFFCUTTER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 3HP 2.0 CHAFFCUTTER",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "really-3hp-20-chaffcutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.883Z"
+  },
+  {
+    "_id": "SXLciKBhuJsTy1RG37t9",
+    "id": "SXLciKBhuJsTy1RG37t9",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "1.00 KW/ 7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "35 CC",
+      "ENGINE TYPE": "4 STROKE",
+      "CARRY TYPE": "BACKPACK"
+    },
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY BACK PACK 4S 35 CC",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY BACKPACK 4S 35CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-backpack-4s-35cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.883Z"
+  },
+  {
+    "_id": "SnIuJgxX0sN9s1glynJW",
+    "id": "SnIuJgxX0sN9s1glynJW",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "thumbnail.png",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2 HP / 7000 RPM",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "52 CC  2 STROKE",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 2S 52CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "mitsuyama-2s-52cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "folder": "Parani - 43 Products/BRUSH CUTTER/MITSUYAMA  2S  52CC",
+    "updatedAt": "2026-10-28T05:37:12.264Z"
+  },
+  {
+    "_id": "St6WvZ8LQHfJxgs0V6CQ",
+    "id": "St6WvZ8LQHfJxgs0V6CQ",
+    "name": "TROLLEY ATTACHMENT",
+    "slug": "trolley-attachment",
+    "description": "",
+    "price": 0,
+    "category": "Brush Cutter",
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793184388/parani_mill_stores/thumbnails/yotecm38ar6gbxcgo590.webp",
+    "thumbnailUrl": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793184629/parani_mill_stores/products/elnirjqcrzic5s6on95f.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793184629/parani_mill_stores/products/llyxkveuigjswetshfoh.webp"
+    ],
+    "imageUrls": [],
+    "specs": {
+      "PRODUCT  TYPE": "TROLLEY ATTACHMENT",
+      "WHEEL TYPE": "RUBBER TYRES WITH METAL SPOKES"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-10-28T10:53:30.738Z",
+    "updatedAt": "2026-10-28T10:53:30.738Z"
+  },
+  {
+    "_id": "TolwiSimScFvzYxDplMi",
+    "id": "TolwiSimScFvzYxDplMi",
+    "images": [
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "thumbnail.png",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "1.25 KW / 7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "35.8 CC",
+      "ENGINE TYPE": "4 STROKE",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 4S 35CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-4s-35cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY  4S  35 CC",
+    "updatedAt": "2026-10-28T05:37:12.264Z"
+  },
+  {
+    "_id": "UDQmkmKbh2l6VeW1Th8x",
+    "id": "UDQmkmKbh2l6VeW1Th8x",
+    "thumbnail": "Thumbnail.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "CAPACITY": "150 MM",
+      "ENGINE": "LC192F 459CC",
+      "WEIGHT": "165 KG",
+      "BLADE": "2+1"
+    },
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/WOOD CHIPPER - WC-205G-ES",
+    "price": 0,
+    "imageUrls": [],
+    "name": "WOOD CHIPPER - WC-205G-ES",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "wood-chipper-wc-205g-es",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "product front view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp"
+    ],
+    "description": "",
+    "updatedAt": "2026-10-28T11:15:14.787Z"
+  },
+  {
+    "_id": "VVCQ5eyzieXRZyGasmqv",
+    "id": "VVCQ5eyzieXRZyGasmqv",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "JOINER SIZE": "1/4 INCH  /  1/2 INCH",
+      "LENGTH": "50 MTR &  100 MTR",
+      "SIZE": "8.5 MM",
+      "JOINER TYPE": "1 SIDE MAIL  OTHER SIDE  FEMALE",
+      "LAYERS": "5 LAYERS"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/HOSE",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HOSE",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "hose",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "description": "",
+    "images": [
+      "OG.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190526/parani_mill_stores/products/kkkavy43ivmgb5yu7ocx.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190512/parani_mill_stores/thumbnails/z9ln5gjzuvxr5mjhzkdu.webp",
+    "updatedAt": "2026-10-28T12:29:01.665Z"
+  },
+  {
+    "_id": "VWFpeihHlUbW2e4xXgZi",
+    "id": "VWFpeihHlUbW2e4xXgZi",
+    "thumbnail": "Thumbnail.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "MAX HEAD": "22 M",
+      "FUEL": "PETROL",
+      "ENGINE": "170F",
+      "MAX SUCTION": "8 M",
+      "INLET / OUTLET": "2 INCH",
+      "FLOW": "750L MIN"
+    },
+    "folder": "Parani - 43 Products/WATER PUMP/MITSUYAMA 2x2 INCH  WA  20  WATERPUMP",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Water Pump",
+    "stock": 15,
+    "slug": "mitsuyama-2x2-inch-water-pump",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "name": "MITSUYAMA  2X2 INCH  WATER PUMP",
+    "description": "",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product raw image.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793191596/parani_mill_stores/products/lt6lo3vejvjb2ez5rxth.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793191623/parani_mill_stores/products/s6khkitmznfaghgluob9.webp"
+    ],
+    "updatedAt": "2026-10-28T12:47:13.133Z"
+  },
+  {
+    "_id": "Y62MmM6xVx0RljXxcUpz",
+    "id": "Y62MmM6xVx0RljXxcUpz",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109336/parani_mill_stores/products/admmouhs6lenvjbdutxe.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109336/parani_mill_stores/products/x9h4uiyarn0vkvj2lsxu.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109335/parani_mill_stores/products/r83gkhabqqjhy1gckdkz.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109323/parani_mill_stores/thumbnails/kf9wnlddtl8x5zij2vpl.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T13:57:54.158Z",
+    "specs": {
+      "FUEL TANK CAPACITY (L)": "3.1",
+      "ENGINE TANK CAPACITY (L)": "0.6",
+      "FUEL TYPE": "UNLEADED PETROL",
+      "COMPRESSION RATIO": "9.0:1",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA VIBRATOR WITH GX 160 ENGINE",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-vibrator-with-gx-160-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.884Z"
+  },
+  {
+    "_id": "YbR4BBQ7767sW6zaT0xE",
+    "id": "YbR4BBQ7767sW6zaT0xE",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "TRANSMISSION": "GEAR DRIVE",
+      "ENGINE POWER": "212CC / 4 KW",
+      "BLADES": "32 PCS",
+      "TILLING WIDTH": "1050 MM",
+      "ENGINE STROKE": "170 F / 4 STROKE",
+      "TILLING DEPTH": "100 -300 MM",
+      "HANDLE": "UP / DOWN",
+      "TYRE": "4.0 -8 SOLID"
+    },
+    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 370G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 370G POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "mitsuyama-370g-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "description": "",
+    "images": [
+      "OG.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793259572/parani_mill_stores/products/lmdi2eiocpo5ojj5hxut.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793262571/parani_mill_stores/products/wls1kxljtr0ztvdaitqf.webp"
+    ],
+    "updatedAt": "2026-10-29T08:29:39.521Z"
+  },
+  {
+    "_id": "YfK2XoJP0m15TawJZtrA",
+    "id": "YfK2XoJP0m15TawJZtrA",
+    "thumbnail": "thumbnail.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "BUMPER": "BIG HEAVY DUTY",
+      "ENGINE  QUALITY": "PREMIUM",
+      "TYRES": "5.0 - 8",
+      "BLADES": "350 GMS",
+      "FENDER": "DOUBLE",
+      "FUEL TANK": "5L",
+      "TOOL BAR": "METAL",
+      "GROSS WEIGHT": "95 KGS",
+      "HANDLE SEAT DESIGN": "IMPROVED",
+      "RECOIL STARTER/SWITCH AIR FILTER/MUFFLER": "IMPROVED",
+      "PACKING WOODEN BOX": "7 MM BOX",
+      "HANDLE SEAT COVER": "YES"
+    },
+    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 470G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 470G POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "mitsuyama-470g-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "description": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793268593/parani_mill_stores/products/jdetguivhou8nvxmyjwk.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793270667/parani_mill_stores/products/kgcbh57tiip1espjwaow.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793276998/parani_mill_stores/products/pmtnkynykbkmhzqx5kni.webp"
+    ],
+    "updatedAt": "2026-10-29T12:30:05.362Z"
+  },
+  {
+    "_id": "ZF0iY93UG0jc6dHAqjae",
+    "id": "ZF0iY93UG0jc6dHAqjae",
+    "thumbnail": "thumbnail.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2 HP / 7000 RPM",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "52CC",
+      "ENGINE TYPE": "2 STROKE"
+    },
+    "folder": "Parani - 43 Products/ENGINE/JONATHAN 52CC ENGINE",
+    "price": 0,
+    "imageUrls": [],
+    "name": "JONATHAN 52CC ENGINE",
+    "category": "Engines",
+    "stock": 15,
+    "slug": "jonathan-52cc-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "person using.webp",
+      "product back view.webp",
+      "product front view.webp",
+      "product left side view.webp",
+      "product raw image.webp",
+      "product right side view.webp",
+      "product top view.webp",
+      "product types of views.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793186917/parani_mill_stores/products/pal2z3ymynfwii4lmcs3.webp"
+    ],
+    "description": "",
+    "updatedAt": "2026-10-28T11:28:50.966Z"
+  },
+  {
+    "_id": "cASrs1RRTOtCYYVObUrN",
+    "id": "cASrs1RRTOtCYYVObUrN",
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793103833/parani_mill_stores/thumbnails/qlgijz7hkohikq9xcy2u.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "3600 RPM",
+      "FUEL": "PETROL",
+      "FUEL TANK CAPACITY": "3.6 L",
+      "STARTING SYSTEM": "RECOIL",
+      "DISPLACEMENT": "212 CC",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "Parani - 43 Products/ENGINE/REALLY 170F ENGINE",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 170F ENGINE",
+    "category": "Engines",
+    "stock": 15,
+    "slug": "really-170f-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793103747/parani_mill_stores/products/zuzgcc6ngzbjtfq7fw8t.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793103747/parani_mill_stores/products/pricmwyawcppxoii3tju.webp"
+    ],
+    "description": "",
+    "updatedAt": "2026-10-28T11:17:52.980Z"
+  },
+  {
+    "_id": "d3dwGhvaKtUkpQQqu4ru",
+    "id": "d3dwGhvaKtUkpQQqu4ru",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2 HP /  7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "43 CC",
+      "ENGINE TYPE": "2 STROKE",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY 2S 43 CC",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 2S 43CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-2s-43cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "dJlsIuQ5xIhXT4M8Q7S6",
+    "id": "dJlsIuQ5xIhXT4M8Q7S6",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "WOOD CHIPPER - RA-WC-192G-ES - COVER.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "BLADE SIZE (MM)/ DIMENSION": "7 MM / 200*55*7MM",
+      "MAX CHIPPING CAPACITY": "100MM(4INCH)",
+      "NO OF BLADES": "3 BLADES (2 ROTATING 1 FIX BLADE)",
+      "PACKAGING": "WOODEN BOX",
+      "ENGINE MODEL": "LC192F",
+      "FUEL": "PETROL",
+      "WALKING WHEEL": "500 -9(SOLID)",
+      "DISPLACEMENT": "459 CC",
+      "G. WEIGHT": "115 KGS",
+      "MAX POWER/ RPM": "10 KW /( 16.0 HP) 3600 RPM"
+    },
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/WOOD CHIPPER 192G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "WOOD CHIPPER 192G",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "wood-chipper-192g",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "eiocp6HQVfjb3aSrqNra",
+    "id": "eiocp6HQVfjb3aSrqNra",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "MAX HEAD": "22 M",
+      "FUEL": "PETROL",
+      "ENGINE": "170F",
+      "MAX SUCTION": "8 M",
+      "INLET / OUTLET": "3 INCH",
+      "FLOW": "MAX 750L MIN"
+    },
+    "folder": "Parani - 43 Products/WATER PUMP/REALLY 3x3 INCH WATERPUMP",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Water Pump",
+    "stock": 15,
+    "slug": "really-3x3-inch-water-pump",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793192532/parani_mill_stores/products/txmwismftl4oo1kjs0ar.webp"
+    ],
+    "name": "REALLY 3X3 INCH WATER PUMP",
+    "description": "",
+    "updatedAt": "2026-10-28T13:02:18.898Z"
+  },
+  {
+    "_id": "fP1RdVFSL3YEexGGYXFd",
+    "id": "fP1RdVFSL3YEexGGYXFd",
+    "images": [
+      "product front view.webp",
+      "product right side view.webp",
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "thumbnail.png",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "DRILL  RANGE": "40MM -300 MM",
+      "ENGINE POWER": "3 HP",
+      "HANDLE TYPE": "ONE MAN OPERATED",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "63 CC",
+      "ENGINE TYPE": "2 STROKE"
+    },
+    "folder": "Parani - 43 Products/EARTH AUGUR/REALLY 63CC EARTH AUGUR",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 63CC EARTH AUGUR",
+    "category": "Earth Augur",
+    "stock": 15,
+    "slug": "really-63cc-earth-augur",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "fWdMZw1WZZoBfZU7IMvb",
+    "id": "fWdMZw1WZZoBfZU7IMvb",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109709/parani_mill_stores/products/a8iaw0v2fj8a7uxe0tam.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109710/parani_mill_stores/products/kqrb14wbe5znwenjkowa.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109709/parani_mill_stores/products/ypo9wjrqf3s9ik6dzbno.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109691/parani_mill_stores/thumbnails/ujkpt2xvucb8chffn46t.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T14:04:13.385Z",
+    "specs": {
+      "FUEL TANK CAPACITY (L)": "3.1",
+      "DISPLACEMENT( CC )": "196",
+      "ENGINE  MODEL": "GX 200",
+      "STARTING SYSTEM": "RECOIL ( ELECTRIC START OPTIONAL)",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA GX 200 ENGINE",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-gx-200-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "hABzNmtZzc4eHoHPeUFx",
+    "id": "hABzNmtZzc4eHoHPeUFx",
+    "images": [
+      "product right side view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "thumbnail.png",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "2 HP / 7000 RPM",
+      "FUEL": "OIL  MIX  PETROL  1:25",
+      "DISPLACEMENT": "52 CC",
+      "ENGINE TYPE": "2 STROKE",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 2S 52CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-2s-52cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY  2S  52CC",
+    "updatedAt": "2026-10-28T05:37:12.264Z"
+  },
+  {
+    "_id": "i991pkeLpcuR4gBPQMN3",
+    "id": "i991pkeLpcuR4gBPQMN3",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "TRANSMISSION": "GEAR DRIVE",
+      "BLADES": "32 PCS",
+      "ENGINE": "170F / 4 STROKE",
+      "POWER": "212 CC / 4 KW",
+      "TILLING WIDTH": "1050 MM",
+      "ATV  TYRE": "19*7*8",
+      "TILLING DEPTH": "100 - 300 MM"
+    },
+    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 380G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 380G POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "mitsuyama-380g-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793192647/parani_mill_stores/thumbnails/wz7lbcgjrkzsngtm7a4b.webp",
+    "description": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793192656/parani_mill_stores/products/sphxt0rczqnrklkpoei5.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793270975/parani_mill_stores/products/hn5vfn24132jpoptxgob.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793276685/parani_mill_stores/products/n0bvkt61mg92aaqqug1a.webp"
+    ],
+    "updatedAt": "2026-10-29T12:24:53.180Z"
+  },
+  {
+    "_id": "kROjCz8brSN9qTw0EQhm",
+    "id": "kROjCz8brSN9qTw0EQhm",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "1.45KW/7000 RPM",
+      "FUEL": "OIL MIX PETROL 1:25",
+      "DISPLACEMENT": "52 CC",
+      "ENGINE TYPE": "2 STROKE",
+      "CARRY TYPE": "BACKPACK"
+    },
+    "folder": "Parani - 43 Products/BRUSH CUTTER/REALLY BACKPACK 2S 52 CC",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY BACKPACK 2S 52CC BRUSH CUTTER",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "really-backpack-2s-52cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "kTl9u12KzSwVp5Nt6je7",
+    "id": "kTl9u12KzSwVp5Nt6je7",
+    "images": [
+      "og.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "og.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE": "170F / 4 STROKE",
+      "WORKING WIDTH": "38 CMS / 15 INCH",
+      "POWER": "212CC / 4KW"
+    },
+    "folder": "Parani - 43 Products/WEEDER/REALLY RH 3800",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY RH 3800 POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "really-rh-3800-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "kxgiWNPWHqPKmllnjad6",
+    "id": "kxgiWNPWHqPKmllnjad6",
+    "images": [
+      "OG.png",
+      "Human.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793106025/parani_mill_stores/products/pczyi4zeowy7fuqjuj8d.webp"
+    ],
+    "thumbnail": "OG.png",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE": "170F / 4 STROKE",
+      "WORKING WIDTH": "20CMS / 8 INCH",
+      "POWER": "212 CC / 4KW"
+    },
+    "folder": "Parani - 43 Products/WEEDER/REALLY RH 2000",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY RH 2000 POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "really-rh-2000-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "lc8hq2FwRL2f9TC4OfbZ",
+    "id": "lc8hq2FwRL2f9TC4OfbZ",
+    "images": [
+      "product back view.webp",
+      "product left side view.webp",
+      "product top view.webp",
+      "product explode view.webp",
+      "person using.webp",
+      "product raw image.webp",
+      "product types of views.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793076665/parani_mill_stores/thumbnails/omcm0rf2xcqsvbz6ly0c.png",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "1.75 HP",
+      "ATTACHMENTS": "TAP & GO, 2T",
+      "DISPLACEMENT": "41.5 CC PETROL",
+      "CARRY TYPE": "SIDE PACK"
+    },
+    "folder": "Parani - 43 Products/BRUSH CUTTER/BRUSH CUTTER 2S - MY-BC-45G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "BRUSH CUTTER 2S - MY-BC-45G",
+    "category": "Brush Cutter",
+    "stock": 15,
+    "slug": "brush-cutter-2s-my-bc-45g",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "lwpLdfC0YmnfYfcFnQVv",
+    "id": "lwpLdfC0YmnfYfcFnQVv",
+    "images": [
+      "og.webp",
+      "exploded.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793100810/parani_mill_stores/products/qcyegrsnzpitcacmx87n.png"
+    ],
+    "thumbnail": "og.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "HANDLE  TYPE": "ONE MAN OPERATED",
+      "DRILL RANGE": "40MM -300 MM",
+      "ENGINE MODEL": "1E48F / 2 STROKE",
+      "ENGINE POWER": "63 CC / 2.2KW",
+      "FUEL": "OIL MIX PETROL 1:25"
+    },
+    "folder": "Parani - 43 Products/EARTH AUGUR/TROLLEY TYPE EARTH AUGUR",
+    "price": 0,
+    "imageUrls": [],
+    "name": "TROLLEY   TYPE  EARTH AUGUR",
+    "category": "Earth Augur",
+    "stock": 15,
+    "slug": "trolley-type-earth-augur",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "miWpsNT9FH3UH4Fao1xB",
+    "id": "miWpsNT9FH3UH4Fao1xB",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "TANK CAPACITY": "50 LIT",
+      "ENGINE": "35CC",
+      "HOSE": "25M",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/SPRAYER WITH TANK IN TROLLY",
+    "price": 0,
+    "imageUrls": [],
+    "name": "SPRAYER WITH TANK  TROLLY",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "sprayer-with-tank-trolly",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "n49q9gqW5X1V9Wnp6CWq",
+    "id": "n49q9gqW5X1V9Wnp6CWq",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110060/parani_mill_stores/products/zhn2rvbiaxngbhvvjnxd.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110060/parani_mill_stores/products/ngj6zyk8hye5yqa7avlf.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110059/parani_mill_stores/products/enqvd6yiqmc6oepvz9m4.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110035/parani_mill_stores/thumbnails/h5wfteffhjobwk9akbx3.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T14:09:15.744Z",
+    "specs": {
+      "ENGINE MODEL": "GX 35",
+      "ENGINE POWER": "1.5 HP / 7000 RPM",
+      "FUEL": "PETROL",
+      "DISPLACEMENT": "35.8 CC",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA 4S 35 CC BRUSH CUTTER",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-4s-35-cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "omudmBGjtpbWe975gUWj",
+    "id": "omudmBGjtpbWe975gUWj",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109896/parani_mill_stores/products/jazyzwhm43kfhrsolith.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109896/parani_mill_stores/products/popcdbmfuzcxsr2os8xz.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109896/parani_mill_stores/products/qjjwmwtal8yiy3nlqyyn.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793109884/parani_mill_stores/thumbnails/gnhqlbnaipnl4lmn0ciy.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T14:06:46.416Z",
+    "specs": {
+      "CYLINDER SLEEVE TYPE": "CAST IRON SLEEVE",
+      "COMPRESSION RATIO": "9:1",
+      "STARTER": "RECOIL (EL.STARTER OPTIONAL)",
+      "DISPLACEMENT": "79.7 CM3;",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA GX 80 ENGINE",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-gx-80-engine",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "pdd9f3w2FTC54RgDF83i",
+    "id": "pdd9f3w2FTC54RgDF83i",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE": "170 F / 4 STROKE",
+      "WORKING WIDTH": "26CMS / 10.25 INCH",
+      "POWER": "212CC / 4 KW"
+    },
+    "folder": "Parani - 43 Products/WEEDER/REALLY RH 2600",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY RH 2600 POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "really-rh-2600-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "r9hIUOAB3uPaH2o5stys",
+    "id": "r9hIUOAB3uPaH2o5stys",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SUITABLE FOR": "TILLING WEEDING",
+      "ENGINE MODEL": "1E48F/ 2 STROKE",
+      "ENGINE POWER": "63CC / 2.3 KW",
+      "FUEL": "OIL MIX PETROL 1:25"
+    },
+    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA MINI TILLER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA MINI TILLER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "mitsuyama-mini-tiller",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "rTvYcFBIRwG90pnD7ku3",
+    "id": "rTvYcFBIRwG90pnD7ku3",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "800 - 1200 RPM",
+      "ENGINE MODEL": "196 CC / 3.7 KW",
+      "FUEL": "PETROL",
+      "SUCTION": "32 - 46 L / MIN",
+      "SPRAYER MODEL": "30 MM"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY 168F ENGINE WITH HTP 50",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 168F ENGINE WITH HTP 50 SPRAYER",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-168f-engine-with-htp-50-sprayer",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "tOtQASS2PQcamK1AR4ep",
+    "id": "tOtQASS2PQcamK1AR4ep",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "800 -1200 RPM",
+      "WEIGHT": "11.2 KGS",
+      "SUCTION": "32 -46 L/MIN"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 50",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Sprayer",
+    "stock": 15,
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "name": "REALLY HTP 50 PUMP",
+    "description": "",
+    "slug": "really-htp-50-pump",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp"
+    ],
+    "updatedAt": "2026-10-29T06:46:20.063Z"
+  },
+  {
+    "_id": "uDoQEg1WCBsPm1sRl0dZ",
+    "id": "uDoQEg1WCBsPm1sRl0dZ",
+    "thumbnail": "OG.png",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "TRANSMISSION": "GEAR DRIVE",
+      "ENGINE POWER": "212CC / 4 KW",
+      "BLADES": "32 PCS",
+      "TILLING WIDTH": "1050 MM",
+      "ENGINE STROKE": "170F/ 4 STROKE",
+      "TILLING DEPTH": "100-300 MM",
+      "HANDLE": "UP / DOWN",
+      "TYRE": "4.0 - 8 SOLID"
+    },
+    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 360G",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Weeder",
+    "stock": 15,
+    "thumbnailUrl": "",
+    "images": [
+      "OG.png",
+      "EXPLODED.png",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793262809/parani_mill_stores/products/takfwbrthksegujx9alk.webp"
+    ],
+    "description": "",
+    "isProductOfTheMonth": true,
+    "name": "MITSUYAMA 360G POWER WEEDER",
+    "slug": "mitsuyama-360g-power-weeder",
+    "updatedAt": "2026-10-30T07:29:17.998Z"
+  },
+  {
+    "_id": "uPzxfNfMTTehxUCxnQzm",
+    "id": "uPzxfNfMTTehxUCxnQzm",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "800 - 1200 RPM",
+      "ENGINE MODEL": "168F  / 4 STROKE",
+      "ENGINE POWER": "196 CC / 3.7 KW",
+      "FUEL": "PETROL",
+      "SUCTION": "13.5 - 20",
+      "SPRAYER MODEL": "22 MM"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY 168F ENGINE WITH HTP 22",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 168F ENGINE WITH HTP 22 SPRAYER",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-168f-engine-with-htp-22-sprayer",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "uYeVu0rTbF46Igq58xc8",
+    "id": "uYeVu0rTbF46Igq58xc8",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "SPEED": "800-1200 RPM",
+      "WEIGHT": "10.5 KGS",
+      "SUCTION": "32-46 L/MIN"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 30",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Sprayer",
+    "stock": 15,
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "name": "REALLY HTP 30 PUMP",
+    "description": "",
+    "slug": "really-htp-30-pump",
+    "images": [
+      "OG.webp",
+      "EXPLODED.webp"
+    ],
+    "updatedAt": "2026-10-29T06:46:05.893Z"
+  },
+  {
+    "_id": "uZxvYh9PwQBx1p5U4lX5",
+    "id": "uZxvYh9PwQBx1p5U4lX5",
+    "images": [
+      "OG.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "PRESSSURE": "25 BAR MAX",
+      "PISTON": "3",
+      "MOTOR": "2.5HP / 220 V COPPER WINDING",
+      "PUMP": "22 MM",
+      "SUCTION": "14-26 L / MIN",
+      "RPM": "1000 TO 1200 RPM"
+    },
+    "folder": "Parani - 43 Products/SPRAYER/REALLY ELECTRIC SPRAYER WITH HTP 22",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY ELECTRIC SPRAYER WITH HTP 22",
+    "category": "Sprayer",
+    "stock": 15,
+    "slug": "really-electric-sprayer-with-htp-22",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "x35snf7a14YT4gANxbtg",
+    "id": "x35snf7a14YT4gANxbtg",
+    "images": [
+      "og.webp",
+      "HUMAN.webp",
+      "EXPLODED.webp"
+    ],
+    "thumbnail": "og.webp",
+    "isActive": true,
+    "stroke": "2 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "ENGINE POWER": "4 HP",
+      "DRILL BIT RANGE": "6 INCH TO 14 INCH",
+      "APPLICATION": "HEAVY SOIL AND ROCKY TERRAIN",
+      "FUEL": "PETROL + 2T OIL",
+      "DISPLACEMENT": "82 CC (HEAVY DUTY)",
+      "ENGINE TYPE": "2 STROKE"
+    },
+    "folder": "Parani - 43 Products/EARTH AUGUR/OREZEN 82 CC EARTH AUGUR",
+    "price": 0,
+    "imageUrls": [],
+    "name": "OREZEN 82CC  EARTH AUGUR",
+    "category": "Earth Augur",
+    "stock": 15,
+    "slug": "orezen-82cc-earth-augur",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.887Z"
+  },
+  {
+    "_id": "xLVO9e6JVD960lTHNuyb",
+    "id": "xLVO9e6JVD960lTHNuyb",
+    "thumbnail": "OG.webp",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "MAX  HEAD": "22M",
+      "FUEL": "PETROL",
+      "ENGINE": "170F",
+      "MAX SUCTION": "8M",
+      "INLET / OUTLET": "2  INCH",
+      "FLOW": "MAC 500L MIN"
+    },
+    "folder": "Parani - 43 Products/WATER PUMP/REALLY 2x2 INCH WATERPUMP",
+    "price": 0,
+    "imageUrls": [],
+    "category": "Water Pump",
+    "stock": 15,
+    "slug": "really-2x2-inch-water-pump",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "images": [
+      "OG.webp",
+      "exploded.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793192463/parani_mill_stores/products/jsunqvzezihqzmzlcjl2.webp"
+    ],
+    "name": "REALLY 2X2 INCH WATER PUMP",
+    "description": "",
+    "updatedAt": "2026-10-28T13:01:09.947Z"
+  },
+  {
+    "_id": "zcg3WKDDE3YkJcKI2hEf",
+    "id": "zcg3WKDDE3YkJcKI2hEf",
+    "isActive": true,
+    "stroke": "4 Stroke",
+    "createdAt": "2026-10-26T11:43:18.413Z",
+    "specs": {
+      "BLADES": "32 PCS",
+      "ENGINE": "170  /4 STROKE",
+      "POWER": "212 CC / 4KW",
+      "HANDLE BAR": "UP / DOWN",
+      "GEAR": "R,0,1,2",
+      "TYRE": "400 -10 RADIAL"
+    },
+    "folder": "Parani - 43 Products/WEEDER/REALLY 700G",
+    "price": 0,
+    "imageUrls": [],
+    "name": "REALLY 700G POWER WEEDER",
+    "category": "Weeder",
+    "stock": 15,
+    "slug": "really-700g-power-weeder",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "description": "",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793258347/parani_mill_stores/products/kdotsuvkeoo42jjocsnj.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793258347/parani_mill_stores/products/nedyprds0fjlvfyngtf2.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793258347/parani_mill_stores/products/ts6shtteay10rqmiuezs.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793258160/parani_mill_stores/thumbnails/iggn9oqahbqhbacbtosg.webp",
+    "updatedAt": "2026-10-29T07:19:29.728Z"
+  },
+  {
+    "_id": "zlfYzlnPzWY2kqaItAwO",
+    "id": "zlfYzlnPzWY2kqaItAwO",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110197/parani_mill_stores/products/kvb2iu4qlzsoyqblww2c.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110197/parani_mill_stores/products/yqpshnsxplvbqyjjfvrf.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110197/parani_mill_stores/products/q1izu7sfcvjdtbohfx0m.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793110184/parani_mill_stores/thumbnails/lu4qzdgpssyonopfhnmk.webp",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-27T14:11:22.392Z",
+    "specs": {
+      "ENGINE MODEL": "GX 50",
+      "ENGINE POWER": "2HP / 1000 RPM",
+      "OIL CAPACITY": "0.1 LITRE",
+      "STARTING SYSTEM": "RECOIL STARTER",
+      "ENGINE TYPE": "4 STROKE"
+    },
+    "folder": "",
+    "price": 0,
+    "imageUrls": [],
+    "name": "HONDA 4S 50 CC BRUSH CUTTER",
+    "category": "Honda Products",
+    "stock": 15,
+    "slug": "honda-4s-50-cc-brush-cutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.888Z"
+  },
+  {
+    "_id": "zllndpLxAun95wTkhxF1",
+    "id": "zllndpLxAun95wTkhxF1",
     "images": [
       "og.png",
       "HUMAN.png",
       "exploded.png"
     ],
+    "thumbnail": "og.png",
+    "isActive": true,
+    "stroke": "",
+    "createdAt": "2026-10-26T11:43:18.413Z",
     "specs": {
-      "REQUIRED POWER": "3 HP SINGLE PHASE",
-      "SPEED OF MOTOR": "2800 R / MIN",
-      "NO. OF BLADE": "4 PCS",
-      "CAPACITY": "0.8 TON / HR",
-      "WEIGHT": "65 KG"
+      "CAPACITY": "400-1000 KG/HR",
+      "PULLEY DIAMETER": "68MM",
+      "3 MM CONVEYOR  BELT": "L1200 MM",
+      "REQUIRED POWER": "2.2 KW SINGLE PHASE",
+      "BLADE": "4 PCS MANGANESE STEEL",
+      "SHAFT DIAMETER": "24MM"
     },
-    "slug": "mitsuyama-3hp-0-8-chaffcutter",
-    "category": "Chaff Cutter & Wood Chipper"
-  },
-  {
-    "name": "REALLY 3HP 1.0 CHAFFCUTTER",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/REALLY 3HP 1.0 CHAFFCUTTER",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "REQUIRED POWER": "3 HP",
-      "SPEED OF MOTOR": "2800 R / MIN",
-      "NO. OF BLADE": "4 PCS",
-      "CAPACITY": "1.0 TON / HR",
-      "WEIGHT": "44 KG"
-    },
-    "slug": "really-3hp-1-0-chaffcutter",
-    "category": "Chaff Cutter & Wood Chipper"
-  },
-  {
-    "name": "REALLY 3HP 2.0 CHAFFCUTTER",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/REALLY 3HP 2.0 CHAFFCUTTER",
-    "thumbnail": "OG.png",
-    "images": [
-      "OG.png",
-      "HUMAN.png",
-      "EXPLODED.png"
-    ],
-    "specs": {
-      "REQUIRED POWER": "3 HP / 5 HP",
-      "SPEED OF MOTOR": "2800 R / MIN",
-      "NO. OF BLADE": "4 PCS / 6 PCS",
-      "CAPACITY": "2.0 TON / HR",
-      "WEIGHT": "75 KG"
-    },
-    "slug": "really-3hp-2-0-chaffcutter",
-    "category": "Chaff Cutter & Wood Chipper"
-  },
-  {
-    "name": "CHAINSAW - MY-CS-6010-18in-ECO",
-    "folder": "Parani - 43 Products/CHAINSAW - MY-CS-6010-18in-ECO",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "DISPLACEMENT": "58CC",
-      "GUIDE BAR": "18 INCH",
-      "IDLE SPEED": "3200+200 RPM",
-      "OIL MIX RATIO": "1:25"
-    },
-    "slug": "chainsaw-my-cs-6010-18in-eco",
-    "category": "Engines"
-  },
-  {
-    "name": "EARTH AUGUR BITS AND EXTENSION ROD",
-    "folder": "Parani - 43 Products/EARTH AUGUR/BITS AND EXTENSION ROD",
-    "thumbnail": "Raw image.webp",
-    "images": [
-      "Raw image.webp",
-      "HUMAN.webp"
-    ],
-    "specs": {
-      "ATTACHMENT TYPE": "DRILL BITS AND EXTENSION ROD",
-      "AVAILABLE SIZES": "4 inch, 6 inch, 8 inch, 10 inch, 12 inch",
-      "EXTENSION LENGTH": "1 METER",
-      "APPLICATION": "PLANTATION, FENCING, PILLAR HOLES"
-    },
-    "slug": "earth-augur-bits-and-extension-rod",
-    "category": "Earth Augur"
-  },
-  {
-    "name": "MITSUYAMA 63CC EARTH AUGUR",
-    "folder": "Parani - 43 Products/EARTH AUGUR/MITSUYAMA 63 CC EARTH AUGUR",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "exploded.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "63 CC",
-      "ENGINE POWER": "3 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "DRILL BIT RANGE": "4 inch TO 12 inch",
-      "FUEL": "PETROL + 2T OIL",
-      "STARTING": "RECOIL START"
-    },
-    "slug": "mitsuyama-63cc-earth-augur",
-    "category": "Earth Augur"
-  },
-  {
-    "name": "OREZEN 82CC HEAVY DUTY EARTH AUGUR",
-    "folder": "Parani - 43 Products/EARTH AUGUR/OREZEN 82 CC EARTH AUGUR",
-    "thumbnail": "og.webp",
-    "images": [
-      "og.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "82 CC (HEAVY DUTY)",
-      "ENGINE POWER": "4 HP",
-      "ENGINE TYPE": "2 STROKE",
-      "DRILL BIT RANGE": "6 inch TO 14 inch",
-      "FUEL": "PETROL + 2T OIL",
-      "APPLICATION": "HEAVY SOIL AND ROCKY TERRAIN"
-    },
-    "slug": "orezen-82cc-heavy-duty-earth-augur",
-    "category": "Earth Augur"
-  },
-  {
-    "name": "REALLY 63CC EARTH AUGUR",
-    "folder": "Parani - 43 Products/EARTH AUGUR/REALLY 63CC EARTH AUGUR",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "63 CC",
-      "ENGINE POWER": "3 HP / 6500 RPM",
-      "ENGINE TYPE": "2 STROKE",
-      "DRILL BIT RANGE": "4 inch TO 12 inch",
-      "FUEL": "PETROL + 2T OIL (1:25)",
-      "GEAR RATIO": "30:1"
-    },
-    "slug": "really-63cc-earth-augur",
-    "category": "Earth Augur"
-  },
-  {
-    "name": "REALLY TROLLEY WHEELED EARTH AUGUR",
-    "folder": "Parani - 43 Products/EARTH AUGUR/TROLLEY TYPE EARTH AUGUR",
-    "thumbnail": "og.webp",
-    "images": [
-      "og.webp",
-      "HUMAN.webp",
-      "exploded.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "63 CC / 68 CC",
-      "ENGINE POWER": "3 HP",
-      "FRAME TYPE": "HEAVY DUTY TROLLEY WITH WHEELS",
-      "OPERATION": "SINGLE PERSON OPERATION",
-      "DRILL BIT RANGE": "6 inch, 8 inch, 10 inch, 12 inch",
-      "FUEL": "PETROL + 2T OIL"
-    },
-    "slug": "really-trolley-wheeled-earth-augur",
-    "category": "Earth Augur"
-  },
-  {
-    "name": "REALLY HIGH PRESSURE SPRAYER HOSE",
-    "folder": "Parani - 43 Products/SPRAYER/HOSE",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp"
-    ],
-    "specs": {
-      "MATERIAL": "5-PLY HEAVY DUTY PVC",
-      "DIAMETER": "8.5 MM",
-      "WORKING PRESSURE": "40 - 50 BAR",
-      "APPLICATION": "POWER SPRAYERS & HTP PUMPS",
-      "LENGTH": "50 M / 100 M"
-    },
-    "slug": "really-high-pressure-sprayer-hose",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY 168F ENGINE WITH HTP 22 SPRAYER",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY 168F ENGINE WITH HTP 22",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "168F (6.5 HP)",
-      "SPRAYER MODEL": "HTP 22 MM",
-      "PRESSURE": "20 - 45 BAR",
-      "SUCTION VOLUME": "14 - 22 L/MIN",
-      "SPEED": "800 - 1200 RPM",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-168f-engine-with-htp-22-sprayer",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY 168F ENGINE WITH HTP 50 SPRAYER",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY 168F ENGINE WITH HTP 50",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "168F / 170F (6.5 HP - 7 HP)",
-      "SPRAYER MODEL": "HTP 50 MM",
-      "PRESSURE": "20 - 45 BAR",
-      "SUCTION VOLUME": "30 - 50 L/MIN",
-      "SPEED": "800 - 1200 RPM",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-168f-engine-with-htp-50-sprayer",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY 2S POWER SPRAYER",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY 2S SPRAYER",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "product raw image.webp",
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "26 CC",
-      "ENGINE POWER": "1 HP / 6500 RPM",
-      "PRESSURE": "1.5 - 2.5 MPA",
-      "WATER FLOW": "3 - 8 L/MIN",
-      "TANK CAPACITY": "20 L / 25 L",
-      "PUMP": "HEAVY BRASS PUMP",
-      "FUEL": "PETROL + 2T OIL"
-    },
-    "slug": "really-2s-power-sprayer",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY 4S PORTABLE POWER SPRAYER",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY 4S PORTABLE SPRAYER",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "35 CC, 4 STROKE",
-      "ENGINE POWER": "1.25 HP",
-      "PRESSURE": "2.5 - 3.5 MPA",
-      "FLOW RATE": "3 - 8 L/MIN",
-      "PUMP": "BRASS PUMP",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-4s-portable-power-sprayer",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY 4S POWER SPRAYER",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY 4S SPRAYER",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "31 CC / 35 CC",
-      "ENGINE POWER": "1.25 HP",
-      "PRESSURE": "1.5 - 2.5 MPA",
-      "WATER FLOW": "6 - 8 L/MIN",
-      "TANK CAPACITY": "25 L",
-      "PUMP": "BRASS PUMP",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-4s-power-sprayer",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY ELECTRIC SPRAYER WITH HTP 22",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY ELECTRIC SPRAYER WITH HTP 22",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "specs": {
-      "MOTOR POWER": "2 HP / 3 HP (100% COPPER)",
-      "VOLTAGE": "220V SINGLE PHASE",
-      "SPRAYER MODEL": "HTP 22 MM",
-      "PRESSURE": "20 - 40 BAR",
-      "SUCTION VOLUME": "14 - 22 L/MIN",
-      "RPM": "1000 - 1200 RPM"
-    },
-    "slug": "really-electric-sprayer-with-htp-22",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY HTP 22 SPRAYER PUMP",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 22",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "specs": {
-      "PLUNGER DIAMETER": "22 MM",
-      "NO. OF PISTONS": "3",
-      "WORKING PRESSURE": "20 - 40 BAR",
-      "SUCTION CAPACITY": "14 - 22 L/MIN",
-      "REQUIRED POWER": "2 HP - 3 HP / 168F ENGINE",
-      "RPM": "800 - 1200 RPM"
-    },
-    "slug": "really-htp-22-sprayer-pump",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY HTP 30 SPRAYER PUMP",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 30",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "specs": {
-      "PLUNGER DIAMETER": "30 MM",
-      "NO. OF PISTONS": "3",
-      "WORKING PRESSURE": "20 - 45 BAR",
-      "SUCTION CAPACITY": "30 - 45 L/MIN",
-      "REQUIRED POWER": "3 HP - 5 HP / 168F/170F ENGINE",
-      "RPM": "800 - 1200 RPM"
-    },
-    "slug": "really-htp-30-sprayer-pump",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY HTP 50 SPRAYER PUMP",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 50",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "specs": {
-      "PLUNGER DIAMETER": "50 MM",
-      "NO. OF PISTONS": "3",
-      "WORKING PRESSURE": "20 - 50 BAR",
-      "SUCTION CAPACITY": "50 - 75 L/MIN",
-      "REQUIRED POWER": "5 HP - 7 HP / 170F ENGINE",
-      "RPM": "800 - 1000 RPM"
-    },
-    "slug": "really-htp-50-sprayer-pump",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY HTP 80 SPRAYER PUMP",
-    "folder": "Parani - 43 Products/SPRAYER/REALLY HTP 80",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "specs": {
-      "PLUNGER DIAMETER": "80 MM",
-      "NO. OF PISTONS": "3",
-      "WORKING PRESSURE": "20 - 50 BAR",
-      "SUCTION CAPACITY": "70 - 100 L/MIN",
-      "REQUIRED POWER": "7 HP - 10 HP / DIESEL ENGINE",
-      "RPM": "600 - 900 RPM"
-    },
-    "slug": "really-htp-80-sprayer-pump",
-    "category": "Sprayer"
-  },
-  {
-    "name": "REALLY TROLLEY SPRAYER WITH TANK",
-    "folder": "Parani - 43 Products/SPRAYER/SPRAYER WITH TANK IN TROLLY",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "TANK CAPACITY": "50 L / TROLLEY MOUNTED",
-      "ENGINE": "4 STROKE / 35 CC",
-      "PRESSURE": "2.5 - 3.5 MPA",
-      "FLOW RATE": "6 - 8 L/MIN",
-      "HOSE LENGTH": "30 M / 50 M WITH REEL",
-      "WHEELS": "HEAVY DUTY TRANSPORT WHEELS"
-    },
-    "slug": "really-trolley-sprayer-with-tank",
-    "category": "Sprayer"
-  },
-  {
-    "name": "KNAPSACK POWER SPRAYER - RAPL-KS-4131",
-    "folder": "Parani - 43 Products/SPRAYER/KNAPSACK POWER SPRAYER - RAPL-KS-4131",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "31CC, 4 STROKE",
-      "ENGINE POWER": "1.25 HP",
-      "TANK CAPACITY": "20L",
-      "PUMP": "ABS PUMP"
-    },
-    "slug": "knapsack-power-sprayer-rapl-ks-4131",
-    "category": "Sprayer"
-  },
-  {
-    "name": "PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
-    "folder": "Parani - 43 Products/SPRAYER/PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "BATTERY": "12V 16AH",
-      "TYPE": "BATTERY OPERATED",
-      "SPEED CONTROLLER": "YES",
-      "CHARGER": "1.7A"
-    },
-    "slug": "portable-battery-sprayer-rapl-ps-1216",
-    "category": "Sprayer"
-  },
-  {
-    "name": "FOGGING MACHINE - RAPL-W80",
-    "folder": "Parani - 43 Products/FOGGING MACHINE - RAPL-W80",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "DISPLACEMENT": "48 CC",
-      "FLOW RATE": "10 - 35 L/HR",
-      "FRAME MATERIAL": "8K SS",
-      "WEIGHT": "9.5 KG"
-    },
-    "slug": "fogging-machine-rapl-w80",
-    "category": "Engines"
-  },
-  {
-    "name": "HIGH PRESSURE WASHER - MY - HPW - 1450",
-    "folder": "Parani - 43 Products/HIGH PRESSURE WASHER - MY - HPW - 1450",
-    "thumbnail": "product raw image.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "WORKING PRESSURE": "UPTO 90 BAR",
-      "POWER": "1500 W",
-      "VOLTAGE": "220V",
-      "AUTO STOP (YES/NO)": "YES"
-    },
-    "slug": "high-pressure-washer-my-hpw-1450",
-    "category": "Engines"
-  },
-  {
-    "name": "JONATHAN 52CC ENGINE",
-    "folder": "Parani - 43 Products/ENGINE/JONATHAN 52CC ENGINE",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "52CC",
-      "ENGINE POWER": "2 HP / 7000 RPM",
-      "FUEL": "PETROL + 2T OIL",
-      "ENGINE TYPE": "2 STROKE"
-    },
-    "slug": "jonathan-52cc-engine",
-    "category": "Engines"
-  },
-  {
-    "name": "JONATHAN 35CC ENGINE",
-    "folder": "Parani - 43 Products/ENGINE/JONATHAN 35CC ENGINE",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "35CC",
-      "ENGINE POWER": "1.25 HP / 7000 RPM",
-      "FUEL": "PETROL",
-      "ENGINE TYPE": "4 STROKE"
-    },
-    "slug": "jonathan-35cc-engine",
-    "category": "Engines"
-  },
-  {
-    "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG",
-    "folder": "Parani - 43 Products/LONG TEETH SEEDER - RAPL-MS-12T LONG",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "MODEL NO.": "RAPL-MS-12T LONG"
-    },
-    "slug": "long-teeth-seeder-rapl-ms-12t-long",
-    "category": "Engines"
-  },
-  {
-    "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG - DETAIL",
-    "folder": "Parani - 43 Products/LONG TEETH SEEDER - RAPL-MS-12T LONG - DETAIL",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "MODEL NO.": "RAPL-MS-12T LONG"
-    },
-    "slug": "long-teeth-seeder-rapl-ms-12t-long-detail",
-    "category": "Engines"
-  },
-  {
-    "name": "MITSUYAMA 360G POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 360G",
-    "thumbnail": "OG.png",
-    "images": [
-      "OG.png",
-      "HUMAN.png",
-      "EXPLODED.png"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC",
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "POWER": "4 KW / 3600 RPM",
-      "TRANSMISSION": "GEAR DRIVE",
-      "BLADES": "32 PCS (DRY LAND)",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-360g-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "MITSUYAMA 370G POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 370G",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "Exploded.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC",
-      "ENGINE POWER": "4 KW / 3600 RPM (7 HP)",
-      "TYRE": "4.0 - 8",
-      "BLADES": "32 PCS (DRY LAND)",
-      "TRANSMISSION": "GEAR DRIVE",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-370g-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "MITSUYAMA 380G POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 380G",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC",
-      "ENGINE POWER": "4 KW / 3600 RPM (7 HP)",
-      "TYRE": "ATV TYRE 19*7*8",
-      "BLADES": "32 PCS (DRY LAND)",
-      "SUSPENSION": "DOUBLE SUSPENSION",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-380g-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "MITSUYAMA 470G POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA 470G",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC",
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "TRANSMISSION": "HEAVY DUTY GEAR",
-      "BLADES": "32 PCS (DRY LAND)",
-      "START": "RECOIL START",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-470g-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "MITSUYAMA MINI TILLER",
-    "folder": "Parani - 43 Products/WEEDER/MITSUYAMA MINI TILLER",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "2 Stroke",
-    "specs": {
-      "DISPLACEMENT": "63 CC PETROL",
-      "ENGINE POWER": "3 HP",
-      "CARRY TYPE": "TROLLY / WHEELED",
-      "RPM": "7000 RPM",
-      "TILLING WIDTH": "30 CM - 40 CM",
-      "FUEL": "PETROL + 2T OIL"
-    },
-    "slug": "mitsuyama-mini-tiller",
-    "category": "Weeder"
-  },
-  {
-    "name": "REALLY 700G POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/REALLY 700G",
-    "thumbnail": "Thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC",
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "TRANSMISSION": "GEAR DRIVE",
-      "BLADES": "32 PCS",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-700g-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "REALLY RH 2000 POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/REALLY RH 2000",
-    "thumbnail": "OG.png",
-    "images": [
-      "OG.png",
-      "Human.webp",
-      "EXPLODED.png"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "DISPLACEMENT": "212 CC",
-      "TRANSMISSION": "GEAR DRIVE",
-      "BLADES": "24 - 32 PCS",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-rh-2000-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "REALLY RH 2600 POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/REALLY RH 2600",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "DISPLACEMENT": "212 CC",
-      "TRANSMISSION": "GEAR DRIVE",
-      "BLADES": "32 PCS",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-rh-2600-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "REALLY RH 3800 POWER WEEDER",
-    "folder": "Parani - 43 Products/WEEDER/REALLY RH 3800",
-    "thumbnail": "og.webp",
-    "images": [
-      "og.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "170F PETROL (7 HP)",
-      "DISPLACEMENT": "212 CC",
-      "WEEDING BLADES": "7",
-      "PUSH TYPE": "SELF PROPELLED",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-rh-3800-power-weeder",
-    "category": "Weeder"
-  },
-  {
-    "name": "REALLY 170F ENGINE",
-    "folder": "Parani - 43 Products/ENGINE/REALLY 170F ENGINE",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "DISPLACEMENT": "212 CC / 7HP",
-      "RPM": "3600 RPM",
-      "FUEL": "PETROL / 3.5 L",
-      "WEIGHT": "16 KG"
-    },
-    "slug": "really-170f-engine",
-    "category": "Engines"
-  },
-  {
-    "name": "RICE MILL - RAPL - RM - 6N40",
-    "folder": "Parani - 43 Products/RICE MILL - RAPL - RM - 6N40",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "PRODUCT NAME": "RICE MILL",
-      "POWER (KW)": "1.8",
-      "GRINDING CAPACITY": "120 - 150 KG",
-      "WEIGHT": "50 KG"
-    },
-    "slug": "rice-mill-rapl-rm-6n40",
-    "category": "Engines"
-  },
-  {
-    "name": "STUBBLE MOVER - RAPL-SM-G50",
-    "folder": "Parani - 43 Products/STUBBLE MOVER - RAPL-SM-G50",
-    "thumbnail": "thumbnail.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "170F, 4 STROKE",
-      "NO OF BLADES": "36 PCS",
-      "CUTTING WIDTH": "50 CM",
-      "FUEL": "PETROL"
-    },
-    "slug": "stubble-mover-rapl-sm-g50",
-    "category": "Engines"
-  },
-  {
-    "name": "TEA LEAF HARVESTER - RAPL-TH-2105",
-    "folder": "Parani - 43 Products/TEA LEAF HARVESTER - RAPL-TH-2105",
-    "thumbnail": "Thumbnail.webp",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "BATTERY": "DC 21V, 5.2AH",
-      "RUNNING TIME": "3-4 HOURS",
-      "MOTOR POWER": "300 W",
-      "BLADE LENGTH": "300 MM"
-    },
-    "slug": "tea-leaf-harvester-rapl-th-2105",
-    "category": "Engines"
-  },
-  {
-    "name": "VACCUM CLEANER - MY-AC-20L",
-    "folder": "Parani - 43 Products/VACCUM CLEANER - MY-AC-20L",
-    "thumbnail": "thumbnail.png",
-    "images": [
-      "person using.webp",
-      "product back view.webp",
-      "product explode view.webp",
-      "product front view.webp",
-      "product left side view.webp",
-      "product raw image.webp",
-      "product right side view.webp",
-      "product top view.webp",
-      "product types of views.webp"
-    ],
-    "specs": {
-      "POWER": "1200W",
-      "VOLTAGE": "240V-50Hz",
-      "VACUUM": "300mbr",
-      "CAPACITY": "20L"
-    },
-    "slug": "vaccum-cleaner-my-ac-20l",
-    "category": "Engines"
-  },
-  {
-    "name": "MITSUYAMA 2x2 INCH WA 20 WATER PUMP",
-    "folder": "Parani - 43 Products/WATER PUMP/MITSUYAMA 2x2 INCH  WA  20  WATERPUMP",
-    "thumbnail": "Thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "170F (4 STROKE PETROL)",
-      "POWER": "7 HP / 3600 RPM",
-      "INLET / OUTLET": "2 INCH x 2 INCH (50 MM)",
-      "MAX HEAD": "26 METER",
-      "MAX SUCTION": "7 - 8 METER",
-      "DISCHARGE": "30,000 LTR / HOUR",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-2x2-inch-wa-20-water-pump",
-    "category": "Water Pump"
-  },
-  {
-    "name": "MITSUYAMA 3x3 INCH WA 30 WATER PUMP",
-    "folder": "Parani - 43 Products/WATER PUMP/MITSUYAMA  3X3 INCH   WA 30 WATERPUMP",
-    "thumbnail": "Thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "170F (4 STROKE PETROL)",
-      "POWER": "7 HP / 3600 RPM",
-      "INLET / OUTLET": "3 INCH x 3 INCH (80 MM)",
-      "MAX HEAD": "28 METER",
-      "MAX SUCTION": "7 - 8 METER",
-      "DISCHARGE": "60,000 LTR / HOUR",
-      "FUEL": "PETROL"
-    },
-    "slug": "mitsuyama-3x3-inch-wa-30-water-pump",
-    "category": "Water Pump"
-  },
-  {
-    "name": "REALLY 2x2 INCH WATER PUMP",
-    "folder": "Parani - 43 Products/WATER PUMP/REALLY 2x2 INCH WATERPUMP",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "exploded.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "168F / 170F (4 STROKE PETROL)",
-      "POWER": "6.5 HP - 7 HP",
-      "INLET / OUTLET": "2 INCH x 2 INCH (50 MM)",
-      "MAX HEAD": "26 METER",
-      "MAX SUCTION": "7 - 8 METER",
-      "DISCHARGE": "30,000 LTR / HOUR",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-2x2-inch-water-pump",
-    "category": "Water Pump"
-  },
-  {
-    "name": "REALLY 3x3 INCH WATER PUMP",
-    "folder": "Parani - 43 Products/WATER PUMP/REALLY 3x3 INCH WATERPUMP",
-    "thumbnail": "OG.webp",
-    "images": [
-      "OG.webp",
-      "HUMAN.webp",
-      "EXPLODED.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "170F (4 STROKE PETROL)",
-      "POWER": "7 HP / 3600 RPM",
-      "INLET / OUTLET": "3 INCH x 3 INCH (80 MM)",
-      "MAX HEAD": "28 METER",
-      "MAX SUCTION": "7 - 8 METER",
-      "DISCHARGE": "60,000 LTR / HOUR",
-      "FUEL": "PETROL"
-    },
-    "slug": "really-3x3-inch-water-pump",
-    "category": "Water Pump"
-  },
-  {
-    "name": "WOOD CHIPPER 192G",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/WOOD CHIPPER 192G",
-    "thumbnail": "WOOD CHIPPER - RA-WC-192G-ES - COVER.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE MODEL": "LC192F",
-      "DISPLACEMENT": "459 CC",
-      "MAX POWER": "10 KW",
-      "FUEL": "PETROL",
-      "STARTING": "ELECTRIC START / RECOIL"
-    },
-    "slug": "wood-chipper-192g",
-    "category": "Chaff Cutter & Wood Chipper"
-  },
-  {
-    "name": "WOOD CHIPPER - WC-205G-ES",
-    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/WOOD CHIPPER - WC-205G-ES",
-    "thumbnail": "Thumbnail.webp",
-    "images": [
-      "product front view.webp",
-      "product right side view.webp",
-      "product back view.webp",
-      "product left side view.webp",
-      "product top view.webp",
-      "product explode view.webp",
-      "person using.webp",
-      "product raw image.webp",
-      "product types of views.webp"
-    ],
-    "stroke": "4 Stroke",
-    "specs": {
-      "ENGINE": "LC192F 459CC",
-      "CAPACITY": "150 MM",
-      "BLADE": "2+1",
-      "WEIGHT": "165 KG",
-      "STARTING": "ELECTRIC START / RECOIL"
-    },
-    "slug": "wood-chipper-wc-205g-es",
-    "category": "Chaff Cutter & Wood Chipper"
+    "folder": "Parani - 43 Products/Chaff Cutter & Wood Chipper/MITSUYAMA 3HP 0.8 CHAFFCUTTER",
+    "price": 0,
+    "imageUrls": [],
+    "name": "MITSUYAMA 3HP 0.8 CHAFFCUTTER",
+    "category": "Chaff Cutter & Wood Chipper",
+    "stock": 15,
+    "slug": "mitsuyama-3hp-08-chaffcutter",
+    "isProductOfTheMonth": false,
+    "thumbnailUrl": "",
+    "updatedAt": "2026-10-28T05:25:38.888Z"
   }
 ]

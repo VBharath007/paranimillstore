@@ -3,12 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Calendar, User, Clock, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Blog.css';
+import fallbackBlogs from '../blogs.json';
 
 // Empty export to preserve compatibility if imported elsewhere
 export const blogPosts: any[] = [];
 
 // Global in-memory cache to guarantee zero-flash instant rendering
-let globalBlogsCache: any[] = [];
+let globalBlogsCache: any[] = (fallbackBlogs as any[]) || [];
 let globalPotmCache: any = null;
 
 const Blog = () => {
@@ -29,9 +30,12 @@ const Blog = () => {
         if (data && data.success && Array.isArray(data.data)) {
           globalBlogsCache = data.data;
           setBlogs(data.data);
+        } else if (globalBlogsCache.length > 0) {
+          setBlogs(globalBlogsCache);
         }
       } catch (err) {
         console.error("Error fetching blogs from backend API:", err);
+        if (globalBlogsCache.length > 0) setBlogs(globalBlogsCache);
       } finally {
         setIsLoading(false);
         setHasFetched(true);
