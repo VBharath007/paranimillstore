@@ -15,7 +15,8 @@
       "FUEL": "PETROL",
       "WEIGHT": "16 KG"
     },
-    "slug": "really-168f-engine"
+    "slug": "really-168f-engine",
+    "category": "Engines"
   },
   {
     "name": "AIR COMPRESSOR - MY-8PRO-30L",
@@ -38,7 +39,8 @@
       "PRESSURE": "8 BAR / 115 PSI",
       "TANK": "30 L"
     },
-    "slug": "air-compressor-my-8pro-30l"
+    "slug": "air-compressor-my-8pro-30l",
+    "category": "Engines"
   },
   {
     "name": "BRUSH CUTTER 2S - MY-BC-45G",
@@ -64,7 +66,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "brush-cutter-2s-my-bc-45g"
+    "slug": "brush-cutter-2s-my-bc-45g",
+    "category": "Brush Cutter"
   },
   {
     "name": "MITSUYAMA 2S 52CC",
@@ -90,7 +93,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T, 80T"
     },
-    "slug": "mitsuyama-2s-52cc"
+    "slug": "mitsuyama-2s-52cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "MITSUYAMA 4S 35CC",
@@ -116,7 +120,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "mitsuyama-4s-35cc"
+    "slug": "mitsuyama-4s-35cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY 2S 52CC",
@@ -142,7 +147,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T, 80T"
     },
-    "slug": "really-2s-52cc"
+    "slug": "really-2s-52cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY 4S 35 CC",
@@ -168,7 +174,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "really-4s-35-cc"
+    "slug": "really-4s-35-cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY 2S 43 CC",
@@ -188,7 +195,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "really-2s-43-cc"
+    "slug": "really-2s-43-cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY 4S 50CC",
@@ -208,7 +216,8 @@
       "CARRY TYPE": "SIDE PACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "really-4s-50cc"
+    "slug": "really-4s-50cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY BACK PACK 4S 35 CC",
@@ -228,7 +237,8 @@
       "CARRY TYPE": "BACKPACK",
       "ATTACHMENTS": "TAP & GO, 2T"
     },
-    "slug": "really-back-pack-4s-35-cc"
+    "slug": "really-back-pack-4s-35-cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY BACKPACK 2S 52 CC",
@@ -248,7 +258,8 @@
       "CARRY TYPE": "BACKPACK",
       "ATTACHMENTS": "TAP & GO, 2T, 80T"
     },
-    "slug": "really-backpack-2s-52-cc"
+    "slug": "really-backpack-2s-52-cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "REALLY TROLLEY 2S 52CC",
@@ -274,7 +285,8 @@
       "CARRY TYPE": "TROLLEY",
       "ATTACHMENT": "TAP & GO, 2T"
     },
-    "slug": "really-trolley-2s-52cc"
+    "slug": "really-trolley-2s-52cc",
+    "category": "Brush Cutter"
   },
   {
     "name": "MITSUYAMA 3HP 0.4 CHAFFCUTTER",
@@ -298,7 +310,8 @@
       "CAPACITY": "0.4 TON / HR",
       "WEIGHT": "70 KGS (WITH MOTOR)"
     },
-    "slug": "mitsuyama-3hp-0-4-chaffcutter"
+    "slug": "mitsuyama-3hp-0-4-chaffcutter",
+    "category": "Chaff Cutter & Wood Chipper"
   },
   {
     "name": "MITSUYAMA 3HP 0.8 CHAFFCUTTER",
@@ -316,7 +329,8 @@
       "CAPACITY": "0.8 TON / HR",
       "WEIGHT": "65 KG"
     },
-    "slug": "mitsuyama-3hp-0-8-chaffcutter"
+    "slug": "mitsuyama-3hp-0-8-chaffcutter",
+    "category": "Chaff Cutter & Wood Chipper"
   },
   {
     "name": "REALLY 3HP 1.0 CHAFFCUTTER",
@@ -340,7 +354,8 @@
       "CAPACITY": "1.0 TON / HR",
       "WEIGHT": "44 KG"
     },
-    "slug": "really-3hp-1-0-chaffcutter"
+    "slug": "really-3hp-1-0-chaffcutter",
+    "category": "Chaff Cutter & Wood Chipper"
   },
   {
     "name": "REALLY 3HP 2.0 CHAFFCUTTER",
@@ -358,7 +373,8 @@
       "CAPACITY": "2.0 TON / HR",
       "WEIGHT": "75 KG"
     },
-    "slug": "really-3hp-2-0-chaffcutter"
+    "slug": "really-3hp-2-0-chaffcutter",
+    "category": "Chaff Cutter & Wood Chipper"
   },
   {
     "name": "CHAINSAW - MY-CS-6010-18in-ECO",
@@ -381,7 +397,8 @@
       "IDLE SPEED": "3200+200 RPM",
       "OIL MIX RATIO": "1:25"
     },
-    "slug": "chainsaw-my-cs-6010-18in-eco"
+    "slug": "chainsaw-my-cs-6010-18in-eco",
+    "category": "Engines"
   },
   {
     "name": "EARTH AUGUR BITS AND EXTENSION ROD",
@@ -397,7 +414,8 @@
       "EXTENSION LENGTH": "1 METER",
       "APPLICATION": "PLANTATION, FENCING, PILLAR HOLES"
     },
-    "slug": "earth-augur-bits-and-extension-rod"
+    "slug": "earth-augur-bits-and-extension-rod",
+    "category": "Earth Augur"
   },
   {
     "name": "MITSUYAMA 63CC EARTH AUGUR",
@@ -417,7 +435,8 @@
       "FUEL": "PETROL + 2T OIL",
       "STARTING": "RECOIL START"
     },
-    "slug": "mitsuyama-63cc-earth-augur"
+    "slug": "mitsuyama-63cc-earth-augur",
+    "category": "Earth Augur"
   },
   {
     "name": "OREZEN 82CC HEAVY DUTY EARTH AUGUR",
@@ -437,7 +456,8 @@
       "FUEL": "PETROL + 2T OIL",
       "APPLICATION": "HEAVY SOIL AND ROCKY TERRAIN"
     },
-    "slug": "orezen-82cc-heavy-duty-earth-augur"
+    "slug": "orezen-82cc-heavy-duty-earth-augur",
+    "category": "Earth Augur"
   },
   {
     "name": "REALLY 63CC EARTH AUGUR",
@@ -463,7 +483,8 @@
       "FUEL": "PETROL + 2T OIL (1:25)",
       "GEAR RATIO": "30:1"
     },
-    "slug": "really-63cc-earth-augur"
+    "slug": "really-63cc-earth-augur",
+    "category": "Earth Augur"
   },
   {
     "name": "REALLY TROLLEY WHEELED EARTH AUGUR",
@@ -483,7 +504,8 @@
       "DRILL BIT RANGE": "6 inch, 8 inch, 10 inch, 12 inch",
       "FUEL": "PETROL + 2T OIL"
     },
-    "slug": "really-trolley-wheeled-earth-augur"
+    "slug": "really-trolley-wheeled-earth-augur",
+    "category": "Earth Augur"
   },
   {
     "name": "REALLY HIGH PRESSURE SPRAYER HOSE",
@@ -500,7 +522,8 @@
       "APPLICATION": "POWER SPRAYERS & HTP PUMPS",
       "LENGTH": "50 M / 100 M"
     },
-    "slug": "really-high-pressure-sprayer-hose"
+    "slug": "really-high-pressure-sprayer-hose",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY 168F ENGINE WITH HTP 22 SPRAYER",
@@ -520,7 +543,8 @@
       "SPEED": "800 - 1200 RPM",
       "FUEL": "PETROL"
     },
-    "slug": "really-168f-engine-with-htp-22-sprayer"
+    "slug": "really-168f-engine-with-htp-22-sprayer",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY 168F ENGINE WITH HTP 50 SPRAYER",
@@ -540,7 +564,8 @@
       "SPEED": "800 - 1200 RPM",
       "FUEL": "PETROL"
     },
-    "slug": "really-168f-engine-with-htp-50-sprayer"
+    "slug": "really-168f-engine-with-htp-50-sprayer",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY 2S POWER SPRAYER",
@@ -567,7 +592,8 @@
       "PUMP": "HEAVY BRASS PUMP",
       "FUEL": "PETROL + 2T OIL"
     },
-    "slug": "really-2s-power-sprayer"
+    "slug": "really-2s-power-sprayer",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY 4S PORTABLE POWER SPRAYER",
@@ -587,7 +613,8 @@
       "PUMP": "BRASS PUMP",
       "FUEL": "PETROL"
     },
-    "slug": "really-4s-portable-power-sprayer"
+    "slug": "really-4s-portable-power-sprayer",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY 4S POWER SPRAYER",
@@ -608,7 +635,8 @@
       "PUMP": "BRASS PUMP",
       "FUEL": "PETROL"
     },
-    "slug": "really-4s-power-sprayer"
+    "slug": "really-4s-power-sprayer",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY ELECTRIC SPRAYER WITH HTP 22",
@@ -627,7 +655,8 @@
       "SUCTION VOLUME": "14 - 22 L/MIN",
       "RPM": "1000 - 1200 RPM"
     },
-    "slug": "really-electric-sprayer-with-htp-22"
+    "slug": "really-electric-sprayer-with-htp-22",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY HTP 22 SPRAYER PUMP",
@@ -646,7 +675,8 @@
       "REQUIRED POWER": "2 HP - 3 HP / 168F ENGINE",
       "RPM": "800 - 1200 RPM"
     },
-    "slug": "really-htp-22-sprayer-pump"
+    "slug": "really-htp-22-sprayer-pump",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY HTP 30 SPRAYER PUMP",
@@ -665,7 +695,8 @@
       "REQUIRED POWER": "3 HP - 5 HP / 168F/170F ENGINE",
       "RPM": "800 - 1200 RPM"
     },
-    "slug": "really-htp-30-sprayer-pump"
+    "slug": "really-htp-30-sprayer-pump",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY HTP 50 SPRAYER PUMP",
@@ -684,7 +715,8 @@
       "REQUIRED POWER": "5 HP - 7 HP / 170F ENGINE",
       "RPM": "800 - 1000 RPM"
     },
-    "slug": "really-htp-50-sprayer-pump"
+    "slug": "really-htp-50-sprayer-pump",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY HTP 80 SPRAYER PUMP",
@@ -703,7 +735,8 @@
       "REQUIRED POWER": "7 HP - 10 HP / DIESEL ENGINE",
       "RPM": "600 - 900 RPM"
     },
-    "slug": "really-htp-80-sprayer-pump"
+    "slug": "really-htp-80-sprayer-pump",
+    "category": "Sprayer"
   },
   {
     "name": "REALLY TROLLEY SPRAYER WITH TANK",
@@ -723,7 +756,8 @@
       "HOSE LENGTH": "30 M / 50 M WITH REEL",
       "WHEELS": "HEAVY DUTY TRANSPORT WHEELS"
     },
-    "slug": "really-trolley-sprayer-with-tank"
+    "slug": "really-trolley-sprayer-with-tank",
+    "category": "Sprayer"
   },
   {
     "name": "KNAPSACK POWER SPRAYER - RAPL-KS-4131",
@@ -747,7 +781,8 @@
       "TANK CAPACITY": "20L",
       "PUMP": "ABS PUMP"
     },
-    "slug": "knapsack-power-sprayer-rapl-ks-4131"
+    "slug": "knapsack-power-sprayer-rapl-ks-4131",
+    "category": "Sprayer"
   },
   {
     "name": "PORTABLE BATTERY SPRAYER - RAPL-PS-1216",
@@ -770,7 +805,8 @@
       "SPEED CONTROLLER": "YES",
       "CHARGER": "1.7A"
     },
-    "slug": "portable-battery-sprayer-rapl-ps-1216"
+    "slug": "portable-battery-sprayer-rapl-ps-1216",
+    "category": "Sprayer"
   },
   {
     "name": "FOGGING MACHINE - RAPL-W80",
@@ -793,7 +829,8 @@
       "FRAME MATERIAL": "8K SS",
       "WEIGHT": "9.5 KG"
     },
-    "slug": "fogging-machine-rapl-w80"
+    "slug": "fogging-machine-rapl-w80",
+    "category": "Engines"
   },
   {
     "name": "HIGH PRESSURE WASHER - MY - HPW - 1450",
@@ -816,7 +853,8 @@
       "VOLTAGE": "220V",
       "AUTO STOP (YES/NO)": "YES"
     },
-    "slug": "high-pressure-washer-my-hpw-1450"
+    "slug": "high-pressure-washer-my-hpw-1450",
+    "category": "Engines"
   },
   {
     "name": "JONATHAN 52CC ENGINE",
@@ -840,7 +878,8 @@
       "FUEL": "PETROL + 2T OIL",
       "ENGINE TYPE": "2 STROKE"
     },
-    "slug": "jonathan-52cc-engine"
+    "slug": "jonathan-52cc-engine",
+    "category": "Engines"
   },
   {
     "name": "JONATHAN 35CC ENGINE",
@@ -864,7 +903,8 @@
       "FUEL": "PETROL",
       "ENGINE TYPE": "4 STROKE"
     },
-    "slug": "jonathan-35cc-engine"
+    "slug": "jonathan-35cc-engine",
+    "category": "Engines"
   },
   {
     "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG",
@@ -884,7 +924,8 @@
     "specs": {
       "MODEL NO.": "RAPL-MS-12T LONG"
     },
-    "slug": "long-teeth-seeder-rapl-ms-12t-long"
+    "slug": "long-teeth-seeder-rapl-ms-12t-long",
+    "category": "Engines"
   },
   {
     "name": "LONG TEETH SEEDER - RAPL-MS-12T LONG - DETAIL",
@@ -904,7 +945,8 @@
     "specs": {
       "MODEL NO.": "RAPL-MS-12T LONG"
     },
-    "slug": "long-teeth-seeder-rapl-ms-12t-long-detail"
+    "slug": "long-teeth-seeder-rapl-ms-12t-long-detail",
+    "category": "Engines"
   },
   {
     "name": "MITSUYAMA 360G POWER WEEDER",
@@ -924,7 +966,8 @@
       "BLADES": "32 PCS (DRY LAND)",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-360g-power-weeder"
+    "slug": "mitsuyama-360g-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "MITSUYAMA 370G POWER WEEDER",
@@ -944,7 +987,8 @@
       "TRANSMISSION": "GEAR DRIVE",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-370g-power-weeder"
+    "slug": "mitsuyama-370g-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "MITSUYAMA 380G POWER WEEDER",
@@ -970,7 +1014,8 @@
       "SUSPENSION": "DOUBLE SUSPENSION",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-380g-power-weeder"
+    "slug": "mitsuyama-380g-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "MITSUYAMA 470G POWER WEEDER",
@@ -996,7 +1041,8 @@
       "START": "RECOIL START",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-470g-power-weeder"
+    "slug": "mitsuyama-470g-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "MITSUYAMA MINI TILLER",
@@ -1016,7 +1062,8 @@
       "TILLING WIDTH": "30 CM - 40 CM",
       "FUEL": "PETROL + 2T OIL"
     },
-    "slug": "mitsuyama-mini-tiller"
+    "slug": "mitsuyama-mini-tiller",
+    "category": "Weeder"
   },
   {
     "name": "REALLY 700G POWER WEEDER",
@@ -1041,7 +1088,8 @@
       "BLADES": "32 PCS",
       "FUEL": "PETROL"
     },
-    "slug": "really-700g-power-weeder"
+    "slug": "really-700g-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "REALLY RH 2000 POWER WEEDER",
@@ -1060,7 +1108,8 @@
       "BLADES": "24 - 32 PCS",
       "FUEL": "PETROL"
     },
-    "slug": "really-rh-2000-power-weeder"
+    "slug": "really-rh-2000-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "REALLY RH 2600 POWER WEEDER",
@@ -1079,7 +1128,8 @@
       "BLADES": "32 PCS",
       "FUEL": "PETROL"
     },
-    "slug": "really-rh-2600-power-weeder"
+    "slug": "really-rh-2600-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "REALLY RH 3800 POWER WEEDER",
@@ -1098,7 +1148,8 @@
       "PUSH TYPE": "SELF PROPELLED",
       "FUEL": "PETROL"
     },
-    "slug": "really-rh-3800-power-weeder"
+    "slug": "really-rh-3800-power-weeder",
+    "category": "Weeder"
   },
   {
     "name": "REALLY 170F ENGINE",
@@ -1122,7 +1173,8 @@
       "FUEL": "PETROL / 3.5 L",
       "WEIGHT": "16 KG"
     },
-    "slug": "really-170f-engine"
+    "slug": "really-170f-engine",
+    "category": "Engines"
   },
   {
     "name": "RICE MILL - RAPL - RM - 6N40",
@@ -1145,7 +1197,8 @@
       "GRINDING CAPACITY": "120 - 150 KG",
       "WEIGHT": "50 KG"
     },
-    "slug": "rice-mill-rapl-rm-6n40"
+    "slug": "rice-mill-rapl-rm-6n40",
+    "category": "Engines"
   },
   {
     "name": "STUBBLE MOVER - RAPL-SM-G50",
@@ -1169,7 +1222,8 @@
       "CUTTING WIDTH": "50 CM",
       "FUEL": "PETROL"
     },
-    "slug": "stubble-mover-rapl-sm-g50"
+    "slug": "stubble-mover-rapl-sm-g50",
+    "category": "Engines"
   },
   {
     "name": "TEA LEAF HARVESTER - RAPL-TH-2105",
@@ -1192,7 +1246,8 @@
       "MOTOR POWER": "300 W",
       "BLADE LENGTH": "300 MM"
     },
-    "slug": "tea-leaf-harvester-rapl-th-2105"
+    "slug": "tea-leaf-harvester-rapl-th-2105",
+    "category": "Engines"
   },
   {
     "name": "VACCUM CLEANER - MY-AC-20L",
@@ -1215,7 +1270,8 @@
       "VACUUM": "300mbr",
       "CAPACITY": "20L"
     },
-    "slug": "vaccum-cleaner-my-ac-20l"
+    "slug": "vaccum-cleaner-my-ac-20l",
+    "category": "Engines"
   },
   {
     "name": "MITSUYAMA 2x2 INCH WA 20 WATER PUMP",
@@ -1242,7 +1298,8 @@
       "DISCHARGE": "30,000 LTR / HOUR",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-2x2-inch-wa-20-water-pump"
+    "slug": "mitsuyama-2x2-inch-wa-20-water-pump",
+    "category": "Water Pump"
   },
   {
     "name": "MITSUYAMA 3x3 INCH WA 30 WATER PUMP",
@@ -1269,7 +1326,8 @@
       "DISCHARGE": "60,000 LTR / HOUR",
       "FUEL": "PETROL"
     },
-    "slug": "mitsuyama-3x3-inch-wa-30-water-pump"
+    "slug": "mitsuyama-3x3-inch-wa-30-water-pump",
+    "category": "Water Pump"
   },
   {
     "name": "REALLY 2x2 INCH WATER PUMP",
@@ -1290,7 +1348,8 @@
       "DISCHARGE": "30,000 LTR / HOUR",
       "FUEL": "PETROL"
     },
-    "slug": "really-2x2-inch-water-pump"
+    "slug": "really-2x2-inch-water-pump",
+    "category": "Water Pump"
   },
   {
     "name": "REALLY 3x3 INCH WATER PUMP",
@@ -1311,7 +1370,8 @@
       "DISCHARGE": "60,000 LTR / HOUR",
       "FUEL": "PETROL"
     },
-    "slug": "really-3x3-inch-water-pump"
+    "slug": "really-3x3-inch-water-pump",
+    "category": "Water Pump"
   },
   {
     "name": "WOOD CHIPPER 192G",
@@ -1336,7 +1396,8 @@
       "FUEL": "PETROL",
       "STARTING": "ELECTRIC START / RECOIL"
     },
-    "slug": "wood-chipper-192g"
+    "slug": "wood-chipper-192g",
+    "category": "Chaff Cutter & Wood Chipper"
   },
   {
     "name": "WOOD CHIPPER - WC-205G-ES",
@@ -1361,6 +1422,7 @@
       "WEIGHT": "165 KG",
       "STARTING": "ELECTRIC START / RECOIL"
     },
-    "slug": "wood-chipper-wc-205g-es"
+    "slug": "wood-chipper-wc-205g-es",
+    "category": "Chaff Cutter & Wood Chipper"
   }
 ]

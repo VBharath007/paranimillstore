@@ -9,7 +9,7 @@ import {
   Settings,
   Tag
 } from 'lucide-react';
-import { getProductImage } from './Products';
+import { getProductImage, getProductCategorySlug } from './Products';
 import fallbackProducts from '../products.json';
 import gensetsData from '../gensets.json';
 import constructionData from '../construction.json';
@@ -214,12 +214,8 @@ const ProductDetail: React.FC = () => {
   const pageTitle = `${selectedProduct.name} | Parani Mill Stores`;
   const primaryImg = getProductImage(selectedProduct.folder, selectedProduct.thumbnail || images[0], selectedProduct.thumbnailUrl);
   const absoluteImageUrl = primaryImg.startsWith('http') ? primaryImg : `https://paranimill.com${primaryImg}`;
-  const catSlug = selectedProduct.category 
-    ? selectedProduct.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') 
-    : '';
-  const canonicalUrl = catSlug 
-    ? `https://paranimill.com/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`
-    : `https://paranimill.com/product/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
+  const catSlug = getProductCategorySlug(selectedProduct);
+  const canonicalUrl = `https://paranimill.com/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
   const metaDescription = selectedProduct.description 
     ? selectedProduct.description.slice(0, 160)
     : `Explore ${selectedProduct.name} at Parani Mill Stores. Genuine farm machinery, spare parts, and full service support across Tamil Nadu.`;

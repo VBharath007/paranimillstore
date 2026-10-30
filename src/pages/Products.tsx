@@ -23,6 +23,36 @@ export const PRODUCT_CATEGORIES: CategoryItem[] = [
   { id: 'weeder', name: 'Weeder' },
 ];
 
+export const getProductCategorySlug = (product: any): string => {
+  if (!product) return 'products';
+  const catName = (product.category || '').toLowerCase().trim();
+  if (catName && !catName.includes('parani') && catName !== 'all') {
+    if (catName.includes('honda')) return 'honda-products';
+    if (catName.includes('brush')) return 'brush-cutter';
+    if (catName.includes('chaff') || catName.includes('chipper')) return 'chaff-cutter-wood-chipper';
+    if (catName.includes('auger') || catName.includes('augur')) return 'earth-augur';
+    if (catName.includes('weeder') || catName.includes('tiller')) return 'weeder';
+    if (catName.includes('sprayer') || catName.includes('htp')) return 'sprayer';
+    if (catName.includes('pump')) return 'water-pump';
+    if (catName.includes('engine')) return 'engines';
+    return catName.replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  }
+
+  const n = (product.name || '').toUpperCase();
+  const f = (product.folder || '').toUpperCase();
+
+  if (f.includes('HONDA') || n.includes('HONDA')) return 'honda-products';
+  if (f.includes('BRUSH CUTTER') || n.includes('BRUSH CUTTER')) return 'brush-cutter';
+  if (f.includes('CHAFF') || f.includes('CHIPPER') || n.includes('CHAFF') || n.includes('CHIPPER')) return 'chaff-cutter-wood-chipper';
+  if (f.includes('AUGER') || f.includes('AUGUR') || n.includes('AUGER') || n.includes('AUGUR')) return 'earth-augur';
+  if (f.includes('WEEDER') || f.includes('TILLER') || n.includes('WEEDER') || n.includes('TILLER')) return 'weeder';
+  if (f.includes('SPRAYER') || n.includes('SPRAYER') || n.includes('HTP')) return 'sprayer';
+  if (f.includes('WATER PUMP') || n.includes('WATER PUMP') || (n.includes('PUMP') && !n.includes('HTP'))) return 'water-pump';
+  if (f.includes('ENGINE') || n.includes('ENGINE')) return 'engines';
+
+  return 'products';
+};
+
 export const isProductInCategory = (product: any, catId: string): boolean => {
   if (!product) return false;
   if (catId === 'all') return true;
@@ -304,11 +334,10 @@ const Products = () => {
     document.body.style.overflow = 'hidden';
 
     const slug = product.slug || (product.name ? product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : (product._id || product.id));
-    const rawCat = product.category || (product.folder ? product.folder.split('/')[0] : 'products');
-    const catSlug = rawCat ? rawCat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : 'all';
+    const catSlug = getProductCategorySlug(product);
 
     if (slug) {
-      const targetUrl = catSlug ? ('/product/' + catSlug + '/' + slug) : ('/product/' + slug);
+      const targetUrl = '/product/' + catSlug + '/' + slug;
       window.history.pushState({ modalOpen: true }, '', targetUrl);
     }
   };
