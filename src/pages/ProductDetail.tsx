@@ -10,6 +10,9 @@ import {
   Tag
 } from 'lucide-react';
 import { getProductImage } from './Products';
+import fallbackProducts from '../products.json';
+import gensetsData from '../gensets.json';
+import constructionData from '../construction.json';
 import './Products.css';
 
 const ProductDetail: React.FC = () => {
@@ -33,26 +36,32 @@ const ProductDetail: React.FC = () => {
 
     const fetchProduct = async () => {
       setIsLoading(true);
+      const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
+      
       try {
-        const res = await fetch('http://localhost:5001/api/products/' + slug);
-        const json = await res.json();
-        if (json && json.success && json.data) {
-          setSelectedProduct(json.data);
-        } else {
-          // Fallback: search in all active products
-          const allRes = await fetch('http://localhost:5001/api/products?isActive=true');
-          const allJson = await allRes.json();
-          if (allJson && allJson.success && Array.isArray(allJson.data)) {
-            const found = allJson.data.find(
-              (p: any) => p.slug === slug || p._id === slug || p.id === slug
-            );
-            setSelectedProduct(found || null);
-          } else {
-            setSelectedProduct(null);
+        const res = await fetch(API_BASE + '/api/products/' + slug).catch(() => null);
+        if (res && res.ok) {
+          const json = await res.json();
+          if (json && json.success && json.data) {
+            setSelectedProduct(json.data);
+            return;
           }
         }
-      } catch (err) {
-        console.error('Error fetching product:', err);
+
+        // Static Cloudflare fallback for teammates
+        const allStatic = [...fallbackProducts, ...(gensetsData || []), ...(constructionData || [])];
+        const found = allStatic.find((p: any) => {
+          const pSlug = p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '');
+          return pSlug === slug || p.id === slug || p._id === slug || (p.name && p.name.toLowerCase() === (slug || '').replace(/-/g, ' '));
+        });
+
+        if (found) {
+          setSelectedProduct(found);
+        } else {
+          setSelectedProduct(null);
+        }
+      } catch (e) {
+        console.error('Error fetching product:', e);
         setSelectedProduct(null);
       } finally {
         setIsLoading(false);

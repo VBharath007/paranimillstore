@@ -165,7 +165,10 @@ const Products = () => {
         uniqueMap.set(p.name.toLowerCase(), p);
       }
     });
-    return Array.from(uniqueMap.values());
+    return Array.from(uniqueMap.values()).map((p: any) => ({
+      ...p,
+      slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
+    }));
   }, [backendProducts]);
 
   const dynamicCategories = useMemo(() => {
@@ -299,10 +302,11 @@ const Products = () => {
     setActiveImageIndex(0);
     setIs360View(false);
     document.body.style.overflow = 'hidden';
-    const slug = product.slug || product._id || product.id;
-    const catSlug = product.category 
-      ? product.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-      : '';
+
+    const slug = product.slug || (product.name ? product.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : (product._id || product.id));
+    const rawCat = product.category || (product.folder ? product.folder.split('/')[0] : 'products');
+    const catSlug = rawCat ? rawCat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : 'all';
+
     if (slug) {
       const targetUrl = catSlug ? ('/product/' + catSlug + '/' + slug) : ('/product/' + slug);
       window.history.pushState({ modalOpen: true }, '', targetUrl);
