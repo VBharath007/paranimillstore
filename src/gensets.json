@@ -161,29 +161,6 @@
         }
     },
     {
-        "name": "REALLY GASOLINE ENGINE - RAPL-GE-168F",
-        "folder": "Genset/REALLY GASOLINE ENGINE - RAPL-GE-168F",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "196 CC",
-            "ENGINE POWER": "4.3 KW",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
-    },
-    {
         "name": "SUGUNA POWER GENERATOR - 5000EX",
         "folder": "Genset/SUGUNA POWER GENERATOR - 5000EX",
         "thumbnail": "product raw image.webp",

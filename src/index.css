@@ -332,16 +332,19 @@ h1, h2, h3, h4 {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  min-width: 200px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 12px;
+  min-width: 460px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   margin-top: 5px;
 }
 
@@ -352,27 +355,27 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-menu li {
-  padding: 0 10px;
-  margin-bottom: 10px;
-}
-
-.dropdown-menu li:last-child {
-  margin-bottom: 0;
+  padding: 0;
+  margin-bottom: 2px;
+  list-style: none;
 }
 
 .dropdown-menu li a {
-  padding: 10px 15px !important;
+  padding: 8px 12px !important;
   border-radius: 8px !important;
   display: block;
   white-space: nowrap;
-  transition: all 0.3s ease !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  transition: all 0.2s ease !important;
 }
 
 .dropdown-menu li a:hover {
-  background-color: var(--primary-green) !important;
-  color: #ffffff !important;
-  transform: translateX(6px) !important;
-  box-shadow: 0 4px 12px rgba(10, 92, 54, 0.2) !important;
+  background-color: #eef6ef !important;
+  color: var(--primary-green) !important;
+  transform: translateX(4px) !important;
+  box-shadow: none !important;
 }
 
 .dropdown-menu li a::after {
@@ -467,7 +470,7 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: 1.6fr 0.8fr 1.2fr 1.4fr;
   gap: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   position: relative;
   z-index: 2;
 }
@@ -1451,4 +1454,53 @@ h1, h2, h3, h4 {
 @keyframes bannerLightSweep {
   0% { left: -100%; }
   100% { left: 200%; }
+}
+
+.moving-truck {
+  animation: driveTruck 1.5s infinite ease-in-out alternate;
+  filter: drop-shadow(0 0 5px rgba(251, 175, 0, 0.4));
+}
+
+@keyframes driveTruck {
+  0% { transform: translateX(-4px) translateY(0); }
+  100% { transform: translateX(4px) translateY(-2px); }
+}
+
+@media (max-width: 768px) {
+  .footer-logo-container {
+    justify-content: center !important;
+  }
+  .footer-socials-row {
+    justify-content: center !important;
+  }
+  .truck-delivery-banner {
+    margin: 25px auto 0 auto !important;
+  }
+  .footer-desc {
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer-socials-row {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  .emi-badge {
+    margin-left: 0;
+  }
+  .footer-contact-card {
+    padding: 12px !important;
+  }
+  .footer-contact-card iframe {
+    height: 160px !important;
+  }
+  .truck-delivery-banner {
+    padding: 10px !important;
+    gap: 8px !important;
+  }
+  .delivery-text-sweep {
+    font-size: 0.85rem !important;
+  }
 }

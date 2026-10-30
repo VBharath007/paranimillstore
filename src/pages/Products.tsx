@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard } from 'lucide-react';
 import './Products.css';
@@ -7,32 +7,231 @@ import productsData from '../products.json';
 import gensetsData from '../gensets.json';
 import constructionData from '../construction.json';
 
+export interface CategoryItem {
+  id: string;
+  name: string;
+}
+
+export const PRODUCT_CATEGORIES: CategoryItem[] = [
+  { id: 'brush-cutter', name: 'Brush Cutter' },
+  { id: 'chaff-cutter-wood-chipper', name: 'Chaff Cutter & Wood Chipper' },
+  { id: 'earth-augur', name: 'Earth Augur' },
+  { id: 'engines', name: 'Engines' },
+  { id: 'honda-products', name: 'Honda Products' },
+  { id: 'sprayer', name: 'Sprayer' },
+  { id: 'water-pump', name: 'Water Pump' },
+  { id: 'weeder', name: 'Weeder' },
+];
+
+export const isProductInCategory = (product: any, catId: string): boolean => {
+  if (!product) return false;
+  if (catId === 'all') return true;
+
+  const name = (product.name || '').toUpperCase();
+  const folder = (product.folder || '').toUpperCase();
+  const cat = (product.category || '').toUpperCase();
+  const catClean = (product.category || '').toLowerCase().trim();
+  const targetClean = (catId || '').toLowerCase().trim();
+  const catSlug = catClean.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  // Exact matching for dynamic / custom / standard categories assigned directly to product
+  if (catClean && (catClean === targetClean || catSlug === targetClean)) {
+    return true;
+  }
+
+  switch (catId) {
+    case 'brush-cutter':
+      if (catClean && catSlug !== 'brush-cutter' && catClean !== 'brush cutter') return false;
+      return name.includes('BRUSH CUTTER') || folder.includes('BRUSH CUTTER') || cat.includes('BRUSH CUTTER');
+    case 'chaff-cutter-wood-chipper':
+    case 'chaff-wood-chipper':
+      if (catClean && catSlug !== 'chaff-wood-chipper' && catSlug !== 'chaff-cutter-wood-chipper') return false;
+      return name.includes('CHAFF') || name.includes('CHAF') || name.includes('CHIPPER') || folder.includes('CHAFF') || folder.includes('CHIPPER');
+    case 'construction':
+      if (catClean && catSlug !== 'construction' && catSlug !== 'construction-equipment') return false;
+      return folder.includes('CONSTRUCTION') || name.includes('VIBRATOR') || name.includes('COMPRESSOR') || name.includes('WASHER') || name.includes('VACCUM') || name.includes('RICE MILL') || cat.includes('CONSTRUCTION');
+    case 'earth-augur':
+      if (catClean && catSlug !== 'earth-augur') return false;
+      return name.includes('AUGER') || name.includes('AUGUR') || folder.includes('AUGER') || folder.includes('AUGUR');
+    case 'earth-rammer':
+      if (catClean && catSlug !== 'earth-rammer') return false;
+      return name.includes('RAMMER') || folder.includes('RAMMER') || cat.includes('RAMMER');
+    case 'engines':
+      if (catClean && catSlug !== 'engines') return false;
+      return (folder.includes('ENGINE') || name.includes('ENGINE')) && !folder.includes('SPRAYER') && !name.includes('SPRAYER');
+    case 'gensets':
+      if (catClean && catSlug !== 'gensets') return false;
+      return folder.includes('GENSET') || name.includes('GENERATOR') || cat.includes('GENSET');
+    case 'hedge-trimmer':
+      if (catClean && catSlug !== 'hedge-trimmer') return false;
+      return name.includes('HEDGE') || name.includes('HARVESTER') || name.includes('STUBBLE') || name.includes('CHAINSAW') || cat.includes('HEDGE');
+    case 'honda-products':
+      return folder.includes('HONDA') || name.includes('HONDA') || cat.includes('HONDA');
+    case 'sprayer':
+      if (catClean && catSlug !== 'sprayer') return false;
+      return folder.includes('SPRAYER') || name.includes('SPRAYER') || name.includes('HTP');
+    case 'water-pump':
+      if (catClean && catSlug !== 'water-pump') return false;
+      return folder.includes('WATER PUMP');
+    case 'weeder':
+      if (catClean && catSlug !== 'weeder') return false;
+      return folder.includes('WEEDER');
+    default:
+      return catSlug === targetClean || catClean === targetClean;
+  }
+};
+
+export const normalizeProductFolder = (folderOrUrl?: string): string => {
+  if (!folderOrUrl) return '';
+  return folderOrUrl
+    .replace(/MITSUYAMA\s+2S\s+52CC(?:\s+BRUSH\s+CUTTER)?/gi, 'MITSUYAMA  2S  52CC')
+    .replace(/MITSUYAMA\s+4S\s+35CC(?:\s+BRUSH\s+CUTTER)?/gi, 'MITSUYAMA  4S  35CC')
+    .replace(/REALLY\s+2S\s+52CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY  2S  52CC')
+    .replace(/REALLY\s+4S\s+35\s*CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY  4S  35 CC')
+    .replace(/REALLY\s+2S\s+43\s*CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY 2S 43 CC')
+    .replace(/REALLY\s+4S\s+50CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY 4S 50CC')
+    .replace(/REALLY\s+BACK\s*PACK\s+4S\s+35\s*CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY BACK PACK 4S 35 CC')
+    .replace(/REALLY\s+BACKPACK\s+2S\s+52\s*CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY BACKPACK 2S 52 CC')
+    .replace(/REALLY\s+TROLLEY\s+2S\s+52CC(?:\s+BRUSH\s+CUTTER)?/gi, 'REALLY TROLLEY 2S 52CC');
+};
+
+export const getProductImage = (folder?: string, imgOrThumb?: string, fallbackUrl?: string): string => {
+  if (fallbackUrl && fallbackUrl.startsWith('http')) return fallbackUrl;
+  if (imgOrThumb && typeof imgOrThumb === 'string' && imgOrThumb.startsWith('http')) return imgOrThumb;
+  
+  if (fallbackUrl) {
+    return normalizeProductFolder(fallbackUrl);
+  }
+  
+  const cleanFolder = normalizeProductFolder(folder || '');
+  const cleanImg = imgOrThumb ? (imgOrThumb.startsWith('/') ? imgOrThumb.slice(1) : imgOrThumb) : '';
+  return ('/' + cleanFolder + '/' + cleanImg).replace(/\/+/g, '/');
+};
+
+// Global cache for immediate, flash-free rendering
+try { sessionStorage.removeItem('pm_cached_products'); sessionStorage.removeItem('pm_cached_categories'); } catch(e){}
+let globalProductsCache: any[] = [];
+let globalCategoriesCache: any[] = [];
+try {
+  const p = sessionStorage.getItem('pm_cached_products_v4');
+  if (p) globalProductsCache = JSON.parse(p);
+  const c = sessionStorage.getItem('pm_cached_categories_v4');
+  if (c) globalCategoriesCache = JSON.parse(c);
+} catch (e) {}
+
 const Products = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
-  const [activeCategory, setActiveCategory] = useState<'agri' | 'genset' | 'construction'>('agri');
-  const [backendProducts, setBackendProducts] = useState<any[]>([]);
+  const [activeCategory, setActiveCategory] = useState<string>('brush-cutter');
+  const [backendProducts, setBackendProducts] = useState<any[]>(globalProductsCache);
+  const [backendCategories, setBackendCategories] = useState<any[]>(globalCategoriesCache);
+  const [isInitialLoading, setIsInitialLoading] = useState<boolean>(globalProductsCache.length === 0);
 
   useEffect(() => {
-    const fetchBackendProducts = async () => {
+    const fetchBackendData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/products');
-        const data = await response.json();
-        if (data && data.success && data.data) {
-          setBackendProducts(data.data);
+        const [prodRes, catRes] = await Promise.all([
+          fetch('http://localhost:5001/api/products').then(r => r.json()).catch(() => null),
+          fetch('http://localhost:5001/api/categories').then(r => r.json()).catch(() => null),
+        ]);
+        if (prodRes && prodRes.success && Array.isArray(prodRes.data)) {
+          setBackendProducts(prodRes.data);
+          globalProductsCache = prodRes.data;
+          try { sessionStorage.setItem('pm_cached_products_v4', JSON.stringify(prodRes.data)); } catch (e) {}
+        }
+        if (catRes && catRes.success && Array.isArray(catRes.data)) {
+          setBackendCategories(catRes.data);
+          globalCategoriesCache = catRes.data;
+          try { sessionStorage.setItem('pm_cached_categories_v4', JSON.stringify(catRes.data)); } catch (e) {}
         }
       } catch (error) {
-        console.error("Error fetching products from backend API:", error);
+        console.error("Error fetching data from backend API:", error);
+      } finally {
+        setIsInitialLoading(false);
       }
     };
-    fetchBackendProducts();
+    fetchBackendData();
   }, []);
+
+  const allProductsList = useMemo(() => {
+    if (backendProducts && backendProducts.length > 0) {
+      return backendProducts;
+    }
+    const combined = [...productsData, ...gensetsData, ...constructionData];
+    const uniqueMap = new Map();
+    combined.forEach((p: any) => {
+      if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
+        uniqueMap.set(p.name.toLowerCase(), p);
+      }
+    });
+    return Array.from(uniqueMap.values());
+  }, [backendProducts]);
+
+  const dynamicCategories = useMemo(() => {
+    if (backendCategories && backendCategories.length > 0) {
+      const list: CategoryItem[] = [];
+      const existingNames = new Set<string>();
+      backendCategories.forEach((cat) => {
+        const catName = cat.name ? cat.name.trim() : '';
+        if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all') {
+          const id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          list.push({ id, name: catName });
+          existingNames.add(catName.toLowerCase());
+        }
+      });
+      return list;
+    }
+    const list = [...PRODUCT_CATEGORIES];
+    const existingIds = new Set(list.map((c: any) => c.id));
+    const existingNames = new Set(list.map((c: any) => c.name.toLowerCase()));
+
+    // 1. Add categories from backend /api/categories
+    backendCategories.forEach((cat: any) => {
+      const catName = cat.name ? cat.name.trim() : '';
+      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all') {
+        const id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (!existingIds.has(id)) {
+          list.push({ id, name: catName });
+          existingIds.add(id);
+          existingNames.add(catName.toLowerCase());
+        }
+      }
+    });
+
+    // 2. Add categories found directly on products
+    allProductsList.forEach((p: any) => {
+      const catName = p.category ? p.category.trim() : '';
+      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products') {
+        const id = catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (!existingIds.has(id)) {
+          list.push({ id, name: catName });
+          existingIds.add(id);
+          existingNames.add(catName.toLowerCase());
+        }
+      }
+    });
+
+    return list;
+  }, [allProductsList, backendCategories]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const category = params.get('category');
-    if (category === 'genset' || category === 'agri' || category === 'construction') {
-      setActiveCategory(category as any);
+    if (category) {
+      const catLower = category.toLowerCase().trim();
+      if (catLower === 'agri' || catLower === 'all') {
+        setActiveCategory('brush-cutter');
+      } else if (catLower === 'genset') {
+        setActiveCategory('gensets');
+      } else if (catLower === 'construction') {
+        setActiveCategory('construction');
+      } else {
+        const found = PRODUCT_CATEGORIES.find(c => c.id === catLower);
+        if (found) {
+          setActiveCategory(found.id);
+        }
+      }
       setTimeout(() => {
         const section = document.querySelector('.categories-section');
         if (section) {
@@ -45,7 +244,9 @@ const Products = () => {
   const [is360View, setIs360View] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
   const [rotationIndex, setRotationIndex] = useState(0);
-  const [zoomStyle, setZoomStyle] = useState<React.CSSProperties>({});
+  const mainImageRef = useRef<HTMLImageElement>(null);
+  const imageDisplayAreaRef = useRef<HTMLDivElement>(null);
+  const rafIdRef = useRef<number | null>(null);
 
   // Filter images to create a 4-point rotation sequence if available
   const rotationSequence = React.useMemo(() => {
@@ -85,6 +286,12 @@ const Products = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const handleModalPopState = () => {
+      setSelectedProduct(null);
+      document.body.style.overflow = 'auto';
+    };
+    window.addEventListener('popstate', handleModalPopState);
+    return () => window.removeEventListener('popstate', handleModalPopState);
   }, []);
 
   const openProductModal = (product: any) => {
@@ -92,11 +299,20 @@ const Products = () => {
     setActiveImageIndex(0);
     setIs360View(false);
     document.body.style.overflow = 'hidden';
+    const slug = product.slug || product._id || product.id;
+    const catSlug = product.category 
+      ? product.category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+      : '';
+    if (slug) {
+      const targetUrl = catSlug ? ('/product/' + catSlug + '/' + slug) : ('/product/' + slug);
+      window.history.pushState({ modalOpen: true }, '', targetUrl);
+    }
   };
 
   const closeProductModal = () => {
     setSelectedProduct(null);
     document.body.style.overflow = 'auto';
+    window.history.pushState(null, '', '/products');
   };
 
   const handlePrevImage = (e: React.MouseEvent) => {
@@ -149,28 +365,60 @@ const Products = () => {
     setStartX(null);
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
+  const handleImageZoomMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (is360View || !selectedProduct) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    setZoomStyle({
-      transformOrigin: `${x}% ${y}%`,
-      transform: 'scale(1.6)',
+
+    // When hovering over next/prev navigation buttons, smoothly ease back to scale(1)
+    if ((e.target as HTMLElement)?.closest('.nav-circ')) {
+      if (mainImageRef.current) {
+        mainImageRef.current.style.transform = 'scale(1) translateZ(0)';
+      }
+      return;
+    }
+
+    if (!imageDisplayAreaRef.current || !mainImageRef.current) return;
+    const rect = imageDisplayAreaRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+    const y = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+    }
+
+    rafIdRef.current = requestAnimationFrame(() => {
+      if (mainImageRef.current) {
+        mainImageRef.current.style.transformOrigin = `${x.toFixed(2)}% ${y.toFixed(2)}%`;
+        mainImageRef.current.style.transform = 'scale(1.7) translateZ(0)';
+      }
     });
   };
 
-  const handleMouseLeave = () => {
+  const handleImageZoomLeave = () => {
     if (is360View) return;
-    setZoomStyle({
-      transformOrigin: 'center center',
-      transform: 'scale(1)',
-    });
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+    }
+    if (mainImageRef.current) {
+      // Keep current transformOrigin so image zooms out smoothly in place without snapping or flickering
+      mainImageRef.current.style.transform = 'scale(1) translateZ(0)';
+    }
   };
 
-  const getWhatsappLink = (productName: string, productImage: string) => {
-    const liveDomain = "https://paranimill.com"; // Add your actual website domain here when going live
-    const text = encodeURIComponent(`Hello Parani Mill Stores,\n\nI am interested in your product: *${productName}*.\n\nCould you please provide more details, pricing information, and availability?\n\nThank you!`);
+  // Reset zoom smoothly whenever active image, product, or 360 view changes
+  useEffect(() => {
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+    }
+    if (mainImageRef.current) {
+      mainImageRef.current.style.transform = 'scale(1) translateZ(0)';
+      mainImageRef.current.style.transformOrigin = 'center center';
+    }
+  }, [activeImageIndex, selectedProduct, is360View]);
+
+  const getWhatsappLink = (productName: string, productImage?: string) => {
+    const text = encodeURIComponent(
+      `Hello Parani Mill Stores,\n\nI am interested in your product: *${productName}*.\n\nCould you please provide pricing details, availability, and EMI options?\n\nThank you!`
+    );
     return `https://wa.me/917094341807?text=${text}`;
   };
 
@@ -181,7 +429,7 @@ const Products = () => {
         <meta name="description" content="Explore our premium range of products including agricultural sprayers, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, and car washers with 100% genuine spares from reputed brands like Jawan, Really and Perfect Equipments." />
       </Helmet>
       <section className="products-hero-image">
-        <img src="/PH.webp" alt="Parani Mill Stores Products Hero" />
+        <img src="/ph2.webp" alt="Parani Mill Stores Products Hero" />
       </section>
 
       {/* Auto-scrolling USP Marquee */}
@@ -222,78 +470,112 @@ const Products = () => {
       
       <section className="categories-section">
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '25px' }}>Explore Our Signature Products</h2>
+          <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '15px' }}>Explore Our Signature Products</h2>
+          <p style={{ textAlign: 'center', color: '#64748b', fontSize: '1.05rem', marginBottom: '25px', maxWidth: '700px', margin: '0 auto 25px auto' }}>
+            Select a category below to browse our high-performance machinery, genuine spares, and trusted industrial tools.
+          </p>
           
-          <div className="products-subnav">
-            <button 
-              className={`subnav-btn ${activeCategory === 'agri' ? 'active' : ''}`}
-              onClick={() => setActiveCategory('agri')}
-            >
-              Agricultural Machinery
-              {activeCategory !== 'agri' && <ArrowRight size={18} className="switch-arrow" />}
-            </button>
-            <button 
-              className={`subnav-btn ${activeCategory === 'genset' ? 'active' : ''}`}
-              onClick={() => setActiveCategory('genset')}
-            >
-              Power Generators
-              {activeCategory !== 'genset' && <ArrowRight size={18} className="switch-arrow" />}
-            </button>
-            <button 
-              className={`subnav-btn ${activeCategory === 'construction' ? 'active' : ''}`}
-              onClick={() => setActiveCategory('construction')}
-            >
-              Construction Equipment
-              {activeCategory !== 'construction' && <ArrowRight size={18} className="switch-arrow" />}
-            </button>
+          <div className="products-subnav-container">
+            <div className="products-subnav">
+              {dynamicCategories.map((cat: any) => {
+                const count = cat.id === 'all' 
+                  ? allProductsList.length 
+                  : allProductsList.filter((p: any) => isProductInCategory(p, cat.id)).length;
+
+                return (
+                  <button 
+                    key={cat.id}
+                    className={`subnav-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                    onClick={() => setActiveCategory(cat.id)}
+                  >
+                    <span className="subnav-btn-name">{cat.name}</span>
+                    <span className="subnav-btn-count">{count}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="categories-grid">
-            {(() => {
-              let localData = activeCategory === 'agri' ? productsData : activeCategory === 'genset' ? gensetsData : constructionData;
-              let apiData = backendProducts.filter(p => {
-                const cat = (p.category || '').toLowerCase();
-                if (activeCategory === 'agri') return cat.includes('agri');
-                if (activeCategory === 'genset') return cat.includes('genset');
-                if (activeCategory === 'construction') return cat.includes('construction');
-                return false;
-              });
-              let combined = [...apiData, ...localData];
-              let uniqueMap = new Map();
-              combined.forEach(p => {
-                if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
-                  uniqueMap.set(p.name.toLowerCase(), p);
-                }
-              });
-              let finalArray = Array.from(uniqueMap.values());
-              finalArray.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
-              return finalArray;
-            })().map((prod, index) => {
-              const thumbnailVal = prod.thumbnail || (prod.images && prod.images[0]);
-              const cardImageSrc = thumbnailVal?.startsWith('http') ? thumbnailVal : `/${prod.folder}/${thumbnailVal}`;
-              
+          {/* Current Category Info Banner */}
+          <div className="category-info-bar">
+            <span className="category-active-label">
+              Category: <strong>{dynamicCategories.find((c: any) => c.id === activeCategory)?.name || PRODUCT_CATEGORIES.find((c: any) => c.id === activeCategory)?.name || activeCategory}</strong>
+            </span>
+          </div>
+
+          {(() => {
+            if (isInitialLoading) {
               return (
-                <div className="premium-product-card" key={index} onClick={() => openProductModal(prod)}>
-                  <div className="card-image-wrapper">
-                    <img src={cardImageSrc} alt={prod.name} loading="lazy" />
-                    {('stroke' in prod) && (
-                      <span className="stroke-badge">{(prod as any).stroke}</span>
-                    )}
-                  </div>
-                  <div className="card-content-wrapper">
-                    <h3 className="card-title" title={prod.name}>
-                      {renderProductTitle(prod.name)}
-                    </h3>
-                    <div className="card-footer">
-                      <button className="catchy-explore-btn">
-                        Explore <ArrowRight size={16} strokeWidth={3} />
-                      </button>
-                    </div>
-                  </div>
+                <div className="categories-grid" style={{ minHeight: '300px' }}>
+                  {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div 
+                      key={i} 
+                      className="category-card" 
+                      style={{ 
+                        opacity: 0.5, 
+                        minHeight: '320px',
+                        background: '#f8fafc',
+                        border: '1px solid #e2e8f0',
+                        borderRadius: '16px'
+                      }}
+                    />
+                  ))}
                 </div>
               );
-            })}
-          </div>
+            }
+
+            let filtered = allProductsList.filter((p: any) => isProductInCategory(p, activeCategory));
+            filtered.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
+
+            if (filtered.length === 0) {
+              return (
+                <div className="no-products-box">
+                  <Package size={48} color="#0a5c36" style={{ marginBottom: '16px' }} />
+                  <h3>New Models Coming Soon!</h3>
+                  <p>We are currently updating our catalogue for <strong>{dynamicCategories.find((c: any) => c.id === activeCategory)?.name}</strong>.</p>
+                  <p style={{ marginTop: '6px', color: '#64748b' }}>For instant pricing, brochures, and in-stock details, contact our showroom directly.</p>
+                  <a 
+                    href="https://wa.me/917094341807?text=Hi%20Parani%20Mill%20Stores,%20I%20am%20looking%20for%20information%20on%20this%20category" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="catchy-explore-btn"
+                    style={{ marginTop: '20px', display: 'inline-flex', padding: '10px 24px' }}
+                  >
+                    Enquire on WhatsApp <ArrowRight size={16} style={{ marginLeft: '6px' }} />
+                  </a>
+                </div>
+              );
+            }
+
+            return (
+              <div className="categories-grid">
+                {filtered.map((prod: any, index: number) => {
+                  const cardImageSrc = getProductImage(prod.folder, prod.thumbnail || (prod.images && prod.images[0]), prod.thumbnailUrl);
+                  
+                  return (
+                    <div className="premium-product-card" key={index} onClick={() => openProductModal(prod)}>
+                      <div className="card-image-wrapper">
+                        <img src={cardImageSrc} alt={prod.name} loading="lazy" onError={(e) => { const target = e.currentTarget; if (!target.dataset.triedFallback) { target.dataset.triedFallback = 'true'; if (target.src.includes('thumbnail.png')) { target.src = target.src.replace('thumbnail.png', 'OG.webp'); } else if (target.src.includes('OG.webp')) { target.src = target.src.replace('OG.webp', 'thumbnail.png'); } } }} />
+                        {Boolean(prod.stroke && typeof prod.stroke === 'string' && prod.stroke.trim() && !['none', 'n/a', 'null', 'undefined'].includes(prod.stroke.trim().toLowerCase())) && (
+                          <span className="stroke-badge">{prod.stroke.trim()}</span>
+                        )}
+                      </div>
+                      <div className="card-content-wrapper">
+                        <h3 className="card-title" title={prod.name}>
+                          {renderProductTitle(prod.name)}
+                        </h3>
+                        <div className="card-footer">
+                          <button className="catchy-explore-btn">
+                            Explore <ArrowRight size={16} strokeWidth={3} />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })()}
         </div>
       </section>
 
@@ -310,8 +592,24 @@ const Products = () => {
                 Back to Products
               </button>
               <div className="breadcrumb">
-                <span>Home</span> <ChevronRight size={14} /> <span>Products</span> <ChevronRight size={14} /> <span className="current">{selectedProduct.name}</span>
-              </div>
+            <span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Home</span> 
+            <ChevronRight size={14} /> 
+            <span style={{ cursor: 'pointer' }} onClick={() => navigate('/products')}>Products</span> 
+            {selectedProduct.category && (
+              <>
+                <ChevronRight size={14} /> 
+                <span 
+                  style={{ cursor: 'pointer', color: '#0B6A38', fontWeight: 600 }} 
+                  onClick={() => navigate('/products?category=' + encodeURIComponent(selectedProduct.category))}
+                  title={'View all ' + selectedProduct.category}
+                >
+                  {selectedProduct.category}
+                </span>
+              </>
+            )}
+            <ChevronRight size={14} /> 
+            <span className="current">{selectedProduct.name}</span>
+          </div>
               <button className="close-modal-btn mobile-only-btn" onClick={closeProductModal} aria-label="Close">
                 <X size={22} strokeWidth={2.5} />
               </button>
@@ -332,7 +630,7 @@ const Products = () => {
                             className={`thumb-item ${activeImageIndex === idx ? 'active' : ''}`}
                             onClick={() => setActiveImageIndex(idx)}
                           >
-                            <img src={img?.startsWith('http') ? img : `/${selectedProduct.folder}/${img}`} alt={`view ${idx}`} />
+                            <img src={getProductImage(selectedProduct.folder, img)} alt={`view ${idx}`} />
                           </div>
                         ))}
                       </div>
@@ -347,34 +645,39 @@ const Products = () => {
 
 
                     <div 
+                      ref={imageDisplayAreaRef}
                       className={`image-display-area ${is360View ? 'is-360' : ''}`}
                       onMouseDown={handleDragStart}
+                      onMouseMove={(e) => {
+                        if (is360View) {
+                          handleDragMove(e);
+                        } else {
+                          handleImageZoomMove(e);
+                        }
+                      }}
                       onMouseUp={handleDragEnd}
-                      onMouseLeave={handleDragEnd}
+                      onMouseLeave={() => {
+                        handleDragEnd();
+                        handleImageZoomLeave();
+                      }}
                       onTouchStart={handleDragStart}
                       onTouchMove={handleDragMove}
                       onTouchEnd={handleDragEnd}
                     >
                       {!is360View && (
-                        <button className="nav-circ prev" onClick={handlePrevImage}><ChevronLeft size={24} /></button>
+                        <button className="nav-circ prev" onClick={handlePrevImage} aria-label="Previous image"><ChevronLeft size={24} /></button>
                       )}
                       
                       <img 
-                        src={
-                          selectedProduct.images && selectedProduct.images[currentDisplayIndex]?.startsWith('http')
-                            ? selectedProduct.images[currentDisplayIndex]
-                            : `/${selectedProduct.folder}/${selectedProduct.images?.[currentDisplayIndex]}`
-                        } 
+                        ref={mainImageRef}
+                        src={getProductImage(selectedProduct.folder, selectedProduct.images?.[currentDisplayIndex])} 
                         alt={selectedProduct.name} 
                         className="main-display-image"
                         draggable="false"
-                        style={zoomStyle}
-                        onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave}
                       />
                       
                       {!is360View && (
-                        <button className="nav-circ next" onClick={handleNextImage}><ChevronRight size={24} /></button>
+                        <button className="nav-circ next" onClick={handleNextImage} aria-label="Next image"><ChevronRight size={24} /></button>
                       )}
                       
                       {is360View && (
@@ -399,11 +702,18 @@ const Products = () => {
               </div>
               <div className="modal-right-column">
                 
-                {selectedProduct.stroke && (
-                  <div className="modal-stroke-badge">
-                    {selectedProduct.stroke}
-                  </div>
-                )}
+                <div className="modal-badges-container">
+              {selectedProduct.category && (
+                <div className="modal-category-badge">
+                  {selectedProduct.category}
+                </div>
+              )}
+              {Boolean(selectedProduct.stroke && typeof selectedProduct.stroke === 'string' && selectedProduct.stroke.trim() && !['none', 'n/a', 'null', 'undefined'].includes(selectedProduct.stroke.trim().toLowerCase())) && (
+                <div className="modal-stroke-badge" style={{ margin: 0 }}>
+                  {selectedProduct.stroke.trim()}
+                </div>
+              )}
+            </div>
                 <h2 className="product-title">
                   {renderProductTitle(selectedProduct.name)}
                 </h2>

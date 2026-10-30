@@ -244,100 +244,166 @@
   transform: scale(1.05);
 }
 
-/* Card Specifics */
-
-/* Card 1: Agri */
-.card-agri {
-  background: linear-gradient(160deg, #eff7f2 0%, #ccead7 100%);
+/* Card Specific Backgrounds */
+.card-cutter {
+  background: linear-gradient(160deg, #f0faf4 0%, #d8f3e3 100%);
 }
-
-.tag-greener {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #4a9161;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
+.card-chaff {
+  background: linear-gradient(160deg, #fdf6f7 0%, #fadfe3 100%);
 }
-
-.tag-icon {
-  color: #4a9161;
+.card-auger {
+  background: linear-gradient(160deg, #fbf6ee 0%, #f6ebd8 100%);
 }
-
-.calligraphy-text {
-  position: absolute;
-  top: 25px;
-  right: 15px;
-  font-family: 'Brush Script MT', 'Dancing Script', cursive;
-  font-size: 1.6rem;
-  color: #2b5639;
-  line-height: 1;
-  transform: rotate(-10deg);
-  z-index: 2;
+.card-engine {
+  background: linear-gradient(160deg, #eff8f2 0%, #d7efdf 100%);
 }
-
-.wrapper-agri {
-  bottom: 15px;
+.card-honda {
+  background: linear-gradient(160deg, #fff5f5 0%, #fedada 100%);
 }
-
-.image-agri {
-  width: 70%;
-  margin-left: 0;
+.card-sprayer {
+  background: linear-gradient(160deg, #fdfbf2 0%, #faefcc 100%);
 }
-
-/* Card 2: Const */
-.card-const {
-  background: linear-gradient(160deg, #fbf7f1 0%, #ecdrc1 100%);
-  background-color: #f4ecdf; /* fallback */
-}
-
-.wrapper-const {
-  bottom: 10px;
-  justify-content: center;
-  padding-right: 0px;
-}
-
-.image-const {
-  width: 65%;
-  margin-left: 30px;
-}
-
-/* Card 3: Gensets */
-.card-gen {
-  background: linear-gradient(160deg, #f0f9f3 0%, #d8efdf 100%);
-}
-
-.lightning-icon {
-  position: absolute;
-  top: 40px;
-  right: 15px;
-  z-index: 1;
-}
-
-.wrapper-gen {
-  bottom: 25px;
-}
-
-.image-gen {
-  width: 80%;
-}
-
-/* Card 4: Pumps */
 .card-pump {
-  background: linear-gradient(160deg, #eff6fc 0%, #cae5fa 100%);
+  background: linear-gradient(160deg, #f0f6fc 0%, #d3e7f8 100%);
+}
+.card-weeder {
+  background: linear-gradient(160deg, #eff7f2 0%, #d6edd9 100%);
 }
 
-.wrapper-pump {
-  bottom: 20px;
+.category-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 30px 22px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  color: inherit;
 }
 
-.image-pump {
-  width: 85%;
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.09);
 }
 
-/* Responsive */
+.category-card-content {
+  position: relative;
+  z-index: 3;
+}
+
+.category-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #1a2f22;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.category-subtitle {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.45;
+  max-width: 90%;
+}
+
+.category-image-wrapper {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.category-image {
+  max-width: 90%;
+  max-height: 205px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
+}
+
+.category-card:hover .category-image {
+  transform: scale(1.07) translateY(-4px);
+}
+
+
+/* Dual image wrapper for Chaff Cutter & Wood Chipper */
+.wrapper-dual {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  bottom: 18px;
+  height: 220px;
+  padding: 0 10px;
+}
+
+.dual-image {
+  max-width: 49%;
+  max-height: 195px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.15));
+}
+
+.dual-chaff {
+  transform: translateX(-2px);
+}
+
+.dual-chipper {
+  transform: translateX(2px);
+}
+
+.category-card:hover .dual-chaff {
+  transform: translateX(-4px) scale(1.08) translateY(-4px);
+}
+
+.category-card:hover .dual-chipper {
+  transform: translateX(4px) scale(1.08) translateY(-4px);
+}
+
+/* Specific adjustment for Brush Cutter so it sits comfortably in the card and doesn't stick to bottom */
+.wrapper-cutter {
+  bottom: 38px;
+  height: 195px;
+}
+
+.wrapper-cutter .category-image {
+  max-width: 94%;
+  max-height: 185px;
+}
+
+.category-card:hover .wrapper-cutter .category-image {
+  transform: scale(1.08) translateY(-6px);
+}
+
+/* Earth Auger vertical height and centering */
+.wrapper-auger {
+  bottom: 14px;
+  height: 235px;
+}
+
+.wrapper-auger .category-image {
+  max-height: 225px;
+}
+
 @media (max-width: 1024px) {
   .product-categories-grid {
     grid-template-columns: repeat(2, 1fr);

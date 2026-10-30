@@ -204,7 +204,7 @@ const About = () => {
                       <div className="nt-line red"></div>
                     </div>
                     <h3>Expanding Horizons</h3>
-                    <p>Broadened the range across agriculture, construction and power tools.</p>
+                    <p>Expanded our product range to include a comprehensive selection of machinery and equipment.</p>
                   </div>
                 </div>
               </div>

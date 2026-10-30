@@ -217,58 +217,98 @@ const Home: React.FC = () => {
           </div>
 
           <div className="product-categories-grid">
-            {/* Card 1: Agricultural Machinery */}
-            <div className="category-card card-agri">
+            {/* Card 1: Brush Cutter */}
+            <Link to="/products?category=brush-cutter" className="category-card card-cutter">
               <div className="category-card-content">
-                <h3 className="category-title">Agricultural<br/>Machinery</h3>
-                <p className="category-subtitle">High-performance tillers & weeders.</p>
+                <h3 className="category-title">Brush<br/>Cutter</h3>
+                <p className="category-subtitle">Heavy-duty grass & crop trimming machinery.</p>
               </div>
-              <div className="category-image-wrapper wrapper-agri">
-                <img loading="lazy" src="/parani products webp/POWER WEEDER - RAPL-RH-700G PREMIUM.webp" alt="Agricultural Machinery" className="category-image image-agri" />
+              <div className="category-image-wrapper wrapper-cutter">
+                <img loading="lazy" src="/categories/brush-cutter.webp" alt="Brush Cutter" className="category-image image-cutter" />
               </div>
-            </div>
-            
-            {/* Card 2: Earth Auger */}
-            <div className="category-card card-const">
+            </Link>
+
+            {/* Card 2: Chaff Cutter & Wood Chipper */}
+            <Link to="/products?category=chaff-cutter-wood-chipper" className="category-card card-chaff">
               <div className="category-card-content">
-                <h3 className="category-title">Earth<br/>Auger</h3>
-                <p className="category-subtitle">Heavy-duty machinery for tough jobs.</p>
+                <h3 className="category-title">Chaff Cutter &<br/>Wood Chipper</h3>
+                <p className="category-subtitle">High-speed fodder cutters & wood chippers.</p>
               </div>
-              <div className="category-image-wrapper wrapper-const">
-                <img loading="lazy" src="/parani products webp/EARTH AUGER - RAPL - EA - 6310.webp" alt="Construction Equipment" className="category-image image-const" />
+              <div className="category-image-wrapper wrapper-chaff wrapper-dual">
+                <img loading="lazy" src="/categories/chaff-cutter.webp" alt="Chaff Cutter" className="category-image dual-image dual-chaff" />
+                <img loading="lazy" src="/categories/wood-chipper.webp" alt="Wood Chipper" className="category-image dual-image dual-chipper" />
               </div>
-            </div>
-            
-            {/* Card 3: Gensets */}
-            <div className="category-card card-gen">
+            </Link>
+
+            {/* Card 3: Earth Augur */}
+            <Link to="/products?category=earth-augur" className="category-card card-auger">
               <div className="category-card-content">
-                <h3 className="category-title">Power<br/>Generators</h3>
+                <h3 className="category-title">Earth<br/>Augur</h3>
+                <p className="category-subtitle">Heavy-duty hole diggers for tough terrain.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-auger">
+                <img loading="lazy" src="/categories/earth-auger.webp" alt="Earth Augur" className="category-image image-auger" />
+              </div>
+            </Link>
+
+            {/* Card 4: Engines */}
+            <Link to="/products?category=engines" className="category-card card-engine">
+              <div className="category-card-content">
+                <h3 className="category-title">Engines</h3>
                 <p className="category-subtitle">Reliable power for continuous performance.</p>
               </div>
-              <div className="lightning-icon">
-                 <svg viewBox="0 0 24 24" width="80" height="80" xmlns="http://www.w3.org/2000/svg" fill="#d8f2e2">
-                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                 </svg>
+              <div className="category-image-wrapper wrapper-engine">
+                <img loading="lazy" src="/categories/engines.webp" alt="Engines" className="category-image" />
               </div>
-              <div className="category-image-wrapper wrapper-gen">
-                <img loading="lazy" src="/parani products webp/168F ENGINE - RAPL - GE - 168F.webp" alt="Power Generators" className="category-image image-gen" />
-              </div>
-            </div>
-            
-            {/* Card 4: Pumps & Motors */}
-            <div className="category-card card-pump">
+            </Link>
+
+            {/* Card 5: Honda Products */}
+            <Link to="/products?category=honda-products" className="category-card card-honda">
               <div className="category-card-content">
-                <h3 className="category-title">Pumps & Motors</h3>
-                <p className="category-subtitle">Efficient water solutions for agriculture and beyond.</p>
+                <h3 className="category-title">Honda<br/>Products</h3>
+                <p className="category-subtitle">Genuine Honda engines & agricultural equipment.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-honda">
+                <img loading="lazy" src="/categories/honda-products.webp" alt="Honda Products" className="category-image" />
+              </div>
+            </Link>
+
+            {/* Card 6: Sprayer */}
+            <Link to="/products?category=sprayer" className="category-card card-sprayer">
+              <div className="category-card-content">
+                <h3 className="category-title">Sprayer</h3>
+                <p className="category-subtitle">Battery, knapsack & high-pressure HTP sprayers.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-sprayer">
+                <img loading="lazy" src="/categories/sprayer.webp" alt="Sprayer" className="category-image" />
+              </div>
+            </Link>
+
+            {/* Card 7: Water Pump */}
+            <Link to="/products?category=water-pump" className="category-card card-pump">
+              <div className="category-card-content">
+                <h3 className="category-title">Water<br/>Pump</h3>
+                <p className="category-subtitle">Efficient water solutions for agriculture & beyond.</p>
               </div>
               <div className="category-image-wrapper wrapper-pump">
-                <img loading="lazy" src="/parani products webp/WATER PUMP - RAPL-WP-30R.webp" alt="Pumps & Motors" className="category-image image-pump" />
+                <img loading="lazy" src="/categories/water-pump.webp" alt="Water Pump" className="category-image" />
               </div>
-            </div>
+            </Link>
+
+            {/* Card 8: Weeder */}
+            <Link to="/products?category=weeder" className="category-card card-weeder">
+              <div className="category-card-content">
+                <h3 className="category-title">Weeder</h3>
+                <p className="category-subtitle">High-performance tillers & soil weeders.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-weeder">
+                <img loading="lazy" src="/categories/weeder.webp" alt="Weeder" className="category-image" />
+              </div>
+            </Link>
           </div>
           <div className="section-footer">
-            <Link to="/products?category=agri" className="btn-outline-red" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              View All Products <ArrowRight size={16} style={{marginLeft: '8px'}}/>
+            <Link to="/products" className="btn-outline-red" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+              View All Categories <ArrowRight size={16} style={{marginLeft: '8px'}}/>
             </Link>
           </div>
         </div>
@@ -524,8 +564,8 @@ const Home: React.FC = () => {
                   <span className="step-text">STEP</span>
                   <span className="step-num">04</span>
                 </div>
-                <h4>Maintenance Packages</h4>
-                <p>Keep your equipment running at its absolute best with our comprehensive maintenance packages.</p>
+                <h4>Genuine Spare Parts</h4>
+                <p>Original parts for all your machinery to ensure long-lasting performance and durability.</p>
                 <div className="card-dots">
                   <span></span><span></span><span></span><span></span>
                 </div>

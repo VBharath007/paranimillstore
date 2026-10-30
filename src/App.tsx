@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Search, User, MapPin, Phone, Mail, Clock, ArrowRight, Leaf, ShieldCheck, Truck, Headset, Handshake, Users, Maximize, Menu, X, Home as HomeIcon, Info, Package, Image as ImageIcon, FileText, ChevronRight, ChevronDown, CreditCard } from 'lucide-react';
@@ -8,11 +8,62 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import ProductDetail from './pages/ProductDetail';
 import './App.css';
+
+const DEFAULT_NAV_CATEGORIES = [
+  { id: 'brush-cutter', name: 'Brush Cutter' },
+  { id: 'chaff-cutter-wood-chipper', name: 'Chaff Cutter & Wood Chipper' },
+  { id: 'earth-augur', name: 'Earth Augur' },
+  { id: 'engines', name: 'Engines' },
+  { id: 'honda-products', name: 'Honda Products' },
+  { id: 'sprayer', name: 'Sprayer' },
+  { id: 'water-pump', name: 'Water Pump' },
+  { id: 'weeder', name: 'Weeder' },
+];
 
 function App() {
   const [activeMap, setActiveMap] = useState<'head' | 'branch'>('head');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [navCategories, setNavCategories] = useState<any[]>(DEFAULT_NAV_CATEGORIES);
+
+  useEffect(() => {
+    // 1. Fetch categories
+    fetch('http://localhost:5001/api/categories')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.success && Array.isArray(data.data)) {
+          const list: any[] = [];
+          const existingIds = new Set(list.map((c: any) => c.id));
+          const existingNames = new Set(list.map((c: any) => c.name.toLowerCase()));
+
+          data.data.forEach((c: any) => {
+            const name = c.name ? c.name.trim() : '';
+            if (name && !existingNames.has(name.toLowerCase()) && name.toLowerCase() !== 'all products' && c.slug !== 'all') {
+              const id = c.slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+              if (!existingIds.has(id)) {
+                list.push({ id, name });
+                existingIds.add(id);
+                existingNames.add(name.toLowerCase());
+              }
+            }
+          });
+          setNavCategories(list);
+          try { sessionStorage.setItem('pm_cached_categories', JSON.stringify(data.data)); } catch (e) {}
+        }
+      })
+      .catch(() => {});
+
+    // 2. Prefetch products for instant zero-delay navigation
+    fetch('http://localhost:5001/api/products')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.success && Array.isArray(data.data)) {
+          try { sessionStorage.setItem('pm_cached_products', JSON.stringify(data.data)); } catch (e) {}
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <HelmetProvider>
@@ -103,9 +154,13 @@ function App() {
                       <span className="nav-chevron hide-on-desktop"><ChevronRight size={18}/></span>
                     </NavLink>
                     <ul className="dropdown-menu">
-                      <li><NavLink to="/products?category=agri" onClick={() => setIsMobileMenuOpen(false)}>Agricultural Machinery</NavLink></li>
-                      <li><NavLink to="/products?category=genset" onClick={() => setIsMobileMenuOpen(false)}>Power Generators</NavLink></li>
-                      <li><NavLink to="/products?category=construction" onClick={() => setIsMobileMenuOpen(false)}>Construction Equipment</NavLink></li>
+                      {navCategories.map((cat: any) => (
+                        <li key={cat.id}>
+                          <NavLink to={`/products?category=${cat.id}`} onClick={() => setIsMobileMenuOpen(false)}>
+                            {cat.name}
+                          </NavLink>
+                        </li>
+                      ))}
                     </ul>
                   </li>
                   <li><NavLink to="/blogs" onClick={() => setIsMobileMenuOpen(false)}><span className="nav-icon-wrapper hide-on-desktop"><FileText size={20}/></span><span className="nav-text">Blogs</span><span className="nav-chevron hide-on-desktop"><ChevronRight size={18}/></span></NavLink></li>
@@ -136,6 +191,10 @@ function App() {
             {/* Placeholders for other routes */}
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:slug" element={<ProductDetail />} />
+            <Route path="/products/:slug" element={<ProductDetail />} />
+            <Route path="/product/:category/:slug" element={<ProductDetail />} />
+            <Route path="/products/:category/:slug" element={<ProductDetail />} />
             <Route path="/blogs" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/contact" element={<Contact />} />
@@ -163,7 +222,8 @@ function App() {
                   </span>
                 </div>
                 <p className="footer-desc">
-                  Serving Madurai with quality agricultural machinery, construction equipment, and power tools since 1960.
+                  <strong style={{ display: 'inline-block', marginBottom: '8px', paddingBottom: '6px', borderBottom: '1px solid #888', color: 'white', letterSpacing: '0.5px', textAlign: 'center' }}>Serving Madurai & South Tamil&nbsp;Nadu</strong><br/>
+                  Explore a wide range of engines, brush cutters, power weeders, agricultural sprayers, water pumps, power generators, construction equipment, and manual tools for agricultural and construction needs.
                 </p>
 
 
@@ -215,8 +275,12 @@ function App() {
                 </div>
                 
                 <div className="truck-delivery-banner" style={{ marginTop: '25px', display: 'flex', alignItems: 'center', gap: '12px', background: 'rgba(255,255,255,0.08)', padding: '12px 20px', borderRadius: '8px', borderLeft: '4px solid #fbaf00', width: 'fit-content', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', position: 'relative', overflow: 'hidden' }}>
-                  <span className="delivery-text-sweep" style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '0.5px' }}>
-                    Delivery Available: <span>Madurai & Nearby Districts</span>
+                  <div className="moving-truck" style={{ flexShrink: 0 }}>
+                    <Truck size={24} color="white" />
+                  </div>
+                  <span className="delivery-text-sweep" style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.5px', lineHeight: '1.4', display: 'block' }}>
+                    <span style={{ color: '#fbaf00', fontSize: '0.8rem', textTransform: 'uppercase' }}>Delivery Available</span><br/>
+                    <span style={{ color: 'white' }}>Madurai & South Tamil Nadu</span>
                   </span>
                 </div>
               </div>
