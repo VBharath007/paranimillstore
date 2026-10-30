@@ -159,11 +159,12 @@ const Products = () => {
   const [isInitialLoading, setIsInitialLoading] = useState<boolean>(globalProductsCache.length === 0);
 
   useEffect(() => {
+    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
     const fetchBackendData = async () => {
       try {
         const [prodRes, catRes] = await Promise.all([
-          fetch('http://localhost:5001/api/products').then(r => r.json()).catch(() => null),
-          fetch('http://localhost:5001/api/categories').then(r => r.json()).catch(() => null),
+          fetch(API_BASE + '/api/products').then(r => r.json()).catch(() => null),
+          fetch(API_BASE + '/api/categories').then(r => r.json()).catch(() => null),
         ]);
         if (prodRes && prodRes.success && Array.isArray(prodRes.data)) {
           setBackendProducts(prodRes.data);
