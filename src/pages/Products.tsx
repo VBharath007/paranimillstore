@@ -17,6 +17,7 @@ export const PRODUCT_CATEGORIES: CategoryItem[] = [
   { id: 'chaff-cutter-wood-chipper', name: 'Chaff Cutter & Wood Chipper' },
   { id: 'earth-augur', name: 'Earth Augur' },
   { id: 'engines', name: 'Engines' },
+  { id: 'gensets', name: 'Gensets' },
   { id: 'honda-products', name: 'Honda Products' },
   { id: 'sprayer', name: 'Sprayer' },
   { id: 'water-pump', name: 'Water Pump' },
@@ -31,6 +32,7 @@ export const getProductCategorySlug = (product: any): string => {
     if (catName.includes('brush')) return 'brush-cutter';
     if (catName.includes('chaff') || catName.includes('chipper')) return 'chaff-cutter-wood-chipper';
     if (catName.includes('auger') || catName.includes('augur')) return 'earth-augur';
+    if (catName.includes('genset') || catName.includes('generator')) return 'gensets';
     if (catName.includes('weeder') || catName.includes('tiller')) return 'weeder';
     if (catName.includes('sprayer') || catName.includes('htp')) return 'sprayer';
     if (catName.includes('pump')) return 'water-pump';
@@ -42,6 +44,7 @@ export const getProductCategorySlug = (product: any): string => {
   const f = (product.folder || '').toUpperCase();
 
   if (f.includes('HONDA') || n.includes('HONDA')) return 'honda-products';
+  if (f.includes('GENSET') || n.includes('GENERATOR') || n.includes('GENSET')) return 'gensets';
   if (f.includes('BRUSH CUTTER') || n.includes('BRUSH CUTTER')) return 'brush-cutter';
   if (f.includes('CHAFF') || f.includes('CHIPPER') || n.includes('CHAFF') || n.includes('CHIPPER')) return 'chaff-cutter-wood-chipper';
   if (f.includes('AUGER') || f.includes('AUGUR') || n.includes('AUGER') || n.includes('AUGUR')) return 'earth-augur';
@@ -90,8 +93,9 @@ export const isProductInCategory = (product: any, catId: string): boolean => {
       if (catClean && catSlug !== 'engines') return false;
       return (folder.includes('ENGINE') || name.includes('ENGINE')) && !folder.includes('SPRAYER') && !name.includes('SPRAYER');
     case 'gensets':
-      if (catClean && catSlug !== 'gensets') return false;
-      return folder.includes('GENSET') || name.includes('GENERATOR') || cat.includes('GENSET');
+    case 'genset':
+      if (catClean && catSlug !== 'gensets' && catSlug !== 'genset') return false;
+      return folder.includes('GENSET') || name.includes('GENERATOR') || name.includes('GENSET') || cat.includes('GENSET');
     case 'hedge-trimmer':
       if (catClean && catSlug !== 'hedge-trimmer') return false;
       return name.includes('HEDGE') || name.includes('HARVESTER') || name.includes('STUBBLE') || name.includes('CHAINSAW') || cat.includes('HEDGE');
@@ -186,10 +190,40 @@ const Products = () => {
   }, []);
 
   const allProductsList = useMemo(() => {
+    const gensetsNormalized = (gensetsData || []).map((p: any) => ({
+      ...p,
+      category: p.category || 'Gensets',
+      slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
+    }));
+
+    const constructionNormalized = (constructionData || []).map((p: any) => ({
+      ...p,
+      category: p.category || 'Construction',
+      slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
+    }));
+
     if (backendProducts && backendProducts.length > 0) {
+      const hasGensets = backendProducts.some((p: any) => isProductInCategory(p, 'gensets'));
+      const hasConstruction = backendProducts.some((p: any) => isProductInCategory(p, 'construction'));
+      
+      const extra: any[] = [];
+      if (!hasGensets) extra.push(...gensetsNormalized);
+      if (!hasConstruction) extra.push(...constructionNormalized);
+
+      if (extra.length > 0) {
+        const combined = [...backendProducts, ...extra];
+        const uniqueMap = new Map();
+        combined.forEach((p: any) => {
+          if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
+            uniqueMap.set(p.name.toLowerCase(), p);
+          }
+        });
+        return Array.from(uniqueMap.values());
+      }
       return backendProducts;
     }
-    const combined = [...productsData, ...gensetsData, ...constructionData];
+
+    const combined = [...productsData, ...gensetsNormalized, ...constructionNormalized];
     const uniqueMap = new Map();
     combined.forEach((p: any) => {
       if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
@@ -203,41 +237,41 @@ const Products = () => {
   }, [backendProducts]);
 
   const dynamicCategories = useMemo(() => {
+    const list: CategoryItem[] = [];
+    const existingNames = new Set<string>();
+    const existingIds = new Set<string>();
+
+    // 1. Add categories from backend /api/categories
     if (backendCategories && backendCategories.length > 0) {
-      const list: CategoryItem[] = [];
-      const existingNames = new Set<string>();
       backendCategories.forEach((cat) => {
         const catName = cat.name ? cat.name.trim() : '';
         if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all') {
-          const id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-          list.push({ id, name: catName });
-          existingNames.add(catName.toLowerCase());
+          let id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          if (id === 'genset') id = 'gensets';
+          if (!existingIds.has(id)) {
+            list.push({ id, name: catName });
+            existingNames.add(catName.toLowerCase());
+            existingIds.add(id);
+          }
         }
       });
-      return list;
     }
-    const list = [...PRODUCT_CATEGORIES];
-    const existingIds = new Set(list.map((c: any) => c.id));
-    const existingNames = new Set(list.map((c: any) => c.name.toLowerCase()));
 
-    // 1. Add categories from backend /api/categories
-    backendCategories.forEach((cat: any) => {
-      const catName = cat.name ? cat.name.trim() : '';
-      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all') {
-        const id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        if (!existingIds.has(id)) {
-          list.push({ id, name: catName });
-          existingIds.add(id);
-          existingNames.add(catName.toLowerCase());
-        }
+    // 2. Add standard categories (ensures Gensets and other staples are always present)
+    PRODUCT_CATEGORIES.forEach((stdCat) => {
+      if (!existingIds.has(stdCat.id) && !existingNames.has(stdCat.name.toLowerCase())) {
+        list.push(stdCat);
+        existingIds.add(stdCat.id);
+        existingNames.add(stdCat.name.toLowerCase());
       }
     });
 
-    // 2. Add categories found directly on products
+    // 3. Add categories found directly on products
     allProductsList.forEach((p: any) => {
       const catName = p.category ? p.category.trim() : '';
       if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products') {
-        const id = catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        let id = catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (id === 'genset') id = 'gensets';
         if (!existingIds.has(id)) {
           list.push({ id, name: catName });
           existingIds.add(id);
@@ -254,16 +288,20 @@ const Products = () => {
     const category = params.get('category');
     if (category) {
       const catLower = category.toLowerCase().trim();
+      const catSlug = catLower.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       if (catLower === 'agri' || catLower === 'all') {
         setActiveCategory('brush-cutter');
-      } else if (catLower === 'genset') {
+      } else if (catLower === 'genset' || catLower === 'gensets' || catSlug === 'genset' || catSlug === 'gensets') {
         setActiveCategory('gensets');
-      } else if (catLower === 'construction') {
+      } else if (catLower === 'construction' || catSlug === 'construction') {
         setActiveCategory('construction');
       } else {
-        const found = PRODUCT_CATEGORIES.find(c => c.id === catLower);
+        const found = dynamicCategories.find(c => c.id === catSlug || c.id === catLower) 
+          || PRODUCT_CATEGORIES.find(c => c.id === catSlug || c.id === catLower);
         if (found) {
           setActiveCategory(found.id);
+        } else {
+          setActiveCategory(catSlug);
         }
       }
       setTimeout(() => {
@@ -273,7 +311,7 @@ const Products = () => {
         }
       }, 100);
     }
-  }, [location.search]);
+  }, [location.search, dynamicCategories]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [is360View, setIs360View] = useState(false);
   const [startX, setStartX] = useState<number | null>(null);
@@ -520,7 +558,10 @@ const Products = () => {
                   <button 
                     key={cat.id}
                     className={`subnav-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                    onClick={() => setActiveCategory(cat.id)}
+                    onClick={() => {
+                      setActiveCategory(cat.id);
+                      navigate('/products?category=' + cat.id, { replace: true });
+                    }}
                   >
                     <span className="subnav-btn-name">{cat.name}</span>
                     <span className="subnav-btn-count">{count}</span>

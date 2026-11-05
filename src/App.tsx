@@ -16,6 +16,7 @@ const DEFAULT_NAV_CATEGORIES = [
   { id: 'chaff-cutter-wood-chipper', name: 'Chaff Cutter & Wood Chipper' },
   { id: 'earth-augur', name: 'Earth Augur' },
   { id: 'engines', name: 'Engines' },
+  { id: 'gensets', name: 'Gensets' },
   { id: 'honda-products', name: 'Honda Products' },
   { id: 'sprayer', name: 'Sprayer' },
   { id: 'water-pump', name: 'Water Pump' },
@@ -28,19 +29,22 @@ function App() {
   const [navCategories, setNavCategories] = useState<any[]>(DEFAULT_NAV_CATEGORIES);
 
   useEffect(() => {
+    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
+
     // 1. Fetch categories
-    fetch('http://localhost:5001/api/categories')
+    fetch(API_BASE + '/api/categories')
       .then(res => res.json())
       .then(data => {
         if (data && data.success && Array.isArray(data.data)) {
           const list: any[] = [];
-          const existingIds = new Set(list.map((c: any) => c.id));
-          const existingNames = new Set(list.map((c: any) => c.name.toLowerCase()));
+          const existingIds = new Set<string>();
+          const existingNames = new Set<string>();
 
           data.data.forEach((c: any) => {
             const name = c.name ? c.name.trim() : '';
             if (name && !existingNames.has(name.toLowerCase()) && name.toLowerCase() !== 'all products' && c.slug !== 'all') {
-              const id = c.slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+              let id = c.slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+              if (id === 'genset') id = 'gensets';
               if (!existingIds.has(id)) {
                 list.push({ id, name });
                 existingIds.add(id);
@@ -48,6 +52,16 @@ function App() {
               }
             }
           });
+
+          // Ensure standard categories like Gensets are always present
+          DEFAULT_NAV_CATEGORIES.forEach((cat) => {
+            if (!existingIds.has(cat.id) && !existingNames.has(cat.name.toLowerCase())) {
+              list.push(cat);
+              existingIds.add(cat.id);
+              existingNames.add(cat.name.toLowerCase());
+            }
+          });
+
           setNavCategories(list);
           try { sessionStorage.setItem('pm_cached_categories', JSON.stringify(data.data)); } catch (e) {}
         }
@@ -55,7 +69,7 @@ function App() {
       .catch(() => {});
 
     // 2. Prefetch products for instant zero-delay navigation
-    fetch('http://localhost:5001/api/products')
+    fetch(API_BASE + '/api/products')
       .then(res => res.json())
       .then(data => {
         if (data && data.success && Array.isArray(data.data)) {

@@ -1,5 +1,6 @@
 [
     {
+        "category": "Gensets",
         "name": "ATLAS POWER GENERATOR - AP5500G",
         "folder": "Genset/ATLAS POWER GENERATOR - AP5500G",
         "thumbnail": "product raw image.webp",
@@ -23,6 +24,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "ATLAS POWER GENERATOR - AP8500G",
         "folder": "Genset/ATLAS POWER GENERATOR - AP8500G",
         "thumbnail": "product raw image.webp",
@@ -46,6 +48,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "KI-HO POWER GENERATOR - 13000E",
         "folder": "Genset/KI-HO POWER GENERATOR - 13000E",
         "thumbnail": "product raw image.webp",
@@ -69,6 +72,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "LIGHTON GENERATOR - LT-4000",
         "folder": "Genset/LIGHTON GENERATOR - LT-4000",
         "thumbnail": "product raw image.webp",
@@ -92,6 +96,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "PELICAN GENERATOR - MLT 3700 L(E)",
         "folder": "Genset/PELICAN GENERATOR - MLT 3700 L(E)",
         "thumbnail": "product raw image.webp",
@@ -115,6 +120,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "PELICAN GENERATOR - W 650 APL",
         "folder": "Genset/PELICAN GENERATOR - W 650 APL",
         "thumbnail": "product raw image.webp",
@@ -138,6 +144,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "PELICAN INVERTER GENERATOR - MLT 1000i",
         "folder": "Genset/PELICAN INVERTER GENERATOR - MLT 1000i",
         "thumbnail": "product raw image.webp",
@@ -161,6 +168,7 @@
         }
     },
     {
+        "category": "Gensets",
         "name": "SUGUNA POWER GENERATOR - 5000EX",
         "folder": "Genset/SUGUNA POWER GENERATOR - 5000EX",
         "thumbnail": "product raw image.webp",
