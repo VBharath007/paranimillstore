@@ -92,73 +92,13 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-battery-double-side-hedge-trimmer</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-battery-single-side-hedge-trimmer</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-petrol-single-side-hedge-trimmer</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/pelican-3kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/kemage-13kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/vi-powergold-3kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/pelican-5kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/atlas-power-8kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/total-800w</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://paranimill.com/product/gensets/atlas-power-5kw</loc>
-    <lastmod>2026-11-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://paranimill.com/product/gensets/vi-powergold-5kw</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://paranimill.com/product/gensets/pelican-1000i</loc>
+    <loc>https://paranimill.com/product/gensets/atlas-power-8kw</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -194,6 +134,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://paranimill.com/product/gensets/pelican-3kw</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://paranimill.com/product/earth-augur/bits-and-extension-rod</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -208,6 +154,12 @@
   <url>
     <loc>https://paranimill.com/product/sprayer/really-2s-sprayer</loc>
     <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/gensets/pelican-5kw</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -230,8 +182,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://paranimill.com/product/gensets/pelican-1000i</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://paranimill.com/product/sprayer/really-htp-22-pump</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-petrol-single-side-hedge-trimmer</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -344,6 +308,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://paranimill.com/product/gensets/total-800w</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://paranimill.com/product/engines/really-170f-engine</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -352,6 +322,12 @@
   <url>
     <loc>https://paranimill.com/product/brush-cutter/really-2s-43cc-brush-cutter</loc>
     <lastmod>2026-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/gensets/atlas-power-5kw</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -388,6 +364,24 @@
   <url>
     <loc>https://paranimill.com/product/weeder/mitsuyama-380g-power-weeder</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-battery-single-side-hedge-trimmer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/hedge-trimmer/zeyang-battery-double-side-hedge-trimmer</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/gensets/vi-powergold-3kw</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -460,6 +454,12 @@
   <url>
     <loc>https://paranimill.com/product/sprayer/really-htp-50-pump</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paranimill.com/product/gensets/kemage-13kw</loc>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

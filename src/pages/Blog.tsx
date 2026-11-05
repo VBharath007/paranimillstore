@@ -23,9 +23,11 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
+
     const fetchBackendBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/blogs');
+        const res = await fetch(`${API_BASE}/api/blogs`);
         const data = await res.json();
         if (data && data.success && Array.isArray(data.data)) {
           globalBlogsCache = data.data;
@@ -44,7 +46,7 @@ const Blog = () => {
     
     const fetchProductOfTheMonth = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/products?isActive=true');
+        const res = await fetch(`${API_BASE}/api/products?isActive=true`);
         const data = await res.json();
         if (data && data.success && Array.isArray(data.data)) {
           const featured = data.data.find((p: any) => p.isProductOfTheMonth);
@@ -135,8 +137,14 @@ const Blog = () => {
   return (
     <div className="blog-page">
       <Helmet>
-        <title>Blogs & Updates | Parani Mill Stores</title>
+        <title>Blogs & Updates | Agricultural Guides & Maintenance | Parani Mill Stores</title>
         <meta name="description" content="Read the latest updates, buying guides, and maintenance tips for your agricultural sprayers, power weeders, petrol brush cutters, and engines from Parani Mill Stores." />
+        <link rel="canonical" href="https://paranimill.com/blogs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Blogs & Updates | Parani Mill Stores" />
+        <meta property="og:description" content="Read the latest updates, buying guides, and maintenance tips for agricultural machinery and engines." />
+        <meta property="og:url" content="https://paranimill.com/blogs" />
+        <meta property="og:image" content="https://paranimill.com/Blogherodummy.webp" />
       </Helmet>
       {/* Editorial Header */}
       <section className="blog-hero-image">

@@ -17,6 +17,7 @@ const DEFAULT_NAV_CATEGORIES = [
   { id: 'earth-augur', name: 'Earth Augur' },
   { id: 'engines', name: 'Engines' },
   { id: 'gensets', name: 'Gensets' },
+  { id: 'hedge-trimmer', name: 'Hedge Trimmer' },
   { id: 'honda-products', name: 'Honda Products' },
   { id: 'sprayer', name: 'Sprayer' },
   { id: 'water-pump', name: 'Water Pump' },
@@ -42,9 +43,10 @@ function App() {
 
           data.data.forEach((c: any) => {
             const name = c.name ? c.name.trim() : '';
-            if (name && !existingNames.has(name.toLowerCase()) && name.toLowerCase() !== 'all products' && c.slug !== 'all') {
+            if (name && !existingNames.has(name.toLowerCase()) && name.toLowerCase() !== 'all products' && c.slug !== 'all' && name.toLowerCase() !== 'construction') {
               let id = c.slug || name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
               if (id === 'genset') id = 'gensets';
+              if (id === 'construction') return;
               if (!existingIds.has(id)) {
                 list.push({ id, name });
                 existingIds.add(id);

@@ -38,6 +38,12 @@ const Contact = () => {
       <Helmet>
         <title>Contact Us | Parani Mill Stores Madurai</title>
         <meta name="description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets and construction equipment. Call +91 70943 41807." />
+        <link rel="canonical" href="https://paranimill.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | Parani Mill Stores Madurai" />
+        <meta property="og:description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural and construction machinery. Call +91 70943 41807." />
+        <meta property="og:url" content="https://paranimill.com/contact" />
+        <meta property="og:image" content="https://paranimill.com/contacthero.webp" />
       </Helmet>
       {/* Hero Banner using user's asset (Responsive Image to prevent cropping) */}
       <div className="contact-hero-banner">

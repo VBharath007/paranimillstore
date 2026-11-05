@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon,
 import './Products.css';
 import productsData from '../products.json';
 import gensetsData from '../gensets.json';
-import constructionData from '../construction.json';
 
 export interface CategoryItem {
   id: string;
@@ -18,6 +17,7 @@ export const PRODUCT_CATEGORIES: CategoryItem[] = [
   { id: 'earth-augur', name: 'Earth Augur' },
   { id: 'engines', name: 'Engines' },
   { id: 'gensets', name: 'Gensets' },
+  { id: 'hedge-trimmer', name: 'Hedge Trimmer' },
   { id: 'honda-products', name: 'Honda Products' },
   { id: 'sprayer', name: 'Sprayer' },
   { id: 'water-pump', name: 'Water Pump' },
@@ -80,9 +80,6 @@ export const isProductInCategory = (product: any, catId: string): boolean => {
     case 'chaff-wood-chipper':
       if (catClean && catSlug !== 'chaff-wood-chipper' && catSlug !== 'chaff-cutter-wood-chipper') return false;
       return name.includes('CHAFF') || name.includes('CHAF') || name.includes('CHIPPER') || folder.includes('CHAFF') || folder.includes('CHIPPER');
-    case 'construction':
-      if (catClean && catSlug !== 'construction' && catSlug !== 'construction-equipment') return false;
-      return folder.includes('CONSTRUCTION') || name.includes('VIBRATOR') || name.includes('COMPRESSOR') || name.includes('WASHER') || name.includes('VACCUM') || name.includes('RICE MILL') || cat.includes('CONSTRUCTION');
     case 'earth-augur':
       if (catClean && catSlug !== 'earth-augur') return false;
       return name.includes('AUGER') || name.includes('AUGUR') || folder.includes('AUGER') || folder.includes('AUGUR');
@@ -196,22 +193,11 @@ const Products = () => {
       slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
     }));
 
-    const constructionNormalized = (constructionData || []).map((p: any) => ({
-      ...p,
-      category: p.category || 'Construction',
-      slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
-    }));
-
     if (backendProducts && backendProducts.length > 0) {
       const hasGensets = backendProducts.some((p: any) => isProductInCategory(p, 'gensets'));
-      const hasConstruction = backendProducts.some((p: any) => isProductInCategory(p, 'construction'));
       
-      const extra: any[] = [];
-      if (!hasGensets) extra.push(...gensetsNormalized);
-      if (!hasConstruction) extra.push(...constructionNormalized);
-
-      if (extra.length > 0) {
-        const combined = [...backendProducts, ...extra];
+      if (!hasGensets && gensetsNormalized.length > 0) {
+        const combined = [...backendProducts, ...gensetsNormalized];
         const uniqueMap = new Map();
         combined.forEach((p: any) => {
           if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
@@ -223,7 +209,7 @@ const Products = () => {
       return backendProducts;
     }
 
-    const combined = [...productsData, ...gensetsNormalized, ...constructionNormalized];
+    const combined = [...productsData, ...gensetsNormalized];
     const uniqueMap = new Map();
     combined.forEach((p: any) => {
       if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
@@ -269,9 +255,10 @@ const Products = () => {
     // 3. Add categories found directly on products
     allProductsList.forEach((p: any) => {
       const catName = p.category ? p.category.trim() : '';
-      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products') {
+      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && catName.toLowerCase() !== 'construction') {
         let id = catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
         if (id === 'genset') id = 'gensets';
+        if (id === 'construction') return;
         if (!existingIds.has(id)) {
           list.push({ id, name: catName });
           existingIds.add(id);
@@ -293,8 +280,6 @@ const Products = () => {
         setActiveCategory('brush-cutter');
       } else if (catLower === 'genset' || catLower === 'gensets' || catSlug === 'genset' || catSlug === 'gensets') {
         setActiveCategory('gensets');
-      } else if (catLower === 'construction' || catSlug === 'construction') {
-        setActiveCategory('construction');
       } else {
         const found = dynamicCategories.find(c => c.id === catSlug || c.id === catLower) 
           || PRODUCT_CATEGORIES.find(c => c.id === catSlug || c.id === catLower);
@@ -499,6 +484,12 @@ const Products = () => {
       <Helmet>
         <title>Our Products | Agricultural Machinery, Power Generators & Construction Equipment | Parani Mill Stores</title>
         <meta name="description" content="Explore our premium range of products including agricultural sprayers, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, and car washers with 100% genuine spares from reputed brands like Jawan, Really and Perfect Equipments." />
+        <link rel="canonical" href="https://paranimill.com/products" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Our Products | Agricultural Machinery & Power Generators | Parani Mill Stores" />
+        <meta property="og:description" content="Explore our premium range of agricultural and construction machinery with 100% genuine spares in Madurai." />
+        <meta property="og:url" content="https://paranimill.com/products" />
+        <meta property="og:image" content="https://paranimill.com/ph2.webp" />
       </Helmet>
       <section className="products-hero-image">
         <img src="/ph2.webp" alt="Parani Mill Stores Products Hero" />

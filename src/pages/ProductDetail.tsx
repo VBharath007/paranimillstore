@@ -12,7 +12,6 @@ import {
 import { getProductImage, getProductCategorySlug } from './Products';
 import fallbackProducts from '../products.json';
 import gensetsData from '../gensets.json';
-import constructionData from '../construction.json';
 import './Products.css';
 
 const ProductDetail: React.FC = () => {
@@ -49,7 +48,7 @@ const ProductDetail: React.FC = () => {
         }
 
         // Static Cloudflare fallback for teammates
-        const allStatic = [...fallbackProducts, ...(gensetsData || []), ...(constructionData || [])];
+        const allStatic = [...fallbackProducts, ...(gensetsData || [])];
         const found = allStatic.find((p: any) => {
           const pSlug = p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '');
           return pSlug === slug || p.id === slug || p._id === slug || (p.name && p.name.toLowerCase() === (slug || '').replace(/-/g, ' '));

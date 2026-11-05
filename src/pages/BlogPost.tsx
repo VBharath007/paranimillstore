@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Share2, User, Calendar, Check } from 'lucide-react';
 import './BlogPost.css';
 import fallbackBlogs from '../blogs.json';
@@ -17,9 +18,11 @@ const BlogPost: React.FC = () => {
     setIsLoading(true);
     setHasFetched(false);
 
+    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
+
     const fetchBackendPost = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/blogs/${id}`);
+        const res = await fetch(`${API_BASE}/api/blogs/${id}`);
         const data = await res.json();
         if (data && data.success && data.data) {
           const b = data.data;
@@ -29,8 +32,9 @@ const BlogPost: React.FC = () => {
             excerpt: b.excerpt,
             content: b.content,
             category: b.category || 'General',
-            author: b.author || 'Admin',
+            author: b.author || 'Parani Mill Stores',
             date: b.createdAt ? new Date(b.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
+            rawDate: b.createdAt || new Date().toISOString(),
             readTime: "5 min read",
             image: b.coverImage || b.image || '/Blogherodummy.webp',
           });
@@ -44,8 +48,9 @@ const BlogPost: React.FC = () => {
               excerpt: fb.excerpt,
               content: fb.content,
               category: fb.category || 'General',
-              author: fb.author || 'Admin',
+              author: fb.author || 'Parani Mill Stores',
               date: fb.createdAt ? new Date(fb.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
+              rawDate: fb.createdAt || new Date().toISOString(),
               readTime: "5 min read",
               image: fb.coverImage || fb.image || '/Blogherodummy.webp',
             });
@@ -64,8 +69,9 @@ const BlogPost: React.FC = () => {
             excerpt: fb.excerpt,
             content: fb.content,
             category: fb.category || 'General',
-            author: fb.author || 'Admin',
+            author: fb.author || 'Parani Mill Stores',
             date: fb.createdAt ? new Date(fb.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Recently',
+            rawDate: fb.createdAt || new Date().toISOString(),
             readTime: "5 min read",
             image: fb.coverImage || fb.image || '/Blogherodummy.webp',
           });
@@ -155,8 +161,51 @@ const BlogPost: React.FC = () => {
     );
   }
 
+  const pageTitle = `${post.title} | Parani Mill Stores Blog`;
+  const pageUrl = `https://paranimill.com/blog/${id}`;
+  const imageUrl = post.image.startsWith('http') ? post.image : `https://paranimill.com${post.image}`;
+  const metaDesc = post.excerpt ? post.excerpt.slice(0, 160) : `Read ${post.title} on Parani Mill Stores blog.`;
+
   return (
     <div className="article-page">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDesc} />
+        <link rel="canonical" href={pageUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDesc} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:site_name" content="Parani Mill Stores" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDesc} />
+        <meta name="twitter:image" content={imageUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": metaDesc,
+            "image": [imageUrl],
+            "datePublished": post.rawDate,
+            "author": {
+              "@type": "Organization",
+              "name": post.author || "Parani Mill Stores"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Parani Mill Stores",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://paranimill.com/officiallogo.png"
+              }
+            },
+            "mainEntityOfPage": pageUrl
+          })}
+        </script>
+      </Helmet>
       <div className="article-container">
         {/* Navigation */}
         <div className="article-nav">
