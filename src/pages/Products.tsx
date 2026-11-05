@@ -252,23 +252,8 @@ const Products = () => {
       }
     });
 
-    // 3. Add categories found directly on products
-    allProductsList.forEach((p: any) => {
-      const catName = p.category ? p.category.trim() : '';
-      if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && catName.toLowerCase() !== 'construction') {
-        let id = catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        if (id === 'genset') id = 'gensets';
-        if (id === 'construction') return;
-        if (!existingIds.has(id)) {
-          list.push({ id, name: catName });
-          existingIds.add(id);
-          existingNames.add(catName.toLowerCase());
-        }
-      }
-    });
-
     return list;
-  }, [allProductsList, backendCategories]);
+  }, [backendCategories]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
