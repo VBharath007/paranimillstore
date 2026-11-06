@@ -268,7 +268,29 @@ const Home: React.FC = () => {
               </div>
             </Link>
 
-            {/* Card 5: Honda Products */}
+            {/* Card 5: Gensets */}
+            <Link to="/products?category=gensets" className="category-card card-genset">
+              <div className="category-card-content">
+                <h3 className="category-title">Gensets</h3>
+                <p className="category-subtitle">Heavy-duty power generators for uninterrupted supply.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-genset">
+                <img loading="lazy" src="/categories/genset.webp" alt="Gensets" className="category-image" />
+              </div>
+            </Link>
+
+            {/* Card 6: Hedge Trimmer */}
+            <Link to="/products?category=hedge-trimmer" className="category-card card-trimmer">
+              <div className="category-card-content">
+                <h3 className="category-title">Hedge<br/>Trimmer</h3>
+                <p className="category-subtitle">Precision pruning & landscape shaping tools.</p>
+              </div>
+              <div className="category-image-wrapper wrapper-trimmer">
+                <img loading="lazy" src="/categories/hedge-trimmer.webp" alt="Hedge Trimmer" className="category-image" />
+              </div>
+            </Link>
+
+            {/* Card 7: Honda Products */}
             <Link to="/products?category=honda-products" className="category-card card-honda">
               <div className="category-card-content">
                 <h3 className="category-title">Honda<br/>Products</h3>
@@ -279,7 +301,7 @@ const Home: React.FC = () => {
               </div>
             </Link>
 
-            {/* Card 6: Sprayer */}
+            {/* Card 8: Sprayer */}
             <Link to="/products?category=sprayer" className="category-card card-sprayer">
               <div className="category-card-content">
                 <h3 className="category-title">Sprayer</h3>
@@ -290,7 +312,7 @@ const Home: React.FC = () => {
               </div>
             </Link>
 
-            {/* Card 7: Water Pump */}
+            {/* Card 9: Water Pump */}
             <Link to="/products?category=water-pump" className="category-card card-pump">
               <div className="category-card-content">
                 <h3 className="category-title">Water<br/>Pump</h3>
@@ -301,7 +323,7 @@ const Home: React.FC = () => {
               </div>
             </Link>
 
-            {/* Card 8: Weeder */}
+            {/* Card 10: Weeder */}
             <Link to="/products?category=weeder" className="category-card card-weeder">
               <div className="category-card-content">
                 <h3 className="category-title">Weeder</h3>

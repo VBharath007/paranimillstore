@@ -269,6 +269,12 @@
 .card-weeder {
   background: linear-gradient(160deg, #eff7f2 0%, #d6edd9 100%);
 }
+.card-genset {
+  background: linear-gradient(160deg, #fdf8ee 0%, #faecd0 100%);
+}
+.card-trimmer {
+  background: linear-gradient(160deg, #f3f9f4 0%, #dcf0e2 100%);
+}
 
 .category-card {
   position: relative;
@@ -402,6 +408,18 @@
 
 .wrapper-auger .category-image {
   max-height: 225px;
+}
+
+.wrapper-genset .category-image {
+  max-height: 195px;
+  max-width: 92%;
+  mix-blend-mode: multiply;
+}
+
+.wrapper-trimmer .category-image {
+  max-height: 185px;
+  max-width: 95%;
+  mix-blend-mode: multiply;
 }
 
 @media (max-width: 1024px) {
