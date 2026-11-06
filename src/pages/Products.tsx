@@ -464,17 +464,102 @@ const Products = () => {
     return `https://wa.me/917094341807?text=${text}`;
   };
 
+  const currentCategoryObj = dynamicCategories.find((c: any) => c.id === activeCategory) || PRODUCT_CATEGORIES.find((c: any) => c.id === activeCategory);
+  const currentCategoryName = currentCategoryObj ? currentCategoryObj.name : 'All Products';
+
+  const getCategorySeoMeta = (catId: string, name: string) => {
+    switch (catId) {
+      case 'gensets':
+      case 'genset':
+        return {
+          title: `Gensets & Power Generators in Tamil Nadu | Best Price & Spares | Parani Mill Stores`,
+          desc: `Buy portable petrol gensets & heavy-duty power generators in Tamil Nadu from Parani Mill Stores, Madurai. 100% genuine spares, warranty & fast delivery across Tamil Nadu.`,
+        };
+      case 'brush-cutter':
+        return {
+          title: `Brush Cutters in Tamil Nadu | 2-Stroke & 4-Stroke | Parani Mill Stores`,
+          desc: `Explore top-rated 2-stroke, 4-stroke & backpack brush cutters in Tamil Nadu. Complete spares, blades & attachments from Parani Mill Stores, Madurai.`,
+        };
+      case 'weeder':
+        return {
+          title: `Power Weeders & Tillers in Tamil Nadu | Best Price & Spares | Parani Mill Stores`,
+          desc: `Heavy-duty agricultural power weeders, mini tillers & rotary weeders in Tamil Nadu. Reliable farm machinery with warranty & genuine spares from Parani Mill Stores.`,
+        };
+      case 'earth-augur':
+        return {
+          title: `Earth Augurs & Post Hole Diggers in Tamil Nadu | Parani Mill Stores`,
+          desc: `High-performance petrol earth augurs with extension rods & drill bits in Tamil Nadu. Ideal for fencing, plantation & tree planting across Tamil Nadu.`,
+        };
+      case 'chaff-cutter-wood-chipper':
+        return {
+          title: `Chaff Cutters & Wood Chippers in Tamil Nadu | Parani Mill Stores`,
+          desc: `Electric & petrol fodder chaff cutters, wood chippers & shredders for dairy farming in Tamil Nadu. Heavy-duty build with best prices at Parani Mill Stores.`,
+        };
+      case 'sprayer':
+        return {
+          title: `Agricultural Sprayers in Tamil Nadu | HTP & Battery Sprayers | Parani Mill Stores`,
+          desc: `High-pressure HTP sprayers, battery knapsack sprayers & portable sprayers in Tamil Nadu. Authorized stockist with all spare parts at Parani Mill Stores, Madurai.`,
+        };
+      case 'water-pump':
+        return {
+          title: `Agricultural Water Pumps in Tamil Nadu | Petrol & Diesel | Parani Mill Stores`,
+          desc: `2-inch & 3-inch high discharge agricultural water pumps in Tamil Nadu. Reliable irrigation solutions with genuine spares from Parani Mill Stores, Madurai.`,
+        };
+      case 'engines':
+        return {
+          title: `Petrol & Diesel Engines in Tamil Nadu | 168F, 170F, GX | Parani Mill Stores`,
+          desc: `Multi-purpose petrol and diesel engines for agricultural machinery in Tamil Nadu. 100% genuine engines with all spare parts at Parani Mill Stores.`,
+        };
+      case 'honda-products':
+        return {
+          title: `Honda Power Products & Engines in Tamil Nadu | Parani Mill Stores`,
+          desc: `Genuine Honda 4-stroke brush cutters, GX series engines & vibrators in Tamil Nadu. Authorized dealer with official warranty and service support.`,
+        };
+      case 'hedge-trimmer':
+        return {
+          title: `Hedge Trimmers & Pruners in Tamil Nadu | Parani Mill Stores`,
+          desc: `Commercial hedge trimmers, tea leaf harvesters & garden pruning tools in Tamil Nadu. Sharp dual-action blades & durable engines at Parani Mill Stores.`,
+        };
+      default:
+        return {
+          title: `${name} in Tamil Nadu | Best Price & Spares | Parani Mill Stores`,
+          desc: `Explore premium ${name} with genuine spares, warranty, and best prices across Tamil Nadu from Parani Mill Stores, established in 1960.`,
+        };
+    }
+  };
+
+  const seoMeta = getCategorySeoMeta(activeCategory, currentCategoryName);
+  const categoryCanonicalUrl = `https://paranimill.com/products?category=${activeCategory}`;
+
   return (
     <div className="products-page">
       <Helmet>
-        <title>Our Products | Agricultural Machinery, Power Generators & Construction Equipment | Parani Mill Stores</title>
-        <meta name="description" content="Explore our premium range of products including agricultural sprayers, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, and car washers with 100% genuine spares from reputed brands like Jawan, Really and Perfect Equipments." />
-        <link rel="canonical" href="https://paranimill.com/products" />
+        <title>{seoMeta.title}</title>
+        <meta name="description" content={seoMeta.desc} />
+        <link rel="canonical" href={categoryCanonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Our Products | Agricultural Machinery & Power Generators | Parani Mill Stores" />
-        <meta property="og:description" content="Explore our premium range of agricultural and construction machinery with 100% genuine spares in Madurai." />
-        <meta property="og:url" content="https://paranimill.com/products" />
+        <meta property="og:title" content={seoMeta.title} />
+        <meta property="og:description" content={seoMeta.desc} />
+        <meta property="og:url" content={categoryCanonicalUrl} />
         <meta property="og:image" content="https://paranimill.com/ph2.webp" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": seoMeta.title,
+            "description": seoMeta.desc,
+            "url": categoryCanonicalUrl,
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Parani Mill Stores",
+              "url": "https://paranimill.com"
+            },
+            "about": {
+              "@type": "Thing",
+              "name": currentCategoryName
+            }
+          })}
+        </script>
       </Helmet>
       <section className="products-hero-image">
         <img src="/ph2.webp" alt="Parani Mill Stores Products Hero" />

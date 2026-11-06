@@ -209,15 +209,15 @@ const ProductDetail: React.FC = () => {
     );
   }
 
-  // SEO details
-  const pageTitle = `${selectedProduct.name} | Parani Mill Stores`;
+  // SEO details - Optimized for Tamil Nadu Rankings
+  const pageTitle = `${selectedProduct.name} Price in Tamil Nadu | Parani Mill Stores`;
   const primaryImg = getProductImage(selectedProduct.folder, selectedProduct.thumbnail || images[0], selectedProduct.thumbnailUrl);
   const absoluteImageUrl = primaryImg.startsWith('http') ? primaryImg : `https://paranimill.com${primaryImg}`;
   const catSlug = getProductCategorySlug(selectedProduct);
   const canonicalUrl = `https://paranimill.com/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
   const metaDescription = selectedProduct.description 
-    ? selectedProduct.description.slice(0, 160)
-    : `Explore ${selectedProduct.name} at Parani Mill Stores. Genuine farm machinery, spare parts, and full service support across Tamil Nadu.`;
+    ? `${selectedProduct.description.slice(0, 130)} - Best price & genuine spares in Tamil Nadu at Parani Mill Stores.`
+    : `Buy genuine ${selectedProduct.name} at best price with warranty, doorstep delivery & spare parts across Tamil Nadu from Parani Mill Stores, Madurai.`;
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', padding: '2rem 1rem 5rem' }}>
@@ -251,7 +251,22 @@ const ProductDetail: React.FC = () => {
               "priceCurrency": "INR",
               "price": selectedProduct.price || 0,
               "availability": "https://schema.org/InStock",
-              "itemCondition": "https://schema.org/NewCondition"
+              "itemCondition": "https://schema.org/NewCondition",
+              "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Tamil Nadu"
+              },
+              "seller": {
+                "@type": "LocalBusiness",
+                "name": "Parani Mill Stores",
+                "telephone": "+91 94433 82343",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Madurai",
+                  "addressRegion": "Tamil Nadu",
+                  "addressCountry": "IN"
+                }
+              }
             }
           })}`}
         </script>

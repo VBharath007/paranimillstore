@@ -149,12 +149,12 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Parani Mill Stores | Best Agricultural Machinery & Power Generators in Madurai</title>
-        <meta name="description" content="Parani Mill Stores, established in 1960, is a trusted supplier of agricultural and construction equipment in Madurai, Tamil Nadu. We deal in agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, HTP sprayers, concrete vibrators, earth rammers, petrol gensets, diesel engines, agricultural hand tools, car washers and related equipment." />
+        <title>Parani Mill Stores | Best Agricultural Machinery & Power Generators in Tamil Nadu</title>
+        <meta name="description" content="Parani Mill Stores, established in 1960 in Madurai, is Tamil Nadu's trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets, diesel engines, and genuine spares with statewide delivery." />
         <link rel="canonical" href="https://paranimill.com" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Parani Mill Stores | Best Agricultural Machinery & Power Generators in Madurai" />
-        <meta property="og:description" content="Trusted supplier of agricultural and construction equipment in Madurai, Tamil Nadu since 1960." />
+        <meta property="og:title" content="Parani Mill Stores | Best Agricultural Machinery & Power Generators in Tamil Nadu" />
+        <meta property="og:description" content="Trusted supplier of agricultural and construction equipment in Madurai & across Tamil Nadu since 1960. 100% genuine spares & expert service." />
         <meta property="og:url" content="https://paranimill.com" />
         <meta property="og:image" content="https://paranimill.com/officiallogo.png" />
         <script type="application/ld+json">
@@ -163,15 +163,20 @@ const Home: React.FC = () => {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Parani Mill Stores",
-              "description": "Leading dealer for agricultural machinery, brush cutters, power weeders, gensets, and construction equipment.",
+              "description": "Leading dealer for agricultural machinery, brush cutters, power weeders, gensets, and construction equipment in Tamil Nadu.",
               "areaServed": [
+                { "@type": "AdministrativeArea", "name": "Tamil Nadu" },
                 { "@type": "City", "name": "Madurai" },
                 { "@type": "City", "name": "Virudhunagar" },
                 { "@type": "City", "name": "Theni" },
                 { "@type": "City", "name": "Sivakasi" },
                 { "@type": "City", "name": "Dindigul" },
                 { "@type": "City", "name": "Sivaganga" },
-                { "@type": "City", "name": "Ramanathapuram" }
+                { "@type": "City", "name": "Ramanathapuram" },
+                { "@type": "City", "name": "Tirunelveli" },
+                { "@type": "City", "name": "Coimbatore" },
+                { "@type": "City", "name": "Tiruchirappalli" },
+                { "@type": "City", "name": "Salem" }
               ],
               "knowsAbout": [
                 "Agricultural Sprayers", "Petrol Brush Cutters", "Earth Augers", "Power Weeders", "Power Generators", "Construction Equipment"
