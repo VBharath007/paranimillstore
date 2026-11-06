@@ -1,194 +1,287 @@
 [
     {
-        "category": "Gensets",
-        "name": "ATLAS POWER GENERATOR - AP5500G",
-        "folder": "Genset/ATLAS POWER GENERATOR - AP5500G",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "-",
-            "ENGINE POWER": "5.0 KW / 5.5 KW",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "1S3u9NSx9hqbcA9o9PEG",
+        "id":  "1S3u9NSx9hqbcA9o9PEG",
+        "name":  "VI POWERGOLD 5KW",
+        "slug":  "vi-powergold-5kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED POWER":  "5000W",
+                      "MAX POWER":  "5500W",
+                      "ENGINE":  "KM190F-420CC-15HP",
+                      "RUNTIME":  "11.2 HOURS@75%",
+                      "START":  "BUTTON ELECTRIC + RECOIL",
+                      "TANK":  "26L",
+                      "OIL CAPACITY":  "1.1L",
+                      "WEIGHT":  "82-85KG"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T11:57:33.694Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957181/parani_mill_stores/products/jxxemxiewjrr4gxtn1t8.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957189/parani_mill_stores/products/hrqowirakwcvhskppr4o.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957176/parani_mill_stores/thumbnails/rorji9gamc3t9hjweb9q.webp",
+        "updatedAt":  "2026-11-06T09:26:35.192Z"
     },
     {
-        "category": "Gensets",
-        "name": "ATLAS POWER GENERATOR - AP8500G",
-        "folder": "Genset/ATLAS POWER GENERATOR - AP8500G",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "-",
-            "ENGINE POWER": "8.0 KW / 8.5 KW",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "2PA2hB06DcxbvoZcgLWP",
+        "id":  "2PA2hB06DcxbvoZcgLWP",
+        "name":  "ATLAS POWER 8KW",
+        "slug":  "atlas-power-8kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED VOLTAGE":  "220V",
+                      "RATED FREQUENCY":  "50 HZ",
+                      "RATED OUTPUT":  "7.5 KW",
+                      "MAXIMUM OUTPUT":  "8.5 KW",
+                      "POWER FACTOR":  "1.0"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:13:27.505Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949879/parani_mill_stores/products/qmgx9igv9dfo7oakfahq.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949893/parani_mill_stores/products/hdjk2pogk4jkcqspl4zy.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949802/parani_mill_stores/thumbnails/hwiiibaumdh4wvfcddif.webp",
+        "updatedAt":  "2026-11-06T07:25:00.308Z"
     },
     {
-        "category": "Gensets",
-        "name": "KI-HO POWER GENERATOR - 13000E",
-        "folder": "Genset/KI-HO POWER GENERATOR - 13000E",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "-",
-            "ENGINE POWER": "10 KW / 10.5 KW",
-            "ENGINE TYPE": "4-Stroke OHV Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "8JK1a9bjV5W5BeN2PKGA",
+        "id":  "8JK1a9bjV5W5BeN2PKGA",
+        "name":  "PELICAN 3KW",
+        "slug":  "pelican-3kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED OUTPUT( 50 HZ )":  "2700 VA",
+                      "MAX OUTPUT ( 50 HZ )":  "3000 VA",
+                      "DISPLACEMENT":  "212 CC",
+                      "STARTING SYSTEM":  "RECOIL / ELECTRIC",
+                      "DRY WEIGHT":  "50KGS"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:27:16.446Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956699/parani_mill_stores/products/b4pk4czxpqzchcrifmcj.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956736/parani_mill_stores/products/ln6hbc9volw6wjldruxv.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956710/parani_mill_stores/thumbnails/weagolqd8w5gcuodano4.webp",
+        "updatedAt":  "2026-11-06T09:19:01.885Z"
     },
     {
-        "category": "Gensets",
-        "name": "LIGHTON GENERATOR - LT-4000",
-        "folder": "Genset/LIGHTON GENERATOR - LT-4000",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "212 CC",
-            "ENGINE POWER": "2800 W / 3000 W",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "EeL1mc6IRpdNARKRj6P9",
+        "id":  "EeL1mc6IRpdNARKRj6P9",
+        "name":  "PELICAN 5KW",
+        "slug":  "pelican-5kw",
+        "description":  "",
+        "price":  0,
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED OUTPUT( 50 HZ )":  "5000 VA",
+                      "MAX OUTPUT ( 50 HZ )":  "5500 VA",
+                      "DISPLACEMENT":  "420CC",
+                      "STARTING SYSTEM":  "RECOIL / ELECTRIC",
+                      "DRY WEIGHT":  "80 KGS"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:16:31.636Z",
+        "category":  "Gensets",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956866/parani_mill_stores/products/veak28ilyhacrxhjcowe.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956879/parani_mill_stores/products/dqm3dwsi3r0wicrg5bxz.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956864/parani_mill_stores/thumbnails/uohtafmwi7fm8hpldsgt.webp",
+        "updatedAt":  "2026-11-06T09:21:25.248Z"
     },
     {
-        "category": "Gensets",
-        "name": "PELICAN GENERATOR - MLT 3700 L(E)",
-        "folder": "Genset/PELICAN GENERATOR - MLT 3700 L(E)",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "212 CC",
-            "ENGINE POWER": "2700 VA / 3000 VA",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "H5ri1W1QQYDLxNv3gT3R",
+        "id":  "H5ri1W1QQYDLxNv3gT3R",
+        "name":  "PELICAN 1000I",
+        "slug":  "pelican-1000i",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "TYPE":  "1000I",
+                      "RATED POWER(PRP)":  "1.0 KW",
+                      "RATED VOLTAGE":  "230 V",
+                      "WEIGHT":  "13.5 KG",
+                      "RATED CURRENT":  "4.3 A",
+                      "RATED FREQUENCY":  "50 HZ"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T11:51:05.455Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957329/parani_mill_stores/products/ihxah9sxsqhh5xvjej6a.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957338/parani_mill_stores/products/nwzath1eaedtepcmw2qs.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957325/parani_mill_stores/thumbnails/xclfzkjiupikjqvj2vpv.webp",
+        "updatedAt":  "2026-11-06T09:29:04.000Z"
     },
     {
-        "category": "Gensets",
-        "name": "PELICAN GENERATOR - W 650 APL",
-        "folder": "Genset/PELICAN GENERATOR - W 650 APL",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "420 CC",
-            "ENGINE POWER": "5000 VA / 5500 VA",
-            "ENGINE TYPE": "4-Stroke Air Cooled",
-            "FUEL": "PETROL"
-        }
+        "_id":  "aXZVrzqf4wZoQ9sWt41K",
+        "id":  "aXZVrzqf4wZoQ9sWt41K",
+        "name":  "TOTAL 800W",
+        "slug":  "total-800w",
+        "description":  "",
+        "price":  0,
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED AC VOLTAGE":  "220-240V",
+                      "RATED FREQUENCY":  "50HZ",
+                      "MAXIMUM  POWER":  "800 W",
+                      "RATED POWER":  "650W",
+                      "ENGINE OUTPUT":  "2HP",
+                      "COOLING SYSTEM":  "AIR COOLED",
+                      "ENGINE SPEED":  "3000 RPM"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:09:16.309Z",
+        "category":  "Gensets",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954313/parani_mill_stores/products/lgr9x8xnbnpp0p68em55.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954327/parani_mill_stores/products/zsnom6vqmppp3abxkh6s.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954291/parani_mill_stores/thumbnails/baqh0iawbuiagmgjir4w.webp",
+        "updatedAt":  "2026-11-06T08:38:54.943Z"
     },
     {
-        "category": "Gensets",
-        "name": "PELICAN INVERTER GENERATOR - MLT 1000i",
-        "folder": "Genset/PELICAN INVERTER GENERATOR - MLT 1000i",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "Inverter",
-        "specs": {
-            "DISPLACEMENT": "56 CC",
-            "ENGINE POWER": "800 VA / 900 VA",
-            "ENGINE TYPE": "4-Stroke Inverter",
-            "FUEL": "PETROL"
-        }
+        "_id":  "dCqCaRRjPPY7rpCFF6TM",
+        "id":  "dCqCaRRjPPY7rpCFF6TM",
+        "name":  "ATLAS POWER 5KW",
+        "slug":  "atlas-power-5kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED VOLTAGE":  "220 V",
+                      "RATED FREQUENCY":  "50 HZ",
+                      "RATED OUTPUT":  "5.0 KW",
+                      "MAXIMUM OUTPUT":  "5.5KW",
+                      "POWER FACTOR":  "1.0"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:02:00.665Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949686/parani_mill_stores/products/lzl8zbxd4z81rnpitvrt.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949686/parani_mill_stores/products/ow6xdof0sqsdh6wv6kue.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949660/parani_mill_stores/thumbnails/ktrajzvpkep2jgmzl2xu.webp",
+        "updatedAt":  "2026-11-06T07:21:31.665Z"
     },
     {
-        "category": "Gensets",
-        "name": "SUGUNA POWER GENERATOR - 5000EX",
-        "folder": "Genset/SUGUNA POWER GENERATOR - 5000EX",
-        "thumbnail": "product raw image.webp",
-        "images": [
-            "person using.webp",
-            "product back view.webp",
-            "product explode view.webp",
-            "product front view.webp",
-            "product left side view.webp",
-            "product raw image.webp",
-            "product right side view.webp",
-            "product top view.webp",
-            "product types of views.webp"
-        ],
-        "stroke": "4 Stroke",
-        "specs": {
-            "DISPLACEMENT": "170F (7 HP)",
-            "ENGINE POWER": "3.5 KW",
-            "ENGINE TYPE": "4-Stroke OHV Engine",
-            "FUEL": "PETROL"
-        }
+        "_id":  "kQOIYmlkHE5DQiuTPwH6",
+        "id":  "kQOIYmlkHE5DQiuTPwH6",
+        "name":  "VI POWERGOLD 3KW",
+        "slug":  "vi-powergold-3kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED VOLTAGE":  "230V",
+                      "RATED FREQUENCY":  "50 HZ",
+                      "RATED  OUTPUT":  "2.8KVA",
+                      "MAXIMUM OUTPUT":  "3.0 KVA",
+                      "POWER  FACTOR":  "1.0"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:22:30.331Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957051/parani_mill_stores/products/g147la6zbqusanjmkg27.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957070/parani_mill_stores/products/kni8wqmpjw6z4msm4bwd.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957037/parani_mill_stores/thumbnails/uubbtuulbzwjxcbnjstc.webp",
+        "updatedAt":  "2026-11-06T09:24:36.463Z"
+    },
+    {
+        "_id":  "tkZXhsKoCKTnCiwObPaK",
+        "id":  "tkZXhsKoCKTnCiwObPaK",
+        "name":  "KEMAGE 1.3KW",
+        "slug":  "kemage-13kw",
+        "description":  "",
+        "price":  0,
+        "category":  "Gensets",
+        "thumbnailUrl":  "",
+        "imageUrls":  [
+
+                      ],
+        "specs":  {
+                      "RATED VOLTAGE":  "230 V",
+                      "RATED FREQUENCY":  "50 HZ",
+                      "RATED OUTPUT":  "1100 W",
+                      "MAX. OUTPUT":  "1300W",
+                      "POWER  FACTOR":  "1.0"
+                  },
+        "stroke":  "",
+        "stock":  15,
+        "isActive":  true,
+        "isProductOfTheMonth":  false,
+        "createdAt":  "2026-11-05T12:24:50.915Z",
+        "images":  [
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956986/parani_mill_stores/products/cnpqlih2puvkswnq8nou.webp",
+                       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956986/parani_mill_stores/products/ghsqdg6st93vubavb86w.webp"
+                   ],
+        "thumbnail":  "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956974/parani_mill_stores/thumbnails/ewdb07evozn1r3fkryna.webp",
+        "updatedAt":  "2026-11-06T09:23:12.750Z"
     }
 ]

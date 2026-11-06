@@ -1,5 +1,66 @@
 [
   {
+    "_id": "1S3u9NSx9hqbcA9o9PEG",
+    "id": "1S3u9NSx9hqbcA9o9PEG",
+    "name": "VI POWERGOLD 5KW",
+    "slug": "vi-powergold-5kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED POWER": "5000W",
+      "MAX POWER": "5500W",
+      "ENGINE": "KM190F-420CC-15HP",
+      "RUNTIME": "11.2 HOURS@75%",
+      "START": "BUTTON ELECTRIC + RECOIL",
+      "TANK": "26L",
+      "OIL CAPACITY": "1.1L",
+      "WEIGHT": "82-85KG"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T11:57:33.694Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957181/parani_mill_stores/products/jxxemxiewjrr4gxtn1t8.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957189/parani_mill_stores/products/hrqowirakwcvhskppr4o.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957176/parani_mill_stores/thumbnails/rorji9gamc3t9hjweb9q.webp",
+    "updatedAt": "2026-11-06T09:26:35.192Z"
+  },
+  {
+    "_id": "2PA2hB06DcxbvoZcgLWP",
+    "id": "2PA2hB06DcxbvoZcgLWP",
+    "name": "ATLAS POWER 8KW",
+    "slug": "atlas-power-8kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED VOLTAGE": "220V",
+      "RATED FREQUENCY": "50 HZ",
+      "RATED OUTPUT": "7.5 KW",
+      "MAXIMUM OUTPUT": "8.5 KW",
+      "POWER FACTOR": "1.0"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:13:27.505Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949879/parani_mill_stores/products/qmgx9igv9dfo7oakfahq.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949893/parani_mill_stores/products/hdjk2pogk4jkcqspl4zy.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949802/parani_mill_stores/thumbnails/hwiiibaumdh4wvfcddif.webp",
+    "updatedAt": "2026-11-06T07:25:00.308Z"
+  },
+  {
     "_id": "5EDQ9OZFlHtbHAY12XDG",
     "id": "5EDQ9OZFlHtbHAY12XDG",
     "images": [
@@ -165,6 +226,35 @@
     "updatedAt": "2026-10-29T06:46:32.436Z"
   },
   {
+    "_id": "8JK1a9bjV5W5BeN2PKGA",
+    "id": "8JK1a9bjV5W5BeN2PKGA",
+    "name": "PELICAN 3KW",
+    "slug": "pelican-3kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED OUTPUT( 50 HZ )": "2700 VA",
+      "MAX OUTPUT ( 50 HZ )": "3000 VA",
+      "DISPLACEMENT": "212 CC",
+      "STARTING SYSTEM": "RECOIL / ELECTRIC",
+      "DRY WEIGHT": "50KGS"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:27:16.446Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956699/parani_mill_stores/products/b4pk4czxpqzchcrifmcj.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956736/parani_mill_stores/products/ln6hbc9volw6wjldruxv.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956710/parani_mill_stores/thumbnails/weagolqd8w5gcuodano4.webp",
+    "updatedAt": "2026-11-06T09:19:01.885Z"
+  },
+  {
     "_id": "BqyNjEqG7kyWhdwHH6d3",
     "id": "BqyNjEqG7kyWhdwHH6d3",
     "images": [
@@ -267,6 +357,35 @@
     "updatedAt": "2026-10-28T05:25:38.881Z"
   },
   {
+    "_id": "EeL1mc6IRpdNARKRj6P9",
+    "id": "EeL1mc6IRpdNARKRj6P9",
+    "name": "PELICAN 5KW",
+    "slug": "pelican-5kw",
+    "description": "",
+    "price": 0,
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED OUTPUT( 50 HZ )": "5000 VA",
+      "MAX OUTPUT ( 50 HZ )": "5500 VA",
+      "DISPLACEMENT": "420CC",
+      "STARTING SYSTEM": "RECOIL / ELECTRIC",
+      "DRY WEIGHT": "80 KGS"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:16:31.636Z",
+    "category": "Gensets",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956866/parani_mill_stores/products/veak28ilyhacrxhjcowe.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956879/parani_mill_stores/products/dqm3dwsi3r0wicrg5bxz.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956864/parani_mill_stores/thumbnails/uohtafmwi7fm8hpldsgt.webp",
+    "updatedAt": "2026-11-06T09:21:25.248Z"
+  },
+  {
     "_id": "EqcNfufWiWxHQrtYpS5Z",
     "id": "EqcNfufWiWxHQrtYpS5Z",
     "images": [
@@ -358,6 +477,36 @@
     "updatedAt": "2026-10-28T05:25:38.881Z"
   },
   {
+    "_id": "H5ri1W1QQYDLxNv3gT3R",
+    "id": "H5ri1W1QQYDLxNv3gT3R",
+    "name": "PELICAN 1000I",
+    "slug": "pelican-1000i",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "TYPE": "1000I",
+      "RATED POWER(PRP)": "1.0 KW",
+      "RATED VOLTAGE": "230 V",
+      "WEIGHT": "13.5 KG",
+      "RATED CURRENT": "4.3 A",
+      "RATED FREQUENCY": "50 HZ"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T11:51:05.455Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957329/parani_mill_stores/products/ihxah9sxsqhh5xvjej6a.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957338/parani_mill_stores/products/nwzath1eaedtepcmw2qs.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957325/parani_mill_stores/thumbnails/xclfzkjiupikjqvj2vpv.webp",
+    "updatedAt": "2026-11-06T09:29:04.000Z"
+  },
+  {
     "_id": "IsMR3Rq9Mzyb3xL6ASFz",
     "id": "IsMR3Rq9Mzyb3xL6ASFz",
     "thumbnail": "OG.webp",
@@ -384,6 +533,33 @@
       "EXPLODED.webp"
     ],
     "updatedAt": "2026-10-29T06:45:53.030Z"
+  },
+  {
+    "_id": "MP7WD3OCE1rHf2YeG3Vt",
+    "id": "MP7WD3OCE1rHf2YeG3Vt",
+    "name": "ZEYANG PETROL SINGLE SIDE HEDGE TRIMMER",
+    "slug": "zeyang-petrol-single-side-hedge-trimmer",
+    "description": "",
+    "price": 0,
+    "category": "Hedge Trimmer",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "ENGINE MODEL": "1E32F",
+      "MAX POWER": "0.95KW",
+      "DISPLACEMENT": "22.5 CC"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:31:09.283Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954078/parani_mill_stores/products/berxct3bz9qlrk4txn6l.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954091/parani_mill_stores/products/sc0q7jp5pcmifqzdtl2n.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954052/parani_mill_stores/thumbnails/fbn8wru6cyqon0tw6ttr.webp",
+    "updatedAt": "2026-11-06T08:35:00.741Z"
   },
   {
     "_id": "OMWTvZyebQfkgfUlKe8X",
@@ -543,14 +719,14 @@
     "slug": "honda-vibrator-with-gx-80-engine",
     "isProductOfTheMonth": false,
     "thumbnailUrl": "",
-    "images": [
-      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/md0ocz0i0xcvpbf5akjo.webp",
-      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/zqyrqhvf6zubxdzucxqi.webp",
-      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/yyge2endgd8cxvctdvef.webp"
-    ],
     "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190702/parani_mill_stores/thumbnails/vszaqnrj501bcgzbl1am.webp",
     "description": "",
-    "updatedAt": "2026-10-28T12:32:13.915Z"
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/md0ocz0i0xcvpbf5akjo.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793190727/parani_mill_stores/products/yyge2endgd8cxvctdvef.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793883184/parani_mill_stores/products/x6tm06wqspbbiiqqarfd.webp"
+    ],
+    "updatedAt": "2026-11-05T12:53:10.590Z"
   },
   {
     "_id": "Q6XaJfiAgPDmGHXmrWDj",
@@ -979,6 +1155,37 @@
     "updatedAt": "2026-10-28T11:28:50.966Z"
   },
   {
+    "_id": "aXZVrzqf4wZoQ9sWt41K",
+    "id": "aXZVrzqf4wZoQ9sWt41K",
+    "name": "TOTAL 800W",
+    "slug": "total-800w",
+    "description": "",
+    "price": 0,
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED AC VOLTAGE": "220-240V",
+      "RATED FREQUENCY": "50HZ",
+      "MAXIMUM  POWER": "800 W",
+      "RATED POWER": "650W",
+      "ENGINE OUTPUT": "2HP",
+      "COOLING SYSTEM": "AIR COOLED",
+      "ENGINE SPEED": "3000 RPM"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:09:16.309Z",
+    "category": "Gensets",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954313/parani_mill_stores/products/lgr9x8xnbnpp0p68em55.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954327/parani_mill_stores/products/zsnom6vqmppp3abxkh6s.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793954291/parani_mill_stores/thumbnails/baqh0iawbuiagmgjir4w.webp",
+    "updatedAt": "2026-11-06T08:38:54.943Z"
+  },
+  {
     "_id": "cASrs1RRTOtCYYVObUrN",
     "id": "cASrs1RRTOtCYYVObUrN",
     "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793103833/parani_mill_stores/thumbnails/qlgijz7hkohikq9xcy2u.webp",
@@ -1038,6 +1245,35 @@
     "isProductOfTheMonth": false,
     "thumbnailUrl": "",
     "updatedAt": "2026-10-28T05:25:38.886Z"
+  },
+  {
+    "_id": "dCqCaRRjPPY7rpCFF6TM",
+    "id": "dCqCaRRjPPY7rpCFF6TM",
+    "name": "ATLAS POWER 5KW",
+    "slug": "atlas-power-5kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED VOLTAGE": "220 V",
+      "RATED FREQUENCY": "50 HZ",
+      "RATED OUTPUT": "5.0 KW",
+      "MAXIMUM OUTPUT": "5.5KW",
+      "POWER FACTOR": "1.0"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:02:00.665Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949686/parani_mill_stores/products/lzl8zbxd4z81rnpitvrt.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949686/parani_mill_stores/products/ow6xdof0sqsdh6wv6kue.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793949660/parani_mill_stores/thumbnails/ktrajzvpkep2jgmzl2xu.webp",
+    "updatedAt": "2026-11-06T07:21:31.665Z"
   },
   {
     "_id": "dJlsIuQ5xIhXT4M8Q7S6",
@@ -1245,6 +1481,95 @@
       "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793276685/parani_mill_stores/products/n0bvkt61mg92aaqqug1a.webp"
     ],
     "updatedAt": "2026-10-29T12:24:53.180Z"
+  },
+  {
+    "_id": "jVtubQvVBzbguRLD1sy4",
+    "id": "jVtubQvVBzbguRLD1sy4",
+    "name": "ZEYANG BATTERY SINGLE SIDE HEDGE TRIMMER",
+    "slug": "zeyang-battery-single-side-hedge-trimmer",
+    "description": "",
+    "price": 0,
+    "category": "Hedge Trimmer",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "SHAPE SIZE (MM)": "550*200*150",
+      "RATED POWER (W)": "300",
+      "DC VOLTAGE (V)": "24",
+      "NO - LOADCURRENT (A)": "1.8",
+      "BLADE  NO-LOAD SPEED (R / MIN)": "1800",
+      "CUTTING FORM": "RECIPROCATING"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:39:01.013Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793951989/parani_mill_stores/products/twyesieidqatxmnf3cxf.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793952005/parani_mill_stores/products/sxwtqxbjqdpmsklvc2vb.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793951973/parani_mill_stores/thumbnails/rucwmyaukfvwbiwkbdwt.webp",
+    "updatedAt": "2026-11-06T08:00:40.438Z"
+  },
+  {
+    "_id": "kKxTMTcBFYyW2N0xNE9h",
+    "id": "kKxTMTcBFYyW2N0xNE9h",
+    "name": "ZEYANG  BATTERY DOUBLE SIDE HEDGE TRIMMER",
+    "slug": "zeyang-battery-double-side-hedge-trimmer",
+    "description": "",
+    "price": 0,
+    "category": "Hedge Trimmer",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "SHAPE SIZE (MM)": "620*100*150",
+      "RATED POWER (W)": "300",
+      "DC VOLTAGE (V)": "24",
+      "NO - LOADCURRENT (A)": "1.8",
+      "BLADE NO-LOAD SPEED (R / MIN)": "1800",
+      "CUTTING FORM": "RECIPROCATING"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:42:47.601Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793951502/parani_mill_stores/products/us4blrp8tje6xoqaxkie.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793951502/parani_mill_stores/products/z3i8cndzocf1jzw7nxik.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793951483/parani_mill_stores/thumbnails/lvl5ogpr6y89zy1osm2e.webp",
+    "updatedAt": "2026-11-06T07:51:49.219Z"
+  },
+  {
+    "_id": "kQOIYmlkHE5DQiuTPwH6",
+    "id": "kQOIYmlkHE5DQiuTPwH6",
+    "name": "VI POWERGOLD 3KW",
+    "slug": "vi-powergold-3kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED VOLTAGE": "230V",
+      "RATED FREQUENCY": "50 HZ",
+      "RATED  OUTPUT": "2.8KVA",
+      "MAXIMUM OUTPUT": "3.0 KVA",
+      "POWER  FACTOR": "1.0"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:22:30.331Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957051/parani_mill_stores/products/g147la6zbqusanjmkg27.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957070/parani_mill_stores/products/kni8wqmpjw6z4msm4bwd.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793957037/parani_mill_stores/thumbnails/uubbtuulbzwjxcbnjstc.webp",
+    "updatedAt": "2026-11-06T09:24:36.463Z"
   },
   {
     "_id": "kROjCz8brSN9qTw0EQhm",
@@ -1598,6 +1923,35 @@
       "EXPLODED.webp"
     ],
     "updatedAt": "2026-10-29T06:46:20.063Z"
+  },
+  {
+    "_id": "tkZXhsKoCKTnCiwObPaK",
+    "id": "tkZXhsKoCKTnCiwObPaK",
+    "name": "KEMAGE 1.3KW",
+    "slug": "kemage-13kw",
+    "description": "",
+    "price": 0,
+    "category": "Gensets",
+    "thumbnailUrl": "",
+    "imageUrls": [],
+    "specs": {
+      "RATED VOLTAGE": "230 V",
+      "RATED FREQUENCY": "50 HZ",
+      "RATED OUTPUT": "1100 W",
+      "MAX. OUTPUT": "1300W",
+      "POWER  FACTOR": "1.0"
+    },
+    "stroke": "",
+    "stock": 15,
+    "isActive": true,
+    "isProductOfTheMonth": false,
+    "createdAt": "2026-11-05T12:24:50.915Z",
+    "images": [
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956986/parani_mill_stores/products/cnpqlih2puvkswnq8nou.webp",
+      "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956986/parani_mill_stores/products/ghsqdg6st93vubavb86w.webp"
+    ],
+    "thumbnail": "https://res.cloudinary.com/dbvns9uwy/image/upload/v1793956974/parani_mill_stores/thumbnails/ewdb07evozn1r3fkryna.webp",
+    "updatedAt": "2026-11-06T09:23:12.750Z"
   },
   {
     "_id": "uDoQEg1WCBsPm1sRl0dZ",
