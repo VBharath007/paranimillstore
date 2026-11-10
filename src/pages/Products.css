@@ -196,47 +196,6 @@
   background: #fee2e2;
 }
 
-/* Voice Status Pill */
-.google-voice-status-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 10px auto 0 auto;
-  padding: 5px 14px;
-  background: #ffffff;
-  color: #3c4043;
-  border: 1px solid #dadce0;
-  border-radius: 50px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.3s ease;
-  width: fit-content;
-}
-
-.google-voice-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #34a853;
-}
-
-.google-voice-dot.recording {
-  background: #ea4335;
-  animation: blink 1s infinite alternate;
-}
-
-@keyframes blink {
-  from { opacity: 0.3; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1.2); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .search-reset-link {
   background: none;
   border: none;

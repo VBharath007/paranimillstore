@@ -280,19 +280,16 @@ const Products = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isListening, setIsListening] = useState(false);
-  const [voiceStatus, setVoiceStatus] = useState<string | null>(null);
 
   const handleVoiceSearch = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      setVoiceStatus('Voice search is not supported on this browser. Please try on Google Chrome or mobile.');
-      setTimeout(() => setVoiceStatus(null), 4000);
+      alert('Voice search is not supported on this browser. Please try on Google Chrome.');
       return;
     }
 
     if (isListening) {
       setIsListening(false);
-      setVoiceStatus(null);
       return;
     }
 
@@ -304,7 +301,6 @@ const Products = () => {
 
       recognition.onstart = () => {
         setIsListening(true);
-        setVoiceStatus('Listening... Speak now (e.g. "Genset", "Brush Cutter")');
       };
 
       recognition.onresult = (event: any) => {
@@ -312,19 +308,11 @@ const Products = () => {
         if (transcript) {
           const clean = transcript.replace(/[.,!?]/g, '').trim();
           setSearchQuery(clean);
-          setVoiceStatus(`Searching: "${clean}"`);
-          setTimeout(() => setVoiceStatus(null), 3500);
         }
         setIsListening(false);
       };
 
-      recognition.onerror = (event: any) => {
-        if (event.error === 'not-allowed') {
-          setVoiceStatus('Microphone permission blocked. Please allow mic access in browser.');
-        } else {
-          setVoiceStatus('Could not detect voice. Please try again.');
-        }
-        setTimeout(() => setVoiceStatus(null), 3500);
+      recognition.onerror = () => {
         setIsListening(false);
       };
 
@@ -336,8 +324,6 @@ const Products = () => {
     } catch (err) {
       console.error('Voice search start error:', err);
       setIsListening(false);
-      setVoiceStatus('Unable to access microphone.');
-      setTimeout(() => setVoiceStatus(null), 3500);
     }
   };
 
@@ -715,7 +701,7 @@ const Products = () => {
                   type="text" 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={isListening ? 'Listening... Speak now...' : 'Search...'}
+                  placeholder={isListening ? 'Listening...' : 'Search...'}
                   className="google-search-input"
                 />
                 
@@ -743,14 +729,6 @@ const Products = () => {
                 </div>
               </div>
             </div>
-
-            {/* Voice Status Pill */}
-            {voiceStatus && (
-              <div className="google-voice-status-pill">
-                <span className={`google-voice-dot ${isListening ? 'recording' : ''}`}></span>
-                <span>{voiceStatus}</span>
-              </div>
-            )}
           </div>
 
           <div className="products-subnav-container">
