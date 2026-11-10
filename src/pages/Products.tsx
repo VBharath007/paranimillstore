@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard, Search, Mic, MicOff, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard, Search, Mic, MicOff } from 'lucide-react';
 import './Products.css';
 import productsData from '../products.json';
 import gensetsData from '../gensets.json';
@@ -688,12 +688,12 @@ const Products = () => {
           <div className="gemini-search-container">
             <div className={`gemini-search-outer ${isListening ? 'listening-glow' : ''}`}>
               <div className="gemini-search-inner">
-                <Search size={22} className="gemini-search-icon" />
+                <Search size={18} className="gemini-search-icon" />
                 <input 
                   type="text" 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={isListening ? 'Listening... Speak now...' : 'Try a whole new way to search... (e.g. Genset, Honda)'}
+                  placeholder={isListening ? 'Listening... Speak now...' : 'Try a whole new way to search'}
                   className="gemini-search-input"
                 />
                 
@@ -705,7 +705,7 @@ const Products = () => {
                       onClick={() => setSearchQuery('')}
                       title="Clear search"
                     >
-                      <X size={18} />
+                      <X size={15} />
                     </button>
                   )}
 
@@ -716,7 +716,7 @@ const Products = () => {
                     title={isListening ? 'Stop listening' : 'Search by voice'}
                     aria-label="Voice Search"
                   >
-                    {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+                    {isListening ? <MicOff size={15} /> : <Mic size={15} />}
                   </button>
                 </div>
               </div>
@@ -729,17 +729,6 @@ const Products = () => {
                 <span>{voiceStatus}</span>
               </div>
             )}
-
-            {/* Quick Suggestions Chips */}
-            <div className="gemini-search-chips">
-              <span className="chips-label"><Sparkles size={13} style={{ marginRight: '4px' }} /> Quick Search:</span>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Genset')}>⚡ Gensets</button>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Power Generator')}>⚡ Power Generator</button>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Brush Cutter')}>🌿 Brush Cutter</button>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Weeder')}>🚜 Weeder</button>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Honda')}>⭐ Honda</button>
-              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Earth Augur')}>🔩 Earth Augur</button>
-            </div>
           </div>
 
           <div className="products-subnav-container">
