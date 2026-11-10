@@ -703,42 +703,44 @@ const Products = () => {
             Select a category below to browse our high-performance machinery, genuine spares, and trusted industrial tools.
           </p>
           
-          {/* Official Google Style Voice & Instant Search Bar */}
+          {/* Official Google Style Voice & Instant Search Bar with Glowing Border */}
           <div className="google-search-container">
-            <div className={`google-search-bar ${isListening ? 'listening' : ''}`}>
-              <div className="google-icon-wrapper" title="Google Search">
-                <GoogleGIcon />
-              </div>
-              <div className="google-search-divider"></div>
-              <input 
-                type="text" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={isListening ? 'Listening... Speak now...' : 'Search...'}
-                className="google-search-input"
-              />
-              
-              <div className="google-search-actions">
-                {searchQuery && (
+            <div className={`google-search-glow-wrapper ${isListening ? 'listening-glow' : ''}`}>
+              <div className="google-search-bar">
+                <div className="google-icon-wrapper" title="Google Search">
+                  <GoogleGIcon />
+                </div>
+                <div className="google-search-divider"></div>
+                <input 
+                  type="text" 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={isListening ? 'Listening... Speak now...' : 'Search...'}
+                  className="google-search-input"
+                />
+                
+                <div className="google-search-actions">
+                  {searchQuery && (
+                    <button 
+                      type="button"
+                      className="google-clear-btn" 
+                      onClick={() => setSearchQuery('')}
+                      title="Clear search"
+                    >
+                      <X size={16} />
+                    </button>
+                  )}
+
                   <button 
                     type="button"
-                    className="google-clear-btn" 
-                    onClick={() => setSearchQuery('')}
-                    title="Clear search"
+                    className={`google-mic-btn ${isListening ? 'active' : ''}`}
+                    onClick={handleVoiceSearch}
+                    title={isListening ? 'Stop listening' : 'Search by voice'}
+                    aria-label="Search by voice"
                   >
-                    <X size={16} />
+                    <GoogleMicIcon isListening={isListening} />
                   </button>
-                )}
-
-                <button 
-                  type="button"
-                  className={`google-mic-btn ${isListening ? 'active' : ''}`}
-                  onClick={handleVoiceSearch}
-                  title={isListening ? 'Stop listening' : 'Search by voice'}
-                  aria-label="Search by voice"
-                >
-                  <GoogleMicIcon isListening={isListening} />
-                </button>
+                </div>
               </div>
             </div>
 

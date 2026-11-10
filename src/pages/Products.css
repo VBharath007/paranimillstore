@@ -59,7 +59,7 @@
   width: 100px;
 }
 
-/* --- Official Google Clean Search Bar --- */
+/* --- Official Google Clean Search Bar with Glowing Border --- */
 .google-search-container {
   max-width: 580px;
   width: 100%;
@@ -68,31 +68,71 @@
   position: relative;
 }
 
+.google-search-glow-wrapper {
+  position: relative;
+  border-radius: 9999px;
+  padding: 2.5px;
+  background: linear-gradient(90deg, #4285f4 0%, #ea4335 35%, #fbbc05 65%, #34a853 100%);
+  background-size: 200% 200%;
+  box-shadow: 
+    -10px 4px 24px -2px rgba(66, 133, 244, 0.35),
+    0 8px 22px -3px rgba(234, 67, 53, 0.25),
+    10px 4px 24px -2px rgba(52, 168, 83, 0.35);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: googleGlowShimmer 6s ease infinite alternate;
+}
+
+@keyframes googleGlowShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.google-search-glow-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    -14px 6px 30px -2px rgba(66, 133, 244, 0.45),
+    0 10px 26px -3px rgba(234, 67, 53, 0.35),
+    14px 6px 30px -2px rgba(52, 168, 83, 0.45);
+}
+
+.google-search-glow-wrapper:focus-within {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 
+    -16px 8px 36px -2px rgba(66, 133, 244, 0.55),
+    0 12px 30px -3px rgba(234, 67, 53, 0.45),
+    16px 8px 36px -2px rgba(52, 168, 83, 0.55);
+}
+
+.google-search-glow-wrapper.listening-glow {
+  background: linear-gradient(90deg, #ea4335 0%, #fbbc05 50%, #34a853 100%);
+  box-shadow: 0 0 30px rgba(234, 67, 53, 0.6);
+  animation: listeningPillPulse 1.2s infinite;
+}
+
+@keyframes listeningPillPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
 .google-search-bar {
   display: flex;
   align-items: center;
   background: #ffffff;
-  border: 1px solid #dfe1e5;
   border-radius: 9999px;
-  padding: 5px 14px 5px 16px;
+  padding: 6px 14px 6px 16px;
   min-height: 44px;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.16);
-  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.google-search-bar:hover {
-  box-shadow: 0 2px 8px 1px rgba(64, 60, 67, 0.22);
-  border-color: rgba(223, 225, 229, 0);
-}
-
-.google-search-bar:focus-within {
-  box-shadow: 0 2px 10px 1px rgba(64, 60, 67, 0.28);
-  border-color: rgba(223, 225, 229, 0);
-}
-
-.google-search-bar.listening {
-  border-color: #ea4335;
-  box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.2), 0 2px 10px rgba(64, 60, 67, 0.25);
+  position: relative;
+  z-index: 2;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
 }
 
 .google-icon-wrapper {
