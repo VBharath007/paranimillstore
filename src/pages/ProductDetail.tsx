@@ -210,14 +210,16 @@ const ProductDetail: React.FC = () => {
   }
 
   // SEO details - Optimized for Tamil Nadu Rankings
-  const pageTitle = `${selectedProduct.name} Price in Tamil Nadu | Parani Mill Stores`;
+  const catSlug = getProductCategorySlug(selectedProduct);
+  const isGenset = catSlug === 'gensets' || catSlug === 'genset' || (selectedProduct.category || '').toLowerCase().includes('genset');
+  const categoryLabel = isGenset ? 'Genset & Power Generator' : (selectedProduct.category || 'Agricultural Machinery');
+  const pageTitle = `${selectedProduct.name}${isGenset && !selectedProduct.name.toLowerCase().includes('generator') && !selectedProduct.name.toLowerCase().includes('genset') ? ' Genset & Power Generator' : ''} Price in Tamil Nadu | Parani Mill Stores`;
   const primaryImg = getProductImage(selectedProduct.folder, selectedProduct.thumbnail || images[0], selectedProduct.thumbnailUrl);
   const absoluteImageUrl = primaryImg.startsWith('http') ? primaryImg : `https://paranimill.com${primaryImg}`;
-  const catSlug = getProductCategorySlug(selectedProduct);
   const canonicalUrl = `https://paranimill.com/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
   const metaDescription = selectedProduct.description 
     ? `${selectedProduct.description.slice(0, 130)} - Best price & genuine spares in Tamil Nadu at Parani Mill Stores.`
-    : `Buy genuine ${selectedProduct.name} at best price with warranty, doorstep delivery & spare parts across Tamil Nadu from Parani Mill Stores, Madurai.`;
+    : `Buy genuine ${selectedProduct.name} ${isGenset ? 'heavy-duty power generator & petrol genset' : categoryLabel} at best price with warranty, doorstep delivery & spare parts across Tamil Nadu from Parani Mill Stores, Madurai.`;
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh', padding: '2rem 1rem 5rem' }}>
@@ -240,7 +242,7 @@ const ProductDetail: React.FC = () => {
             "image": [absoluteImageUrl],
             "description": metaDescription,
             "sku": selectedProduct._id || selectedProduct.id,
-            "category": selectedProduct.category || "Agricultural Machinery",
+            "category": isGenset ? "Gensets & Power Generators" : (selectedProduct.category || "Agricultural Machinery"),
             "brand": {
               "@type": "Brand",
               "name": "Parani Mill Stores"

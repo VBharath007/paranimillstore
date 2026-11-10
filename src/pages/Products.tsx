@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard, Search } from 'lucide-react';
 import './Products.css';
 import productsData from '../products.json';
 import gensetsData from '../gensets.json';
@@ -91,6 +91,10 @@ export const isProductInCategory = (product: any, catId: string): boolean => {
       return (folder.includes('ENGINE') || name.includes('ENGINE')) && !folder.includes('SPRAYER') && !name.includes('SPRAYER');
     case 'gensets':
     case 'genset':
+    case 'generator':
+    case 'generators':
+    case 'power-generator':
+    case 'power-generators':
       if (catClean && catSlug !== 'gensets' && catSlug !== 'genset') return false;
       return folder.includes('GENSET') || name.includes('GENERATOR') || name.includes('GENSET') || cat.includes('GENSET');
     case 'hedge-trimmer':
@@ -255,15 +259,26 @@ const Products = () => {
     return list;
   }, [backendCategories]);
 
+  const [searchQuery, setSearchQuery] = useState('');
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
+    const searchParam = params.get('search') || params.get('q');
+    if (searchParam) {
+      setSearchQuery(searchParam);
+    }
     const category = params.get('category');
     if (category) {
       const catLower = category.toLowerCase().trim();
       const catSlug = catLower.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       if (catLower === 'agri' || catLower === 'all') {
         setActiveCategory('brush-cutter');
-      } else if (catLower === 'genset' || catLower === 'gensets' || catSlug === 'genset' || catSlug === 'gensets') {
+      } else if (
+        catLower.includes('genset') || 
+        catLower.includes('generator') || 
+        catSlug.includes('genset') || 
+        catSlug.includes('generator')
+      ) {
         setActiveCategory('gensets');
       } else {
         const found = dynamicCategories.find(c => c.id === catSlug || c.id === catLower) 
@@ -608,6 +623,30 @@ const Products = () => {
             Select a category below to browse our high-performance machinery, genuine spares, and trusted industrial tools.
           </p>
           
+          {/* Instant Search Bar */}
+          <div className="products-search-container">
+            <div className="products-search-bar">
+              <Search size={20} className="products-search-icon" />
+              <input 
+                type="text" 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products by name or category (e.g. Genset, Power Generator, Brush Cutter)..."
+                className="products-search-input"
+              />
+              {searchQuery && (
+                <button 
+                  type="button"
+                  className="products-search-clear" 
+                  onClick={() => setSearchQuery('')}
+                  title="Clear search"
+                >
+                  <X size={18} />
+                </button>
+              )}
+            </div>
+          </div>
+
           <div className="products-subnav-container">
             <div className="products-subnav">
               {dynamicCategories.map((cat: any) => {
@@ -618,8 +657,9 @@ const Products = () => {
                 return (
                   <button 
                     key={cat.id}
-                    className={`subnav-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                    className={`subnav-btn ${!searchQuery && activeCategory === cat.id ? 'active' : ''}`}
                     onClick={() => {
+                      setSearchQuery('');
                       setActiveCategory(cat.id);
                       navigate('/products?category=' + cat.id, { replace: true });
                     }}
@@ -632,11 +672,25 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Current Category Info Banner */}
+          {/* Current Category / Search Info Banner */}
           <div className="category-info-bar">
-            <span className="category-active-label">
-              Category: <strong>{dynamicCategories.find((c: any) => c.id === activeCategory)?.name || PRODUCT_CATEGORIES.find((c: any) => c.id === activeCategory)?.name || activeCategory}</strong>
-            </span>
+            {searchQuery.trim() ? (
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                <span className="category-active-label">
+                  Search Results for: <strong>"{searchQuery}"</strong>
+                </span>
+                <button 
+                  onClick={() => setSearchQuery('')} 
+                  className="search-reset-link"
+                >
+                  Back to Categories
+                </button>
+              </div>
+            ) : (
+              <span className="category-active-label">
+                Category: <strong>{dynamicCategories.find((c: any) => c.id === activeCategory)?.name || PRODUCT_CATEGORIES.find((c: any) => c.id === activeCategory)?.name || activeCategory}</strong>
+              </span>
+            )}
           </div>
 
           {(() => {
@@ -660,10 +714,42 @@ const Products = () => {
               );
             }
 
-            let filtered = allProductsList.filter((p: any) => isProductInCategory(p, activeCategory));
+            let filtered = allProductsList;
+            if (searchQuery.trim()) {
+              const q = searchQuery.toLowerCase().trim();
+              const isGensetQuery = q.includes('generator') || q.includes('genset') || q.includes('power gen');
+              filtered = filtered.filter((p: any) => {
+                const name = (p.name || '').toLowerCase();
+                const cat = (p.category || '').toLowerCase();
+                const folder = (p.folder || '').toLowerCase();
+                const desc = (p.description || '').toLowerCase();
+                const gensetMatch = isGensetQuery && (isProductInCategory(p, 'gensets') || cat.includes('genset'));
+                return name.includes(q) || cat.includes(q) || folder.includes(q) || desc.includes(q) || gensetMatch;
+              });
+            } else {
+              filtered = filtered.filter((p: any) => isProductInCategory(p, activeCategory));
+            }
             filtered.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
 
             if (filtered.length === 0) {
+              if (searchQuery.trim()) {
+                return (
+                  <div className="no-products-box">
+                    <Search size={48} color="#0a5c36" style={{ marginBottom: '16px' }} />
+                    <h3>No Products Found</h3>
+                    <p>No products matched your search for <strong>"{searchQuery}"</strong>.</p>
+                    <p style={{ marginTop: '6px', color: '#64748b' }}>Try searching with keywords like <em>Genset</em>, <em>Generator</em>, <em>Honda</em>, <em>Brush Cutter</em>, or <em>Sprayer</em>.</p>
+                    <button 
+                      onClick={() => setSearchQuery('')}
+                      className="catchy-explore-btn"
+                      style={{ marginTop: '20px', display: 'inline-flex', padding: '10px 24px', cursor: 'pointer', border: 'none' }}
+                    >
+                      Clear Search & View All Categories
+                    </button>
+                  </div>
+                );
+              }
+
               return (
                 <div className="no-products-box">
                   <Package size={48} color="#0a5c36" style={{ marginBottom: '16px' }} />
