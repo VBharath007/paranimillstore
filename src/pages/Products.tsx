@@ -280,7 +280,36 @@ const Products = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isListening, setIsListening] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const recognitionRef = useRef<any>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+  const resultsSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase().trim();
+    const isGensetQuery = q.includes('generator') || q.includes('genset') || q.includes('power gen');
+    const matched = allProductsList.filter((p: any) => {
+      const name = (p.name || '').toLowerCase();
+      const cat = (p.category || '').toLowerCase();
+      const folder = (p.folder || '').toLowerCase();
+      const desc = (p.description || '').toLowerCase();
+      const gensetMatch = isGensetQuery && (isProductInCategory(p, 'gensets') || cat.includes('genset'));
+      return name.includes(q) || cat.includes(q) || folder.includes(q) || desc.includes(q) || gensetMatch;
+    });
+    matched.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
+    return matched;
+  }, [searchQuery, allProductsList]);
 
   const handleVoiceSearch = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -325,6 +354,7 @@ const Products = () => {
         if (currentTranscript) {
           const clean = currentTranscript.replace(/[.,!?]/g, '').trim();
           setSearchQuery(clean);
+          setIsDropdownOpen(true);
         }
       };
 
@@ -338,12 +368,23 @@ const Products = () => {
 
       recognition.onend = () => {
         setIsListening(false);
+        // Automatically scroll to results so user sees them immediately!
+        setTimeout(() => {
+          resultsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
       };
 
       recognition.start();
     } catch (err) {
       console.error('Voice search start error:', err);
       setIsListening(false);
+    }
+  };
+
+  const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      setIsDropdownOpen(false);
+      resultsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -710,7 +751,7 @@ const Products = () => {
           </p>
           
           {/* Official Google Style Voice & Instant Search Bar with Glowing Border */}
-          <div className="google-search-container">
+          <div className="google-search-container" ref={searchContainerRef}>
             <div className={`google-search-glow-wrapper ${isListening ? 'listening-glow' : ''}`}>
               <div className="google-search-bar">
                 <div className="google-icon-wrapper" title="Google Search">
@@ -720,7 +761,14 @@ const Products = () => {
                 <input 
                   type="text" 
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    if (e.target.value.trim()) setIsDropdownOpen(true);
+                  }}
+                  onFocus={() => {
+                    if (searchQuery.trim()) setIsDropdownOpen(true);
+                  }}
+                  onKeyDown={handleSearchKeyDown}
                   placeholder={isListening ? 'Listening...' : 'Search...'}
                   className="google-search-input"
                 />
@@ -730,7 +778,10 @@ const Products = () => {
                     <button 
                       type="button"
                       className="google-clear-btn" 
-                      onClick={() => setSearchQuery('')}
+                      onClick={() => {
+                        setSearchQuery('');
+                        setIsDropdownOpen(false);
+                      }}
                       title="Clear search"
                     >
                       <X size={16} />
@@ -749,6 +800,57 @@ const Products = () => {
                 </div>
               </div>
             </div>
+
+            {/* Google Style Instant Search Dropdown (Direct Product Jump) */}
+            {isDropdownOpen && searchQuery.trim().length > 0 && (
+              <div className="google-search-dropdown">
+                {searchResults.length > 0 ? (
+                  <>
+                    <div className="google-search-dropdown-header">
+                      Matching Products ({searchResults.length})
+                    </div>
+                    <div className="google-search-dropdown-list">
+                      {searchResults.slice(0, 6).map((prod: any, idx: number) => {
+                        const imgSrc = getProductImage(prod.folder, prod.thumbnail || (prod.images && prod.images[0]), prod.thumbnailUrl);
+                        return (
+                          <div 
+                            key={prod.id || prod._id || idx}
+                            className="google-search-dropdown-item"
+                            onClick={() => {
+                              openProductModal(prod);
+                              setIsDropdownOpen(false);
+                            }}
+                          >
+                            <img src={imgSrc} alt={prod.name} className="dropdown-item-img" />
+                            <div className="dropdown-item-info">
+                              <div className="dropdown-item-name">{prod.name}</div>
+                              <div className="dropdown-item-cat">{prod.category || 'Agricultural Machinery'}</div>
+                            </div>
+                            <ArrowRight size={14} className="dropdown-item-arrow" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="google-search-dropdown-footer">
+                      <button 
+                        type="button" 
+                        className="dropdown-view-all-btn"
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          resultsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }}
+                      >
+                        View all {searchResults.length} results in catalog <ArrowRight size={13} style={{ marginLeft: '4px' }} />
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="dropdown-empty">
+                    No products found for "<strong>{searchQuery}</strong>"
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="products-subnav-container">
@@ -764,6 +866,7 @@ const Products = () => {
                     className={`subnav-btn ${!searchQuery && activeCategory === cat.id ? 'active' : ''}`}
                     onClick={() => {
                       setSearchQuery('');
+                      setIsDropdownOpen(false);
                       setActiveCategory(cat.id);
                       navigate('/products?category=' + cat.id, { replace: true });
                     }}
@@ -777,7 +880,7 @@ const Products = () => {
           </div>
 
           {/* Current Category / Search Info Banner */}
-          <div className="category-info-bar">
+          <div className="category-info-bar" ref={resultsSectionRef}>
             {searchQuery.trim() ? (
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
                 <span className="category-active-label">
