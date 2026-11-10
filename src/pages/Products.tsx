@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard, Search } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon, Maximize2, ShieldCheck, Package, Shield, Settings, Zap, Layers, Tag, FileText, Heart, Star, ShoppingCart, X, Fuel, Cpu, Wrench, Gauge, Database, Truck, CreditCard, Search, Mic, MicOff, Sparkles } from 'lucide-react';
 import './Products.css';
 import productsData from '../products.json';
 import gensetsData from '../gensets.json';
@@ -260,6 +260,67 @@ const Products = () => {
   }, [backendCategories]);
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const [voiceStatus, setVoiceStatus] = useState<string | null>(null);
+
+  const handleVoiceSearch = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      setVoiceStatus('Voice search is not supported on this browser. Please try on Google Chrome or mobile.');
+      setTimeout(() => setVoiceStatus(null), 4000);
+      return;
+    }
+
+    if (isListening) {
+      setIsListening(false);
+      setVoiceStatus(null);
+      return;
+    }
+
+    try {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'en-IN';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        setIsListening(true);
+        setVoiceStatus('Listening... Speak now (e.g. "Genset", "Brush Cutter")');
+      };
+
+      recognition.onresult = (event: any) => {
+        const transcript = event.results?.[0]?.[0]?.transcript;
+        if (transcript) {
+          const clean = transcript.replace(/[.,!?]/g, '').trim();
+          setSearchQuery(clean);
+          setVoiceStatus(`Searching: "${clean}"`);
+          setTimeout(() => setVoiceStatus(null), 3500);
+        }
+        setIsListening(false);
+      };
+
+      recognition.onerror = (event: any) => {
+        if (event.error === 'not-allowed') {
+          setVoiceStatus('Microphone permission blocked. Please allow mic access in browser.');
+        } else {
+          setVoiceStatus('Could not detect voice. Please try again.');
+        }
+        setTimeout(() => setVoiceStatus(null), 3500);
+        setIsListening(false);
+      };
+
+      recognition.onend = () => {
+        setIsListening(false);
+      };
+
+      recognition.start();
+    } catch (err) {
+      console.error('Voice search start error:', err);
+      setIsListening(false);
+      setVoiceStatus('Unable to access microphone.');
+      setTimeout(() => setVoiceStatus(null), 3500);
+    }
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -623,27 +684,61 @@ const Products = () => {
             Select a category below to browse our high-performance machinery, genuine spares, and trusted industrial tools.
           </p>
           
-          {/* Instant Search Bar */}
-          <div className="products-search-container">
-            <div className="products-search-bar">
-              <Search size={20} className="products-search-icon" />
-              <input 
-                type="text" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search products by name or category (e.g. Genset, Power Generator, Brush Cutter)..."
-                className="products-search-input"
-              />
-              {searchQuery && (
-                <button 
-                  type="button"
-                  className="products-search-clear" 
-                  onClick={() => setSearchQuery('')}
-                  title="Clear search"
-                >
-                  <X size={18} />
-                </button>
-              )}
+          {/* Gemini AI Glowing Voice & Instant Search Bar */}
+          <div className="gemini-search-container">
+            <div className={`gemini-search-outer ${isListening ? 'listening-glow' : ''}`}>
+              <div className="gemini-search-inner">
+                <Search size={22} className="gemini-search-icon" />
+                <input 
+                  type="text" 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder={isListening ? 'Listening... Speak now...' : 'Try a whole new way to search... (e.g. Genset, Honda)'}
+                  className="gemini-search-input"
+                />
+                
+                <div className="gemini-search-actions">
+                  {searchQuery && (
+                    <button 
+                      type="button"
+                      className="gemini-clear-btn" 
+                      onClick={() => setSearchQuery('')}
+                      title="Clear search"
+                    >
+                      <X size={18} />
+                    </button>
+                  )}
+
+                  <button 
+                    type="button"
+                    className={`gemini-mic-btn ${isListening ? 'listening' : ''}`}
+                    onClick={handleVoiceSearch}
+                    title={isListening ? 'Stop listening' : 'Search by voice'}
+                    aria-label="Voice Search"
+                  >
+                    {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Voice Status Pill */}
+            {voiceStatus && (
+              <div className="gemini-voice-status-pill">
+                <span className={`voice-dot ${isListening ? 'recording' : ''}`}></span>
+                <span>{voiceStatus}</span>
+              </div>
+            )}
+
+            {/* Quick Suggestions Chips */}
+            <div className="gemini-search-chips">
+              <span className="chips-label"><Sparkles size={13} style={{ marginRight: '4px' }} /> Quick Search:</span>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Genset')}>⚡ Gensets</button>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Power Generator')}>⚡ Power Generator</button>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Brush Cutter')}>🌿 Brush Cutter</button>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Weeder')}>🚜 Weeder</button>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Honda')}>⭐ Honda</button>
+              <button type="button" className="chip-btn" onClick={() => setSearchQuery('Earth Augur')}>🔩 Earth Augur</button>
             </div>
           </div>
 
