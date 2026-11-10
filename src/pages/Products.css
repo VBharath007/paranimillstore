@@ -59,114 +59,87 @@
   width: 100px;
 }
 
-/* --- Gemini AI Iridescent Glowing Search Bar (Compact & Sleek) --- */
-.gemini-search-container {
-  max-width: 480px;
+/* --- Official Google Clean Search Bar --- */
+.google-search-container {
+  max-width: 580px;
   width: 100%;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 26px auto;
   padding: 0 16px;
   position: relative;
 }
 
-.gemini-search-outer {
-  position: relative;
-  border-radius: 9999px;
-  padding: 2px;
-  background: linear-gradient(90deg, #1a73e8 0%, #2563eb 20%, #e11d48 45%, #f59e0b 72%, #10b981 100%);
-  background-size: 200% 200%;
-  box-shadow: 
-    -12px 0 24px -3px rgba(26, 115, 232, 0.45),
-    0 10px 18px -3px rgba(225, 29, 72, 0.35),
-    10px 10px 18px -3px rgba(245, 158, 11, 0.4),
-    12px 0 24px -3px rgba(16, 185, 129, 0.45);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  animation: geminiBorderGlow 8s ease infinite alternate;
-}
-
-@keyframes geminiBorderGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.gemini-search-outer:focus-within {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 
-    -16px 0 30px -2px rgba(26, 115, 232, 0.6),
-    0 14px 25px -2px rgba(225, 29, 72, 0.45),
-    14px 14px 25px -2px rgba(245, 158, 11, 0.5),
-    16px 0 30px -2px rgba(16, 185, 129, 0.6);
-}
-
-.gemini-search-outer.listening-glow {
-  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
-  box-shadow: 0 0 25px rgba(239, 68, 68, 0.6), 0 0 35px rgba(16, 185, 129, 0.4);
-  animation: listeningPulse 1.5s infinite;
-}
-
-@keyframes listeningPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
-}
-
-.gemini-search-inner {
+.google-search-bar {
   display: flex;
   align-items: center;
-  background: #080d16;
+  background: #ffffff;
+  border: 1px solid #dfe1e5;
   border-radius: 9999px;
-  padding: 6px 14px;
-  position: relative;
-  z-index: 2;
+  padding: 5px 14px 5px 16px;
+  min-height: 44px;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.16);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.gemini-search-icon {
-  color: #60a5fa;
-  margin-right: 10px;
+.google-search-bar:hover {
+  box-shadow: 0 2px 8px 1px rgba(64, 60, 67, 0.22);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.google-search-bar:focus-within {
+  box-shadow: 0 2px 10px 1px rgba(64, 60, 67, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.google-search-bar.listening {
+  border-color: #ea4335;
+  box-shadow: 0 0 0 3px rgba(234, 67, 53, 0.2), 0 2px 10px rgba(64, 60, 67, 0.25);
+}
+
+.google-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  user-select: none;
+}
+
+.google-search-divider {
+  width: 1px;
+  height: 22px;
+  background: #dadce0;
+  margin: 0 12px 0 10px;
   flex-shrink: 0;
-  transition: transform 0.25s ease;
 }
 
-.gemini-search-outer:focus-within .gemini-search-icon {
-  transform: scale(1.08);
-  color: #93c5fd;
-}
-
-.gemini-search-input {
+.google-search-input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
-  font-size: 0.9rem;
-  color: #ffffff;
+  font-size: 0.95rem;
+  color: #202124;
   font-family: inherit;
   font-weight: 400;
+  padding: 0;
   letter-spacing: -0.1px;
 }
 
-.gemini-search-input::placeholder {
-  color: #94a3b8;
-  font-size: 0.86rem;
+.google-search-input::placeholder {
+  color: #9aa0a6;
   font-weight: 400;
 }
 
-.gemini-search-actions {
+.google-search-actions {
   display: flex;
   align-items: center;
   gap: 6px;
   margin-left: 8px;
 }
 
-.gemini-clear-btn {
-  background: rgba(255, 255, 255, 0.08);
+.google-clear-btn {
+  background: transparent;
   border: none;
-  color: #94a3b8;
+  color: #70757a;
   cursor: pointer;
   padding: 4px;
   display: flex;
@@ -176,78 +149,67 @@
   transition: all 0.2s ease;
 }
 
-.gemini-clear-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
+.google-clear-btn:hover {
+  color: #202124;
+  background: #f1f3f4;
 }
 
-.gemini-mic-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+.google-mic-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #f1f5f9;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  position: relative;
+  border-radius: 50%;
+  transition: all 0.2s ease;
 }
 
-.gemini-mic-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+.google-mic-btn:hover {
+  background: #f1f3f4;
   transform: scale(1.08);
 }
 
-.gemini-mic-btn.listening {
-  background: #ef4444;
-  color: #ffffff;
-  border-color: #ef4444;
-  animation: micRipple 1.2s infinite;
+.google-mic-btn.active {
+  background: #fee2e2;
+  animation: googleMicPulse 1.2s infinite;
 }
 
-@keyframes micRipple {
-  0% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(239, 68, 68, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
-  }
+@keyframes googleMicPulse {
+  0% { box-shadow: 0 0 0 0 rgba(234, 67, 53, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(234, 67, 53, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(234, 67, 53, 0); }
 }
 
 /* Voice Status Pill */
-.gemini-voice-status-pill {
+.google-voice-status-pill {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   margin: 10px auto 0 auto;
   padding: 5px 14px;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #ffffff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   animation: fadeIn 0.3s ease;
   width: fit-content;
 }
 
-.voice-dot {
+.google-voice-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #10b981;
+  background: #34a853;
 }
 
-.voice-dot.recording {
-  background: #ef4444;
+.google-voice-dot.recording {
+  background: #ea4335;
   animation: blink 1s infinite alternate;
 }
 
