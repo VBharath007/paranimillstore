@@ -3,7 +3,24 @@ import { Helmet } from 'react-helmet-async';
 import { Share2, MapPin, Phone, Mail, Clock, Map, Headset } from 'lucide-react';
 import './Contact.css';
 
+const STANDARD_CATEGORIES = [
+  'Brush Cutter',
+  'Chaff Cutter & Wood Chipper',
+  'Earth Augur',
+  'Engines',
+  'Gensets & Power Generators',
+  'Hedge Trimmer',
+  'Honda Products',
+  'Power Weeder',
+  'Sprayer',
+  'Water Pump',
+  'Genuine Spares & Maintenance',
+  'Wholesale / Bulk Order',
+  'General Inquiry'
+];
+
 const Contact = () => {
+  const [categories, setCategories] = useState<string[]>(STANDARD_CATEGORIES);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +31,20 @@ const Contact = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    try {
+      const cached = sessionStorage.getItem('pm_cached_categories_v4') || sessionStorage.getItem('pm_cached_categories');
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const names = parsed
+            .map((c: any) => c.name ? c.name.trim() : '')
+            .filter((n: string) => n && n.toLowerCase() !== 'all products' && n.toLowerCase() !== 'all' && n.toLowerCase() !== 'construction');
+          const merged = Array.from(new Set([...names, ...STANDARD_CATEGORIES]));
+          setCategories(merged);
+        }
+      }
+    } catch (e) {}
   }, []);
 
   const handleChange = (e: any) => {
@@ -29,7 +60,7 @@ const Contact = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const text = `Hello Parani Mill Stores,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\nMessage: ${formData.message}`;
+    const text = `Hello Parani Mill Stores,\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nProduct Required: ${formData.service}\nMessage: ${formData.message}`;
     window.open(`https://wa.me/917094341807?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -37,11 +68,11 @@ const Contact = () => {
     <div className="contact-flat-page">
       <Helmet>
         <title>Contact Us | Parani Mill Stores Madurai</title>
-        <meta name="description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets and construction equipment. Call +91 70943 41807." />
+        <meta name="description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets, engines and genuine spares. Call +91 70943 41807." />
         <link rel="canonical" href="https://paranimill.com/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact Us | Parani Mill Stores Madurai" />
-        <meta property="og:description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural and construction machinery. Call +91 70943 41807." />
+        <meta property="og:description" content="Contact Parani Mill Stores in Madurai. Trusted supplier of agricultural machinery and power generators. Call +91 70943 41807." />
         <meta property="og:url" content="https://paranimill.com/contact" />
         <meta property="og:image" content="https://paranimill.com/contacthero.webp" />
       </Helmet>
@@ -86,13 +117,12 @@ const Contact = () => {
                 />
               </div>
               <div className="flat-input-group">
-                <label>Service *</label>
+                <label>Product Requirement *</label>
                 <select name="service" required onChange={handleChange} defaultValue="">
-                  <option value="" disabled>Select Services</option>
-                  <option value="Agricultural Machinery">Agricultural Machinery</option>
-                  <option value="Power Generators">Power Generators</option>
-                  <option value="Construction Equipment">Construction Equipment</option>
-                  <option value="Bulk Order">Bulk Order</option>
+                  <option value="" disabled>Select Product / Category</option>
+                  {categories.map((cat) => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
                 </select>
               </div>
             </div>
