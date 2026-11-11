@@ -13,10 +13,7 @@ const STANDARD_CATEGORIES = [
   'Honda Products',
   'Power Weeder',
   'Sprayer',
-  'Water Pump',
-  'Genuine Spares & Maintenance',
-  'Wholesale / Bulk Order',
-  'General Inquiry'
+  'Water Pump'
 ];
 
 const Contact = () => {
