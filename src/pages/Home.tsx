@@ -437,10 +437,6 @@ const Home: React.FC = () => {
                     </div>
                     <div className="wcu-year">1960</div>
                     <div className="wcu-trust-title">{yearsOfTrust}+ Years<br/>of Trust</div>
-                    <p className="wcu-trust-desc hide-on-mobile">
-                      Serving customers since 1960<br/>with experience and<br/>dedication.
-                    </p>
-                    
                   </div>
                 </div>
                 {/* External mass decoration */}
