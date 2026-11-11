@@ -89,6 +89,8 @@ const RealisticCrown = () => (
 );
 
 const Home: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+  const yearsOfTrust = currentYear - 1960;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeReviewIndex, setActiveReviewIndex] = useState(0);
   const reviewsRef = React.useRef<HTMLDivElement>(null);
@@ -434,7 +436,7 @@ const Home: React.FC = () => {
                       <span className="since-line"></span>
                     </div>
                     <div className="wcu-year">1960</div>
-                    <div className="wcu-trust-title">65+ Years<br/>of Trust</div>
+                    <div className="wcu-trust-title">{yearsOfTrust}+ Years<br/>of Trust</div>
                     <p className="wcu-trust-desc hide-on-mobile">
                       Serving customers since 1960<br/>with experience and<br/>dedication.
                     </p>
@@ -619,7 +621,7 @@ const Home: React.FC = () => {
               <span className="line"></span>
             </div>
             <h2 className="cr-title">What <span className="cr-title-highlight">Our Customers</span> Say</h2>
-            <p className="cr-subtitle">65+ Years of Trust. Empowering Madurai with premium agricultural and construction machinery since 1960.</p>
+            <p className="cr-subtitle">{yearsOfTrust}+ Years of Trust. Empowering Madurai with premium agricultural and construction machinery since 1960.</p>
           </div>
 
           <div className="cr-carousel-container">

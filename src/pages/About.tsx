@@ -28,6 +28,9 @@ const TypewriterText = ({ text }: { text: string }) => {
 };
 
 const About = () => {
+  const currentYear = new Date().getFullYear();
+  const yearsOfTrust = currentYear - 1960;
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -53,11 +56,11 @@ const About = () => {
   return (
     <div className="about-page">
       <Helmet>
-        <title>About Us | Parani Mill Stores - 65+ Years of Trust</title>
+        <title>About Us | Parani Mill Stores - {yearsOfTrust}+ Years of Trust</title>
         <meta name="description" content="Since 1960, Parani Mill Stores has been the authorized stockists for reputed brands including Jawan, Really and Perfect Equipments. We are a trusted supplier of agricultural and construction equipment in Madurai, serving wholesale and retail customers." />
         <link rel="canonical" href="https://paranimill.com/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About Us | Parani Mill Stores - 65+ Years of Trust" />
+        <meta property="og:title" content={`About Us | Parani Mill Stores - ${yearsOfTrust}+ Years of Trust`} />
         <meta property="og:description" content="Authorized stockists for reputed brands including Jawan, Really and Perfect Equipments in Madurai." />
         <meta property="og:url" content="https://paranimill.com/about" />
         <meta property="og:image" content="https://paranimill.com/officiallogo.png" />
@@ -252,11 +255,11 @@ const About = () => {
                   </div>
                   <div className="nt-text-box">
                     <div className="nt-year-wrapper">
-                      <span className="nt-year red">2026</span>
+                      <span className="nt-year red">{currentYear}</span>
                       <div className="nt-line red"></div>
                     </div>
                     <h3>Continuing the Legacy ⭐</h3>
-                    <p><strong>66+ Years of Trust</strong><br/>Continuing to serve customers with quality equipment, trusted service and a commitment to the future.</p>
+                    <p><strong>{yearsOfTrust}+ Years of Trust</strong><br/>Continuing to serve customers with quality equipment, trusted service and a commitment to the future.</p>
                   </div>
                 </div>
               </div>
