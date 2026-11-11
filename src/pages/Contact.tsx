@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Share2, MapPin, Phone, Mail, Clock, Map, Headset } from 'lucide-react';
+import { PRODUCT_CATEGORIES } from './Products';
 import './Contact.css';
 
-const STANDARD_CATEGORIES = [
-  'Brush Cutter',
-  'Chaff Cutter & Wood Chipper',
-  'Earth Augur',
-  'Engines',
-  'Gensets & Power Generators',
-  'Hedge Trimmer',
-  'Honda Products',
-  'Power Weeder',
-  'Sprayer',
-  'Water Pump'
-];
-
 const Contact = () => {
-  const [categories, setCategories] = useState<string[]>(STANDARD_CATEGORIES);
+  const [categories, setCategories] = useState<string[]>(PRODUCT_CATEGORIES.map(c => c.name));
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,21 +17,48 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const updateCategoriesFromList = (list: any[]) => {
-      if (Array.isArray(list) && list.length > 0) {
-        const names = list
-          .map((c: any) => (typeof c === 'string' ? c.trim() : (c.name ? c.name.trim() : '')))
-          .filter((n: string) => n && n.toLowerCase() !== 'all products' && n.toLowerCase() !== 'all' && n.toLowerCase() !== 'construction');
-        const merged = Array.from(new Set([...STANDARD_CATEGORIES, ...names]));
-        setCategories(merged);
+    const buildCategoryList = (backendList?: any[]): string[] => {
+      const list: string[] = [];
+      const existingNames = new Set<string>();
+      const existingIds = new Set<string>();
+
+      // 1. Add categories from backend /api/categories
+      if (backendList && backendList.length > 0) {
+        backendList.forEach((cat: any) => {
+          const catName = cat && cat.name ? cat.name.trim() : (typeof cat === 'string' ? cat.trim() : '');
+          if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all' && catName.toLowerCase() !== 'construction') {
+            let id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            if (id === 'genset') id = 'gensets';
+            if (id === 'power-weeder') id = 'weeder';
+            if (!existingIds.has(id)) {
+              list.push(catName);
+              existingNames.add(catName.toLowerCase());
+              existingIds.add(id);
+            }
+          }
+        });
       }
+
+      // 2. Add standard categories from PRODUCT_CATEGORIES (exact match with Products page & navbar)
+      PRODUCT_CATEGORIES.forEach((stdCat) => {
+        if (!existingIds.has(stdCat.id) && !existingNames.has(stdCat.name.toLowerCase())) {
+          list.push(stdCat.name);
+          existingIds.add(stdCat.id);
+          existingNames.add(stdCat.name.toLowerCase());
+        }
+      });
+
+      return list;
     };
 
     // 1. Instant load from session cache (zero delay/flicker)
     try {
       const cached = sessionStorage.getItem('pm_cached_categories') || sessionStorage.getItem('pm_cached_categories_v4');
       if (cached) {
-        updateCategoriesFromList(JSON.parse(cached));
+        const parsed = JSON.parse(cached);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          setCategories(buildCategoryList(parsed));
+        }
       }
     } catch (e) {}
 
@@ -56,7 +71,7 @@ const Contact = () => {
           ? resData.data 
           : (Array.isArray(resData) ? resData : []);
         if (catList.length > 0) {
-          updateCategoriesFromList(catList);
+          setCategories(buildCategoryList(catList));
           try { sessionStorage.setItem('pm_cached_categories', JSON.stringify(catList)); } catch (e) {}
         }
       })
