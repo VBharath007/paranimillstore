@@ -22,15 +22,22 @@ const Contact = () => {
       const existingNames = new Set<string>();
       const existingIds = new Set<string>();
 
-      // 1. Add categories from backend /api/categories
+      // 1. Keep standard 10 categories in clean consistent order
+      PRODUCT_CATEGORIES.forEach((stdCat) => {
+        list.push(stdCat.name);
+        existingIds.add(stdCat.id);
+        existingNames.add(stdCat.name.toLowerCase());
+      });
+
+      // 2. Add any new custom category created from backend /api/categories
       if (backendList && backendList.length > 0) {
         backendList.forEach((cat: any) => {
           const catName = cat && cat.name ? cat.name.trim() : (typeof cat === 'string' ? cat.trim() : '');
-          if (catName && !existingNames.has(catName.toLowerCase()) && catName.toLowerCase() !== 'all products' && cat.slug !== 'all' && catName.toLowerCase() !== 'construction') {
+          if (catName && catName.toLowerCase() !== 'all products' && cat.slug !== 'all' && catName.toLowerCase() !== 'construction') {
             let id = cat.slug || catName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
             if (id === 'genset') id = 'gensets';
             if (id === 'power-weeder') id = 'weeder';
-            if (!existingIds.has(id)) {
+            if (!existingIds.has(id) && !existingNames.has(catName.toLowerCase())) {
               list.push(catName);
               existingNames.add(catName.toLowerCase());
               existingIds.add(id);
@@ -38,15 +45,6 @@ const Contact = () => {
           }
         });
       }
-
-      // 2. Add standard categories from PRODUCT_CATEGORIES (exact match with Products page & navbar)
-      PRODUCT_CATEGORIES.forEach((stdCat) => {
-        if (!existingIds.has(stdCat.id) && !existingNames.has(stdCat.name.toLowerCase())) {
-          list.push(stdCat.name);
-          existingIds.add(stdCat.id);
-          existingNames.add(stdCat.name.toLowerCase());
-        }
-      });
 
       return list;
     };
