@@ -29,19 +29,38 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    const updateCategoriesFromList = (list: any[]) => {
+      if (Array.isArray(list) && list.length > 0) {
+        const names = list
+          .map((c: any) => (typeof c === 'string' ? c.trim() : (c.name ? c.name.trim() : '')))
+          .filter((n: string) => n && n.toLowerCase() !== 'all products' && n.toLowerCase() !== 'all' && n.toLowerCase() !== 'construction');
+        const merged = Array.from(new Set([...STANDARD_CATEGORIES, ...names]));
+        setCategories(merged);
+      }
+    };
+
+    // 1. Instant load from session cache (zero delay/flicker)
     try {
-      const cached = sessionStorage.getItem('pm_cached_categories_v4') || sessionStorage.getItem('pm_cached_categories');
+      const cached = sessionStorage.getItem('pm_cached_categories') || sessionStorage.getItem('pm_cached_categories_v4');
       if (cached) {
-        const parsed = JSON.parse(cached);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          const names = parsed
-            .map((c: any) => c.name ? c.name.trim() : '')
-            .filter((n: string) => n && n.toLowerCase() !== 'all products' && n.toLowerCase() !== 'all' && n.toLowerCase() !== 'construction');
-          const merged = Array.from(new Set([...names, ...STANDARD_CATEGORIES]));
-          setCategories(merged);
-        }
+        updateCategoriesFromList(JSON.parse(cached));
       }
     } catch (e) {}
+
+    // 2. Fresh live fetch directly from Backend API (guarantees any new category added in backend appears immediately!)
+    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
+    fetch(`${API_BASE}/api/categories`)
+      .then(res => res.json())
+      .then(resData => {
+        const catList = resData && resData.data && Array.isArray(resData.data) 
+          ? resData.data 
+          : (Array.isArray(resData) ? resData : []);
+        if (catList.length > 0) {
+          updateCategoriesFromList(catList);
+          try { sessionStorage.setItem('pm_cached_categories', JSON.stringify(catList)); } catch (e) {}
+        }
+      })
+      .catch(() => {});
   }, []);
 
   const handleChange = (e: any) => {
