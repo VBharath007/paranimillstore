@@ -173,6 +173,110 @@ try {
   if (c) globalCategoriesCache = JSON.parse(c);
 } catch (e) {}
 
+const SEARCH_STOP_WORDS = new Set([
+  'show', 'me', 'find', 'give', 'want', 'need', 'please', 'the', 'a', 'an', 'for', 'in', 'of', 'and', 'with', 'to', 'can', 'i', 'product', 'products', 'item', 'items', 'buy'
+]);
+
+export const getSearchTokens = (query: string): string[] => {
+  const raw = (query || '').toLowerCase().trim().replace(/[.,!?;:]/g, ' ');
+  const tokens = raw.split(/\s+/).filter(Boolean);
+  const meaningful = tokens.filter(t => !SEARCH_STOP_WORDS.has(t));
+  return meaningful.length > 0 ? meaningful : tokens;
+};
+
+export const getSearchableText = (product: any): string => {
+  const name = product.name || '';
+  const cat = product.category || '';
+  const folder = product.folder || '';
+  const desc = product.description || '';
+  const stroke = product.stroke || '';
+  const specs = product.specs ? JSON.stringify(product.specs) : '';
+  return `${name} ${cat} ${folder} ${desc} ${stroke} ${specs}`.toLowerCase();
+};
+
+export const matchesProduct = (product: any, query: string): boolean => {
+  if (!query || !query.trim()) return false;
+  const cleanQ = query.toLowerCase().trim();
+  const tokens = getSearchTokens(cleanQ);
+  if (tokens.length === 0) return false;
+
+  const fullText = getSearchableText(product);
+  const fullTextClean = fullText.replace(/[^a-z0-9]/g, ' ');
+  const fullCollapsed = fullText.replace(/[^a-z0-9]/g, '');
+  const queryCollapsed = cleanQ.replace(/[^a-z0-9]/g, '');
+
+  // 1. Direct collapsed phrase match (e.g. 'hondagx160' matches 'honda gx 160')
+  if (queryCollapsed && fullCollapsed.includes(queryCollapsed)) {
+    return true;
+  }
+
+  // 2. Token match: every token must be found in the product text/specs
+  return tokens.every(tok => {
+    // Exact substring in fullText
+    if (fullText.includes(tok)) return true;
+
+    // Collapsed alphanumeric match (e.g. 'gx160' matches 'gx 160')
+    const tokCollapsed = tok.replace(/[^a-z0-9]/g, '');
+    if (tokCollapsed && fullCollapsed.includes(tokCollapsed)) return true;
+
+    // kw / kva equivalence for gensets
+    if (tok.endsWith('kva')) {
+      const kw = tok.replace('kva', 'kw');
+      if (fullCollapsed.includes(kw)) return true;
+    }
+    if (tok.endsWith('kw')) {
+      const kva = tok.replace('kw', 'kva');
+      if (fullCollapsed.includes(kva)) return true;
+    }
+
+    // Split alphanumeric tokens like 'gx160' -> 'gx' & '160', '52cc' -> '52' & 'cc'
+    const parts = tok.match(/[a-z]+|[0-9]+/g);
+    if (parts && parts.length > 1) {
+      if (parts.every(p => fullTextClean.includes(p))) return true;
+      const collapsedParts = parts.join('');
+      if (fullCollapsed.includes(collapsedParts)) return true;
+    }
+
+    // Machinery synonyms & category aliases
+    if (tok === 'generator' || tok === 'generators') {
+      return fullText.includes('genset') || fullText.includes('generator') || isProductInCategory(product, 'gensets');
+    }
+    if (tok === 'genset' || tok === 'gensets') {
+      return fullText.includes('generator') || fullText.includes('genset') || isProductInCategory(product, 'gensets');
+    }
+    if (tok === 'auger' || tok === 'augur') {
+      return fullText.includes('auger') || fullText.includes('augur');
+    }
+    if (tok === 'chipper' || tok === 'chaff') {
+      return fullText.includes('chipper') || fullText.includes('chaff');
+    }
+
+    return false;
+  });
+};
+
+export const getProductRelevanceScore = (product: any, query: string): number => {
+  let score = 0;
+  const name = (product.name || '').toLowerCase();
+  const cat = (product.category || '').toLowerCase();
+  const nameCollapsed = name.replace(/[^a-z0-9]/g, '');
+  const queryCollapsed = query.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const tokens = getSearchTokens(query);
+
+  if (nameCollapsed === queryCollapsed) score += 300;
+  else if (nameCollapsed.includes(queryCollapsed)) score += 150;
+
+  tokens.forEach(t => {
+    if (name.includes(t)) score += 40;
+    const tCollapsed = t.replace(/[^a-z0-9]/g, '');
+    if (tCollapsed && nameCollapsed.includes(tCollapsed)) score += 30;
+    if (cat.includes(t)) score += 20;
+  });
+
+  score -= name.length * 0.1;
+  return score;
+};
+
 const Products = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -297,17 +401,13 @@ const Products = () => {
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    const q = searchQuery.toLowerCase().trim();
-    const isGensetQuery = q.includes('generator') || q.includes('genset') || q.includes('power gen');
-    const matched = allProductsList.filter((p: any) => {
-      const name = (p.name || '').toLowerCase();
-      const cat = (p.category || '').toLowerCase();
-      const folder = (p.folder || '').toLowerCase();
-      const desc = (p.description || '').toLowerCase();
-      const gensetMatch = isGensetQuery && (isProductInCategory(p, 'gensets') || cat.includes('genset'));
-      return name.includes(q) || cat.includes(q) || folder.includes(q) || desc.includes(q) || gensetMatch;
+    const matched = allProductsList.filter((p: any) => matchesProduct(p, searchQuery));
+    matched.sort((a: any, b: any) => {
+      const scoreB = getProductRelevanceScore(b, searchQuery);
+      const scoreA = getProductRelevanceScore(a, searchQuery);
+      if (scoreB !== scoreA) return scoreB - scoreA;
+      return (a.name || '').localeCompare(b.name || '');
     });
-    matched.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
     return matched;
   }, [searchQuery, allProductsList]);
 
@@ -923,20 +1023,17 @@ const Products = () => {
 
             let filtered = allProductsList;
             if (searchQuery.trim()) {
-              const q = searchQuery.toLowerCase().trim();
-              const isGensetQuery = q.includes('generator') || q.includes('genset') || q.includes('power gen');
-              filtered = filtered.filter((p: any) => {
-                const name = (p.name || '').toLowerCase();
-                const cat = (p.category || '').toLowerCase();
-                const folder = (p.folder || '').toLowerCase();
-                const desc = (p.description || '').toLowerCase();
-                const gensetMatch = isGensetQuery && (isProductInCategory(p, 'gensets') || cat.includes('genset'));
-                return name.includes(q) || cat.includes(q) || folder.includes(q) || desc.includes(q) || gensetMatch;
+              filtered = filtered.filter((p: any) => matchesProduct(p, searchQuery));
+              filtered.sort((a: any, b: any) => {
+                const scoreB = getProductRelevanceScore(b, searchQuery);
+                const scoreA = getProductRelevanceScore(a, searchQuery);
+                if (scoreB !== scoreA) return scoreB - scoreA;
+                return (a.name || '').localeCompare(b.name || '');
               });
             } else {
               filtered = filtered.filter((p: any) => isProductInCategory(p, activeCategory));
+              filtered.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
             }
-            filtered.sort((a: any, b: any) => (a.name || '').localeCompare(b.name || ''));
 
             if (filtered.length === 0) {
               if (searchQuery.trim()) {
