@@ -173,12 +173,67 @@ try {
   if (c) globalCategoriesCache = JSON.parse(c);
 } catch (e) {}
 
+export const isProduct2Stroke = (p: any): boolean => {
+  if (!p) return false;
+  const s = (p.stroke || '').toLowerCase();
+  const n = (p.name || '').toLowerCase();
+  const f = (p.folder || '').toLowerCase();
+  if (s.includes('2') || s.includes('2s') || s.includes('2 stroke')) return true;
+  if (/\b2s\b|\b2-stroke\b|\b2\s*stroke\b/.test(n) || /\b2s\b|\b2-stroke\b|\b2\s*stroke\b/.test(f)) return true;
+  return false;
+};
+
+export const isProduct4Stroke = (p: any): boolean => {
+  if (!p) return false;
+  const s = (p.stroke || '').toLowerCase();
+  const n = (p.name || '').toLowerCase();
+  const f = (p.folder || '').toLowerCase();
+  if (s.includes('4') || s.includes('4s') || s.includes('4 stroke')) return true;
+  if (/\b4s\b|\b4-stroke\b|\b4\s*stroke\b/.test(n) || /\b4s\b|\b4-stroke\b|\b4\s*stroke\b/.test(f)) return true;
+  return false;
+};
+
+export const normalizeSpokenQuery = (q: string): string => {
+  if (!q) return '';
+  let str = q.toLowerCase().trim();
+
+  // 1. Spoken number words to digits ("two stroke" -> "2 stroke", "four stroke" -> "4 stroke", "two hp" -> "2 hp")
+  const numWords: Record<string, string> = {
+    zero: '0', one: '1', two: '2', three: '3', four: '4',
+    five: '5', six: '6', seven: '7', eight: '8', nine: '9', ten: '10'
+  };
+  for (const [w, d] of Object.entries(numWords)) {
+    str = str.replace(new RegExp(`\\b${w}\\b`, 'g'), d);
+  }
+
+  // 2. Stroke variations: "2 stroke", "two stroke", "2 stroek", "2strok", "2-stroke", "2 s" -> "2 stroke"
+  str = str.replace(/\b2\s*-?\s*stro[a-z]*\b/g, '2 stroke');
+  str = str.replace(/\b4\s*-?\s*stro[a-z]*\b/g, '4 stroke');
+
+  // 3. Machinery and voice aliases (English + Tanglish)
+  str = str.replace(/\bpull?u\s*(machine|cutter)?\b/g, 'brush cutter');
+  str = str.replace(/\bgrass\s*cutter\b/g, 'brush cutter');
+  str = str.replace(/\bweed\s*cutter\b/g, 'brush cutter');
+  str = str.replace(/\bbush\s*cutter\b/g, 'brush cutter');
+  str = str.replace(/\bmaram\s*(arukkum|vetti)\b/g, 'chainsaw');
+  str = str.replace(/\bthann?i\s*(motor|pump)\b/g, 'water pump');
+  str = str.replace(/\bcurrent\s*(machine|generator)?\b/g, 'generator');
+  str = str.replace(/\bmarunthu\s*(machine|adikkum|sprayer)?\b/g, 'sprayer');
+  str = str.replace(/\bkuli\s*(thondum|machine)?\b/g, 'earth auger');
+  str = str.replace(/\bgen\s*set\b/g, 'genset');
+  str = str.replace(/\bwood\s*cutter\b/g, 'wood chipper');
+  str = str.replace(/\btea\s*(leaf)?\s*cutter\b/g, 'tea leaf harvester');
+
+  return str;
+};
+
 const SEARCH_STOP_WORDS = new Set([
-  'show', 'me', 'find', 'give', 'want', 'need', 'please', 'the', 'a', 'an', 'for', 'in', 'of', 'and', 'with', 'to', 'can', 'i', 'product', 'products', 'item', 'items', 'buy'
+  'show', 'me', 'find', 'give', 'want', 'need', 'please', 'the', 'a', 'an', 'for', 'in', 'of', 'and', 'with', 'to', 'can', 'i', 'product', 'products', 'item', 'items', 'buy', 'machine', 'rate', 'price', 'model'
 ]);
 
 export const getSearchTokens = (query: string): string[] => {
-  const raw = (query || '').toLowerCase().trim().replace(/[.,!?;:]/g, ' ');
+  const norm = normalizeSpokenQuery(query);
+  const raw = norm.replace(/[.,!?;:]/g, ' ');
   const tokens = raw.split(/\s+/).filter(Boolean);
   const meaningful = tokens.filter(t => !SEARCH_STOP_WORDS.has(t));
   return meaningful.length > 0 ? meaningful : tokens;
@@ -189,16 +244,27 @@ export const getSearchableText = (product: any): string => {
   const cat = product.category || '';
   const folder = product.folder || '';
   const desc = product.description || '';
-  const stroke = product.stroke || '';
+  const stroke = product.stroke || (isProduct2Stroke(product) ? '2 Stroke 2S' : isProduct4Stroke(product) ? '4 Stroke 4S' : '');
   const specs = product.specs ? JSON.stringify(product.specs) : '';
   return `${name} ${cat} ${folder} ${desc} ${stroke} ${specs}`.toLowerCase();
 };
 
-export const matchesProduct = (product: any, query: string): boolean => {
-  if (!query || !query.trim()) return false;
-  const cleanQ = query.toLowerCase().trim();
+export const matchesProduct = (product: any, rawQuery: string): boolean => {
+  if (!rawQuery || !rawQuery.trim()) return false;
+  const cleanQ = normalizeSpokenQuery(rawQuery);
   const tokens = getSearchTokens(cleanQ);
   if (tokens.length === 0) return false;
+
+  // Stroke exclusivity filter
+  const is2StrokeQuery = cleanQ.includes('2 stroke') || /\b2s\b/.test(cleanQ);
+  const is4StrokeQuery = cleanQ.includes('4 stroke') || /\b4s\b/.test(cleanQ);
+
+  if (is2StrokeQuery && !isProduct2Stroke(product)) {
+    return false;
+  }
+  if (is4StrokeQuery && !isProduct4Stroke(product)) {
+    return false;
+  }
 
   const fullText = getSearchableText(product);
   const fullTextClean = fullText.replace(/[^a-z0-9]/g, ' ');
@@ -210,8 +276,21 @@ export const matchesProduct = (product: any, query: string): boolean => {
     return true;
   }
 
+  // If stroke query matched, don't let '2' or 'stroke' block other product words
+  const activeTokens = tokens.filter(t => {
+    if ((is2StrokeQuery || is4StrokeQuery) && (t === '2' || t === '4' || t === 'stroke' || t === '2s' || t === '4s')) {
+      return false;
+    }
+    return true;
+  });
+
+  // If the query was purely "2 stroke" or "4 stroke", having satisfied the stroke check above is enough!
+  if (activeTokens.length === 0) {
+    return true;
+  }
+
   // 2. Token match: every token must be found in the product text/specs
-  return tokens.every(tok => {
+  return activeTokens.every(tok => {
     // Exact substring in fullText
     if (fullText.includes(tok)) return true;
 
@@ -255,13 +334,14 @@ export const matchesProduct = (product: any, query: string): boolean => {
   });
 };
 
-export const getProductRelevanceScore = (product: any, query: string): number => {
+export const getProductRelevanceScore = (product: any, rawQuery: string): number => {
   let score = 0;
+  const cleanQ = normalizeSpokenQuery(rawQuery);
   const name = (product.name || '').toLowerCase();
   const cat = (product.category || '').toLowerCase();
   const nameCollapsed = name.replace(/[^a-z0-9]/g, '');
-  const queryCollapsed = query.toLowerCase().replace(/[^a-z0-9]/g, '');
-  const tokens = getSearchTokens(query);
+  const queryCollapsed = cleanQ.replace(/[^a-z0-9]/g, '');
+  const tokens = getSearchTokens(cleanQ);
 
   if (nameCollapsed === queryCollapsed) score += 300;
   else if (nameCollapsed.includes(queryCollapsed)) score += 150;
@@ -272,6 +352,10 @@ export const getProductRelevanceScore = (product: any, query: string): number =>
     if (tCollapsed && nameCollapsed.includes(tCollapsed)) score += 30;
     if (cat.includes(t)) score += 20;
   });
+
+  // Boost stroke matches if explicitly requested
+  if ((cleanQ.includes('2 stroke') || /\b2s\b/.test(cleanQ)) && isProduct2Stroke(product)) score += 50;
+  if ((cleanQ.includes('4 stroke') || /\b4s\b/.test(cleanQ)) && isProduct4Stroke(product)) score += 50;
 
   score -= name.length * 0.1;
   return score;
