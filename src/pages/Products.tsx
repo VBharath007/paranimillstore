@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, ArrowRight, ChevronDown, Image as ImageIcon,
 import './Products.css';
 import productsData from '../products.json';
 import gensetsData from '../gensets.json';
+import { API_BASE } from '../config/api';
 
 export interface CategoryItem {
   id: string;
@@ -371,7 +372,6 @@ const Products = () => {
   const [isInitialLoading, setIsInitialLoading] = useState<boolean>(globalProductsCache.length === 0);
 
   useEffect(() => {
-    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
     const fetchBackendData = async () => {
       try {
         const [prodRes, catRes] = await Promise.all([
@@ -407,17 +407,20 @@ const Products = () => {
     if (backendProducts && backendProducts.length > 0) {
       const hasGensets = backendProducts.some((p: any) => isProductInCategory(p, 'gensets'));
       
-      if (!hasGensets && gensetsNormalized.length > 0) {
-        const combined = [...backendProducts, ...gensetsNormalized];
-        const uniqueMap = new Map();
-        combined.forEach((p: any) => {
-          if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
-            uniqueMap.set(p.name.toLowerCase(), p);
-          }
-        });
-        return Array.from(uniqueMap.values());
-      }
-      return backendProducts;
+      const combined = (!hasGensets && gensetsNormalized.length > 0)
+        ? [...backendProducts, ...gensetsNormalized]
+        : backendProducts;
+
+      const uniqueMap = new Map();
+      combined.forEach((p: any) => {
+        if (p.name && !uniqueMap.has(p.name.toLowerCase())) {
+          uniqueMap.set(p.name.toLowerCase(), p);
+        }
+      });
+      return Array.from(uniqueMap.values()).map((p: any) => ({
+        ...p,
+        slug: p.slug || (p.name ? p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') : '')
+      }));
     }
 
     const combined = [...productsData, ...gensetsNormalized];
@@ -683,17 +686,26 @@ const Products = () => {
     window.history.pushState(null, '', '/products');
   };
 
+  const modalImages = useMemo(() => {
+    if (!selectedProduct) return [];
+    if (Array.isArray(selectedProduct.images) && selectedProduct.images.length > 0) {
+      return selectedProduct.images;
+    }
+    const fallback = selectedProduct.thumbnail || selectedProduct.thumbnailUrl;
+    return fallback ? [fallback] : [];
+  }, [selectedProduct]);
+
   const handlePrevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedProduct) {
-      setActiveImageIndex((prev) => (prev === 0 ? selectedProduct.images.length - 1 : prev - 1));
+    if (modalImages.length > 0) {
+      setActiveImageIndex((prev) => (prev === 0 ? modalImages.length - 1 : prev - 1));
     }
   };
 
   const handleNextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (selectedProduct) {
-      setActiveImageIndex((prev) => (prev === selectedProduct.images.length - 1 ? 0 : prev + 1));
+    if (modalImages.length > 0) {
+      setActiveImageIndex((prev) => (prev === modalImages.length - 1 ? 0 : prev + 1));
     }
   };
 
@@ -717,10 +729,12 @@ const Products = () => {
           setRotationIndex((prev) => (prev === rotationSequence.length - 1 ? 0 : prev + 1));
         }
       } else {
-        if (diff > 0) {
-          setActiveImageIndex((prev) => (prev === 0 ? selectedProduct.images.length - 1 : prev - 1));
-        } else {
-          setActiveImageIndex((prev) => (prev === selectedProduct.images.length - 1 ? 0 : prev + 1));
+        if (modalImages.length > 0) {
+          if (diff > 0) {
+            setActiveImageIndex((prev) => (prev === 0 ? modalImages.length - 1 : prev - 1));
+          } else {
+            setActiveImageIndex((prev) => (prev === modalImages.length - 1 ? 0 : prev + 1));
+          }
         }
       }
       setStartX(clientX);
@@ -1231,20 +1245,20 @@ const Products = () => {
               <div className="modal-left-column">
                 <div className="gallery-layout">
                   
-                  {!is360View && (
+                  {!is360View && modalImages.length > 1 && (
                     <div className="thumbnails-sidebar">
                       <div className="thumbnails-scroll-area">
-                        {(selectedProduct.images || []).map((img: string, idx: number) => (
+                        {modalImages.map((img: string, idx: number) => (
                           <div 
                             key={idx} 
                             className={`thumb-item ${activeImageIndex === idx ? 'active' : ''}`}
                             onClick={() => setActiveImageIndex(idx)}
                           >
-                            <img src={getProductImage(selectedProduct.folder, img)} alt={`view ${idx}`} />
+                            <img src={getProductImage(selectedProduct.folder, img, selectedProduct.thumbnailUrl)} alt={`view ${idx}`} />
                           </div>
                         ))}
                       </div>
-                      {(selectedProduct.images || []).length > 4 && (
+                      {modalImages.length > 4 && (
                         <button className="thumb-scroll-down"><ChevronDown size={20}/></button>
                       )}
                     </div>
@@ -1274,19 +1288,19 @@ const Products = () => {
                       onTouchMove={handleDragMove}
                       onTouchEnd={handleDragEnd}
                     >
-                      {!is360View && (
+                      {!is360View && modalImages.length > 1 && (
                         <button className="nav-circ prev" onClick={handlePrevImage} aria-label="Previous image"><ChevronLeft size={24} /></button>
                       )}
                       
                       <img 
                         ref={mainImageRef}
-                        src={getProductImage(selectedProduct.folder, selectedProduct.images?.[currentDisplayIndex])} 
+                        src={getProductImage(selectedProduct.folder, modalImages[currentDisplayIndex] || selectedProduct.thumbnail || selectedProduct.thumbnailUrl, selectedProduct.thumbnailUrl)} 
                         alt={selectedProduct.name} 
                         className="main-display-image"
                         draggable="false"
                       />
                       
-                      {!is360View && (
+                      {!is360View && modalImages.length > 1 && (
                         <button className="nav-circ next" onClick={handleNextImage} aria-label="Next image"><ChevronRight size={24} /></button>
                       )}
                       

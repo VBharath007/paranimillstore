@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Share2, MapPin, Phone, Mail, Clock, Map, Headset } from 'lucide-react';
 import { PRODUCT_CATEGORIES } from './Products';
+import { API_BASE } from '../config/api';
 import './Contact.css';
 
 const Contact = () => {
@@ -61,7 +62,6 @@ const Contact = () => {
     } catch (e) {}
 
     // 2. Fresh live fetch directly from Backend API (guarantees any new category added in backend appears immediately!)
-    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
     fetch(`${API_BASE}/api/categories`)
       .then(res => res.json())
       .then(resData => {

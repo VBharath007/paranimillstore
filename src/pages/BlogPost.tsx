@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, Share2, User, Calendar, Check } from 'lucide-react';
 import './BlogPost.css';
 import fallbackBlogs from '../blogs.json';
+import { API_BASE } from '../config/api';
 
 const BlogPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,8 +18,6 @@ const BlogPost: React.FC = () => {
     window.scrollTo(0, 0);
     setIsLoading(true);
     setHasFetched(false);
-
-    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
 
     const fetchBackendPost = async () => {
       try {

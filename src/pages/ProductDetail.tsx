@@ -12,6 +12,7 @@ import {
 import { getProductImage, getProductCategorySlug } from './Products';
 import fallbackProducts from '../products.json';
 import gensetsData from '../gensets.json';
+import { API_BASE } from '../config/api';
 import './Products.css';
 
 const ProductDetail: React.FC = () => {
@@ -35,7 +36,6 @@ const ProductDetail: React.FC = () => {
 
     const fetchProduct = async () => {
       setIsLoading(true);
-      const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
       
       try {
         const res = await fetch(API_BASE + '/api/products/' + slug).catch(() => null);

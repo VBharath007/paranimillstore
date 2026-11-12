@@ -4,6 +4,7 @@ import { ArrowRight, Calendar, User, Clock, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import './Blog.css';
 import fallbackBlogs from '../blogs.json';
+import { API_BASE } from '../config/api';
 
 // Empty export to preserve compatibility if imported elsewhere
 export const blogPosts: any[] = [];
@@ -22,8 +23,6 @@ const Blog = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
 
     const fetchBackendBlogs = async () => {
       try {
