@@ -301,7 +301,7 @@ function App() {
                   </div>
                   <span className="delivery-text-sweep" style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.5px', lineHeight: '1.4', display: 'block' }}>
                     <span style={{ color: '#fbaf00', fontSize: '0.8rem', textTransform: 'uppercase' }}>Delivery Available</span><br/>
-                    <span style={{ color: 'white' }}>Delivery Across India</span>
+                    <span style={{ color: 'white' }}>Across India</span>
                   </span>
                 </div>
               </div>
