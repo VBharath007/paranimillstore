@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import ProductDetail from './pages/ProductDetail';
+import { API_BASE } from './config/api';
 import './App.css';
 
 const DEFAULT_NAV_CATEGORIES = [
@@ -30,8 +31,6 @@ function App() {
   const [navCategories, setNavCategories] = useState<any[]>(DEFAULT_NAV_CATEGORIES);
 
   useEffect(() => {
-    const API_BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_URL) || 'http://localhost:5001';
-
     // 1. Fetch categories
     fetch(API_BASE + '/api/categories')
       .then(res => res.json())
@@ -65,7 +64,10 @@ function App() {
           });
 
           setNavCategories(list);
-          try { sessionStorage.setItem('pm_cached_categories', JSON.stringify(data.data)); } catch (e) {}
+          try { 
+            sessionStorage.setItem('pm_cached_categories', JSON.stringify(data.data)); 
+            sessionStorage.setItem('pm_cached_categories_v4', JSON.stringify(data.data)); 
+          } catch (e) {}
         }
       })
       .catch(() => {});
@@ -75,7 +77,10 @@ function App() {
       .then(res => res.json())
       .then(data => {
         if (data && data.success && Array.isArray(data.data)) {
-          try { sessionStorage.setItem('pm_cached_products', JSON.stringify(data.data)); } catch (e) {}
+          try { 
+            sessionStorage.setItem('pm_cached_products', JSON.stringify(data.data)); 
+            sessionStorage.setItem('pm_cached_products_v4', JSON.stringify(data.data)); 
+          } catch (e) {}
         }
       })
       .catch(() => {});
@@ -296,7 +301,7 @@ function App() {
                   </div>
                   <span className="delivery-text-sweep" style={{ fontWeight: 600, fontSize: '0.9rem', letterSpacing: '0.5px', lineHeight: '1.4', display: 'block' }}>
                     <span style={{ color: '#fbaf00', fontSize: '0.8rem', textTransform: 'uppercase' }}>Delivery Available</span><br/>
-                    <span style={{ color: 'white' }}>Madurai & South Tamil Nadu</span>
+                    <span style={{ color: 'white' }}>Delivery Across India</span>
                   </span>
                 </div>
               </div>
