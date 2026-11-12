@@ -27,20 +27,20 @@ export const PRODUCT_CATEGORIES: CategoryItem[] = [
 
 const GoogleGIcon = () => (
   <svg viewBox="0 0 24 24" width="19" height="19" style={{ flexShrink: 0 }}>
-    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
-    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05" />
+    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335" />
   </svg>
 );
 
 const GoogleMicIcon = ({ isListening }: { isListening?: boolean }) => (
   <svg viewBox="0 0 24 24" width="19" height="19" style={{ flexShrink: 0 }}>
-    <path fill={isListening ? '#ef4444' : '#4285F4'} d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-    <path fill={isListening ? '#ef4444' : '#34A853'} d="M11 18.08h2V21h-2z"/>
-    <path fill={isListening ? '#ef4444' : '#EA4335'} d="M7.05 16.97c-1.28-1.28-2.05-3.04-2.05-4.97h2c0 1.38.56 2.63 1.46 3.54l-1.41 1.43z"/>
-    <path fill={isListening ? '#ef4444' : '#FBBC05'} d="M12 17c1.38 0 2.63-.56 3.54-1.46l1.41 1.43c-1.28 1.28-3.04 2.05-4.95 2.05V17z"/>
-    <path fill={isListening ? '#ef4444' : '#4285F4'} d="M16.95 16.97c1.28-1.28 2.05-3.04 2.05-4.97h-2c0 1.38-.56 2.63-1.46 3.54l1.41 1.43z"/>
+    <path fill={isListening ? '#ef4444' : '#4285F4'} d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+    <path fill={isListening ? '#ef4444' : '#34A853'} d="M11 18.08h2V21h-2z" />
+    <path fill={isListening ? '#ef4444' : '#EA4335'} d="M7.05 16.97c-1.28-1.28-2.05-3.04-2.05-4.97h2c0 1.38.56 2.63 1.46 3.54l-1.41 1.43z" />
+    <path fill={isListening ? '#ef4444' : '#FBBC05'} d="M12 17c1.38 0 2.63-.56 3.54-1.46l1.41 1.43c-1.28 1.28-3.04 2.05-4.95 2.05V17z" />
+    <path fill={isListening ? '#ef4444' : '#4285F4'} d="M16.95 16.97c1.28-1.28 2.05-3.04 2.05-4.97h-2c0 1.38-.56 2.63-1.46 3.54l1.41 1.43z" />
   </svg>
 );
 
@@ -153,18 +153,18 @@ export const normalizeProductFolder = (folderOrUrl?: string): string => {
 export const getProductImage = (folder?: string, imgOrThumb?: string, fallbackUrl?: string): string => {
   if (fallbackUrl && fallbackUrl.startsWith('http')) return fallbackUrl;
   if (imgOrThumb && typeof imgOrThumb === 'string' && imgOrThumb.startsWith('http')) return imgOrThumb;
-  
+
   if (fallbackUrl) {
     return normalizeProductFolder(fallbackUrl);
   }
-  
+
   const cleanFolder = normalizeProductFolder(folder || '');
   const cleanImg = imgOrThumb ? (imgOrThumb.startsWith('/') ? imgOrThumb.slice(1) : imgOrThumb) : '';
   return ('/' + cleanFolder + '/' + cleanImg).replace(/\/+/g, '/');
 };
 
 // Global cache for immediate, flash-free rendering
-try { sessionStorage.removeItem('pm_cached_products'); sessionStorage.removeItem('pm_cached_categories'); } catch(e){}
+try { sessionStorage.removeItem('pm_cached_products'); sessionStorage.removeItem('pm_cached_categories'); } catch (e) { }
 let globalProductsCache: any[] = [];
 let globalCategoriesCache: any[] = [];
 try {
@@ -172,7 +172,7 @@ try {
   if (p) globalProductsCache = JSON.parse(p);
   const c = sessionStorage.getItem('pm_cached_categories_v4');
   if (c) globalCategoriesCache = JSON.parse(c);
-} catch (e) {}
+} catch (e) { }
 
 export const isProduct2Stroke = (p: any): boolean => {
   if (!p) return false;
@@ -381,12 +381,12 @@ const Products = () => {
         if (prodRes && prodRes.success && Array.isArray(prodRes.data)) {
           setBackendProducts(prodRes.data);
           globalProductsCache = prodRes.data;
-          try { sessionStorage.setItem('pm_cached_products_v4', JSON.stringify(prodRes.data)); } catch (e) {}
+          try { sessionStorage.setItem('pm_cached_products_v4', JSON.stringify(prodRes.data)); } catch (e) { }
         }
         if (catRes && catRes.success && Array.isArray(catRes.data)) {
           setBackendCategories(catRes.data);
           globalCategoriesCache = catRes.data;
-          try { sessionStorage.setItem('pm_cached_categories_v4', JSON.stringify(catRes.data)); } catch (e) {}
+          try { sessionStorage.setItem('pm_cached_categories_v4', JSON.stringify(catRes.data)); } catch (e) { }
         }
       } catch (error) {
         console.error("Error fetching data from backend API:", error);
@@ -406,7 +406,7 @@ const Products = () => {
 
     if (backendProducts && backendProducts.length > 0) {
       const hasGensets = backendProducts.some((p: any) => isProductInCategory(p, 'gensets'));
-      
+
       const combined = (!hasGensets && gensetsNormalized.length > 0)
         ? [...backendProducts, ...gensetsNormalized]
         : backendProducts;
@@ -509,7 +509,7 @@ const Products = () => {
       if (recognitionRef.current) {
         try {
           recognitionRef.current.stop();
-        } catch (e) {}
+        } catch (e) { }
       }
       setIsListening(false);
       return;
@@ -519,7 +519,7 @@ const Products = () => {
       if (recognitionRef.current) {
         try {
           recognitionRef.current.abort();
-        } catch (e) {}
+        } catch (e) { }
       }
 
       const recognition = new SpeechRecognition();
@@ -588,14 +588,14 @@ const Products = () => {
       if (catLower === 'agri' || catLower === 'all') {
         setActiveCategory('brush-cutter');
       } else if (
-        catLower.includes('genset') || 
-        catLower.includes('generator') || 
-        catSlug.includes('genset') || 
+        catLower.includes('genset') ||
+        catLower.includes('generator') ||
+        catSlug.includes('genset') ||
         catSlug.includes('generator')
       ) {
         setActiveCategory('gensets');
       } else {
-        const found = dynamicCategories.find(c => c.id === catSlug || c.id === catLower) 
+        const found = dynamicCategories.find(c => c.id === catSlug || c.id === catLower)
           || PRODUCT_CATEGORIES.find(c => c.id === catSlug || c.id === catLower);
         if (found) {
           setActiveCategory(found.id);
@@ -627,7 +627,7 @@ const Products = () => {
     const right = selectedProduct.images.findIndex((img: string) => img.includes('right'));
     const back = selectedProduct.images.findIndex((img: string) => img.includes('back'));
     const left = selectedProduct.images.findIndex((img: string) => img.includes('left'));
-    
+
     const seq = [front, right, back, left].filter(idx => idx !== -1);
     return seq.length >= 2 ? seq : null;
   }, [selectedProduct]);
@@ -719,7 +719,7 @@ const Products = () => {
     if (!is360View || startX === null || !selectedProduct) return;
     const clientX = 'touches' in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
     const diff = clientX - startX;
-    
+
     // Higher sensitivity threshold for 360 drag
     if (Math.abs(diff) > 25) {
       if (rotationSequence) {
@@ -908,46 +908,46 @@ const Products = () => {
       {/* Auto-scrolling USP Marquee */}
       <div className="product-usp-marquee">
         <div className="marquee-track">
-          <span className="marquee-item"><Package size={18}/> All Spares Available</span>
+          <span className="marquee-item"><Package size={18} /> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across India</span>
+          <span className="marquee-item"><Truck size={18} /> Delivery Available Across India</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
+          <span className="marquee-item"><CreditCard size={18} /> EMI Available</span>
           <span className="marquee-divider">•</span>
-          
+
           {/* Set 2 */}
-          <span className="marquee-item"><Package size={18}/> All Spares Available</span>
+          <span className="marquee-item"><Package size={18} /> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across India</span>
+          <span className="marquee-item"><Truck size={18} /> Delivery Available Across India</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
+          <span className="marquee-item"><CreditCard size={18} /> EMI Available</span>
           <span className="marquee-divider">•</span>
-          
+
           {/* Set 3 */}
-          <span className="marquee-item"><Package size={18}/> All Spares Available</span>
+          <span className="marquee-item"><Package size={18} /> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across India</span>
+          <span className="marquee-item"><Truck size={18} /> Delivery Available Across India</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
+          <span className="marquee-item"><CreditCard size={18} /> EMI Available</span>
           <span className="marquee-divider">•</span>
-          
+
           {/* Set 4 to ensure smooth scroll on ultrawide */}
-          <span className="marquee-item"><Package size={18}/> All Spares Available</span>
+          <span className="marquee-item"><Package size={18} /> All Spares Available</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><Truck size={18}/> Delivery Across India</span>
+          <span className="marquee-item"><Truck size={18} /> Delivery Available Across India</span>
           <span className="marquee-divider">•</span>
-          <span className="marquee-item"><CreditCard size={18}/> EMI Available</span>
+          <span className="marquee-item"><CreditCard size={18} /> EMI Available</span>
           <span className="marquee-divider">•</span>
         </div>
       </div>
-      
+
       <section className="categories-section">
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '15px' }}>Explore Our Signature Products</h2>
           <p style={{ textAlign: 'center', color: '#64748b', fontSize: '1.05rem', marginBottom: '25px', maxWidth: '700px', margin: '0 auto 25px auto' }}>
             Select a category below to browse our high-performance machinery, genuine spares, and trusted industrial tools.
           </p>
-          
+
           {/* Official Google Style Voice & Instant Search Bar with Glowing Border */}
           <div className="google-search-container" ref={searchContainerRef}>
             <div className={`google-search-glow-wrapper ${isListening ? 'listening-glow' : ''}`}>
@@ -956,8 +956,8 @@ const Products = () => {
                   <GoogleGIcon />
                 </div>
                 <div className="google-search-divider"></div>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={searchQuery}
                   onChange={(e) => {
                     setSearchQuery(e.target.value);
@@ -970,12 +970,12 @@ const Products = () => {
                   placeholder={isListening ? 'Listening...' : 'Search...'}
                   className="google-search-input"
                 />
-                
+
                 <div className="google-search-actions">
                   {searchQuery && (
-                    <button 
+                    <button
                       type="button"
-                      className="google-clear-btn" 
+                      className="google-clear-btn"
                       onClick={() => {
                         setSearchQuery('');
                         setIsDropdownOpen(false);
@@ -986,7 +986,7 @@ const Products = () => {
                     </button>
                   )}
 
-                  <button 
+                  <button
                     type="button"
                     className={`google-mic-btn ${isListening ? 'active' : ''}`}
                     onClick={handleVoiceSearch}
@@ -1011,7 +1011,7 @@ const Products = () => {
                       {searchResults.slice(0, 6).map((prod: any, idx: number) => {
                         const imgSrc = getProductImage(prod.folder, prod.thumbnail || (prod.images && prod.images[0]), prod.thumbnailUrl);
                         return (
-                          <div 
+                          <div
                             key={prod.id || prod._id || idx}
                             className="google-search-dropdown-item"
                             onClick={() => {
@@ -1030,8 +1030,8 @@ const Products = () => {
                       })}
                     </div>
                     <div className="google-search-dropdown-footer">
-                      <button 
-                        type="button" 
+                      <button
+                        type="button"
                         className="dropdown-view-all-btn"
                         onClick={() => {
                           setIsDropdownOpen(false);
@@ -1054,12 +1054,12 @@ const Products = () => {
           <div className="products-subnav-container">
             <div className="products-subnav">
               {dynamicCategories.map((cat: any) => {
-                const count = cat.id === 'all' 
-                  ? allProductsList.length 
+                const count = cat.id === 'all'
+                  ? allProductsList.length
                   : allProductsList.filter((p: any) => isProductInCategory(p, cat.id)).length;
 
                 return (
-                  <button 
+                  <button
                     key={cat.id}
                     className={`subnav-btn ${!searchQuery && activeCategory === cat.id ? 'active' : ''}`}
                     onClick={() => {
@@ -1084,8 +1084,8 @@ const Products = () => {
                 <span className="category-active-label">
                   Search Results for: <strong>"{searchQuery}"</strong>
                 </span>
-                <button 
-                  onClick={() => setSearchQuery('')} 
+                <button
+                  onClick={() => setSearchQuery('')}
                   className="search-reset-link"
                 >
                   Back to Categories
@@ -1103,11 +1103,11 @@ const Products = () => {
               return (
                 <div className="categories-grid" style={{ minHeight: '300px' }}>
                   {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div 
-                      key={i} 
-                      className="category-card" 
-                      style={{ 
-                        opacity: 0.5, 
+                    <div
+                      key={i}
+                      className="category-card"
+                      style={{
+                        opacity: 0.5,
                         minHeight: '320px',
                         background: '#f8fafc',
                         border: '1px solid #e2e8f0',
@@ -1141,7 +1141,7 @@ const Products = () => {
                     <h3>No Products Found</h3>
                     <p>No products matched your search for <strong>"{searchQuery}"</strong>.</p>
                     <p style={{ marginTop: '6px', color: '#64748b' }}>Try searching with keywords like <em>Genset</em>, <em>Generator</em>, <em>Honda</em>, <em>Brush Cutter</em>, or <em>Sprayer</em>.</p>
-                    <button 
+                    <button
                       onClick={() => setSearchQuery('')}
                       className="catchy-explore-btn"
                       style={{ marginTop: '20px', display: 'inline-flex', padding: '10px 24px', cursor: 'pointer', border: 'none' }}
@@ -1158,10 +1158,10 @@ const Products = () => {
                   <h3>New Models Coming Soon!</h3>
                   <p>We are currently updating our catalogue for <strong>{dynamicCategories.find((c: any) => c.id === activeCategory)?.name}</strong>.</p>
                   <p style={{ marginTop: '6px', color: '#64748b' }}>For instant pricing, brochures, and in-stock details, contact our showroom directly.</p>
-                  <a 
-                    href="https://wa.me/917094341807?text=Hi%20Parani%20Mill%20Stores,%20I%20am%20looking%20for%20information%20on%20this%20category" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <a
+                    href="https://wa.me/917094341807?text=Hi%20Parani%20Mill%20Stores,%20I%20am%20looking%20for%20information%20on%20this%20category"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="catchy-explore-btn"
                     style={{ marginTop: '20px', display: 'inline-flex', padding: '10px 24px' }}
                   >
@@ -1175,7 +1175,7 @@ const Products = () => {
               <div className="categories-grid">
                 {filtered.map((prod: any, index: number) => {
                   const cardImageSrc = getProductImage(prod.folder, prod.thumbnail || (prod.images && prod.images[0]), prod.thumbnailUrl);
-                  
+
                   return (
                     <div className="premium-product-card" key={index} onClick={() => openProductModal(prod)}>
                       <div className="card-image-wrapper">
@@ -1207,7 +1207,7 @@ const Products = () => {
       {selectedProduct && (
         <div className="product-modal-overlay">
           <div className="product-modal-fullpage">
-            
+
             <div className="modal-header-uploaded">
               <button className="back-link desktop-only-btn" onClick={closeProductModal}>
                 <span className="back-icon-circle">
@@ -1216,41 +1216,41 @@ const Products = () => {
                 Back to Products
               </button>
               <div className="breadcrumb">
-            <span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Home</span> 
-            <ChevronRight size={14} /> 
-            <span style={{ cursor: 'pointer' }} onClick={() => navigate('/products')}>Products</span> 
-            {selectedProduct.category && (
-              <>
-                <ChevronRight size={14} /> 
-                <span 
-                  style={{ cursor: 'pointer', color: '#0B6A38', fontWeight: 600 }} 
-                  onClick={() => navigate('/products?category=' + encodeURIComponent(selectedProduct.category))}
-                  title={'View all ' + selectedProduct.category}
-                >
-                  {selectedProduct.category}
-                </span>
-              </>
-            )}
-            <ChevronRight size={14} /> 
-            <span className="current">{selectedProduct.name}</span>
-          </div>
+                <span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Home</span>
+                <ChevronRight size={14} />
+                <span style={{ cursor: 'pointer' }} onClick={() => navigate('/products')}>Products</span>
+                {selectedProduct.category && (
+                  <>
+                    <ChevronRight size={14} />
+                    <span
+                      style={{ cursor: 'pointer', color: '#0B6A38', fontWeight: 600 }}
+                      onClick={() => navigate('/products?category=' + encodeURIComponent(selectedProduct.category))}
+                      title={'View all ' + selectedProduct.category}
+                    >
+                      {selectedProduct.category}
+                    </span>
+                  </>
+                )}
+                <ChevronRight size={14} />
+                <span className="current">{selectedProduct.name}</span>
+              </div>
               <button className="close-modal-btn mobile-only-btn" onClick={closeProductModal} aria-label="Close">
                 <X size={22} strokeWidth={2.5} />
               </button>
             </div>
 
             <div className="modal-content-container">
-              
+
               {/* Left Column: Gallery */}
               <div className="modal-left-column">
                 <div className="gallery-layout">
-                  
+
                   {!is360View && modalImages.length > 1 && (
                     <div className="thumbnails-sidebar">
                       <div className="thumbnails-scroll-area">
                         {modalImages.map((img: string, idx: number) => (
-                          <div 
-                            key={idx} 
+                          <div
+                            key={idx}
                             className={`thumb-item ${activeImageIndex === idx ? 'active' : ''}`}
                             onClick={() => setActiveImageIndex(idx)}
                           >
@@ -1259,16 +1259,16 @@ const Products = () => {
                         ))}
                       </div>
                       {modalImages.length > 4 && (
-                        <button className="thumb-scroll-down"><ChevronDown size={20}/></button>
+                        <button className="thumb-scroll-down"><ChevronDown size={20} /></button>
                       )}
                     </div>
                   )}
 
                   <div className="main-image-section">
-                    
 
 
-                    <div 
+
+                    <div
                       ref={imageDisplayAreaRef}
                       className={`image-display-area ${is360View ? 'is-360' : ''}`}
                       onMouseDown={handleDragStart}
@@ -1291,19 +1291,19 @@ const Products = () => {
                       {!is360View && modalImages.length > 1 && (
                         <button className="nav-circ prev" onClick={handlePrevImage} aria-label="Previous image"><ChevronLeft size={24} /></button>
                       )}
-                      
-                      <img 
+
+                      <img
                         ref={mainImageRef}
-                        src={getProductImage(selectedProduct.folder, modalImages[currentDisplayIndex] || selectedProduct.thumbnail || selectedProduct.thumbnailUrl, selectedProduct.thumbnailUrl)} 
-                        alt={selectedProduct.name} 
+                        src={getProductImage(selectedProduct.folder, modalImages[currentDisplayIndex] || selectedProduct.thumbnail || selectedProduct.thumbnailUrl, selectedProduct.thumbnailUrl)}
+                        alt={selectedProduct.name}
                         className="main-display-image"
                         draggable="false"
                       />
-                      
+
                       {!is360View && modalImages.length > 1 && (
                         <button className="nav-circ next" onClick={handleNextImage} aria-label="Next image"><ChevronRight size={24} /></button>
                       )}
-                      
+
                       {is360View && (
                         <div className="drag-hint">
                           <ChevronLeft size={20} /> Drag to rotate <ChevronRight size={20} />
@@ -1325,23 +1325,23 @@ const Products = () => {
                 </div>
               </div>
               <div className="modal-right-column">
-                
+
                 <div className="modal-badges-container">
-              {selectedProduct.category && (
-                <div className="modal-category-badge">
-                  {selectedProduct.category}
+                  {selectedProduct.category && (
+                    <div className="modal-category-badge">
+                      {selectedProduct.category}
+                    </div>
+                  )}
+                  {Boolean(selectedProduct.stroke && typeof selectedProduct.stroke === 'string' && selectedProduct.stroke.trim() && !['none', 'n/a', 'null', 'undefined'].includes(selectedProduct.stroke.trim().toLowerCase())) && (
+                    <div className="modal-stroke-badge" style={{ margin: 0 }}>
+                      {selectedProduct.stroke.trim()}
+                    </div>
+                  )}
                 </div>
-              )}
-              {Boolean(selectedProduct.stroke && typeof selectedProduct.stroke === 'string' && selectedProduct.stroke.trim() && !['none', 'n/a', 'null', 'undefined'].includes(selectedProduct.stroke.trim().toLowerCase())) && (
-                <div className="modal-stroke-badge" style={{ margin: 0 }}>
-                  {selectedProduct.stroke.trim()}
-                </div>
-              )}
-            </div>
                 <h2 className="product-title">
                   {renderProductTitle(selectedProduct.name)}
                 </h2>
-                
+
                 <div className="product-rating-emi-row">
 
                   <div className="emi-info-catchy">
@@ -1353,7 +1353,7 @@ const Products = () => {
                   </div>
                 </div>
 
-                <div className="product-specs-container" style={{display: 'block'}}>
+                <div className="product-specs-container" style={{ display: 'block' }}>
                   <h3 className="specs-title">
                     <Settings size={20} />
                     Specifications
@@ -1396,7 +1396,7 @@ const Products = () => {
                         </tbody>
                       </table>
                     ) : (
-                      <div style={{padding: '20px', color: '#cc3f45', fontWeight: 'bold'}}>
+                      <div style={{ padding: '20px', color: '#cc3f45', fontWeight: 'bold' }}>
                         No specifications data found for this product.
                       </div>
                     );
@@ -1407,8 +1407,8 @@ const Products = () => {
                   <a href={getWhatsappLink(selectedProduct.name, selectedProduct.images[0])} target="_blank" rel="noopener noreferrer" className="btn-whatsapp-catchy">
                     <div className="wa-icon-container">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28">
-                        <path fill="#25D366" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z"/>
-                        <path fill="#FFF" d="M223.9 413.2c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+                        <path fill="#25D366" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157z" />
+                        <path fill="#FFF" d="M223.9 413.2c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
                       </svg>
                     </div>
                     <div className="wa-divider"></div>
