@@ -320,6 +320,21 @@ const Blog = () => {
                 )}
               </aside>
             </div>
+
+            {/* Bottom CTA Card */}
+            <div className="blog-footer-cta">
+              <h3>Need equipment advice or pricing?</h3>
+              <p>Our farming and machinery specialists at Parani Mill Stores are ready to help you find the right equipment.</p>
+              <button 
+                className="blog-cta-btn"
+                onClick={() => {
+                  const text = encodeURIComponent(`Hello Parani Mill Stores,\n\nI was browsing your blogs and equipment guides.\n\nCould you please help me with equipment advice and pricing?`);
+                  window.open(`https://wa.me/917094341807?text=${text}`, '_blank');
+                }}
+              >
+                Enquire via WhatsApp
+              </button>
+            </div>
           </>
         )}
       </div>
