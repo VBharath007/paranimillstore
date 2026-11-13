@@ -6,6 +6,170 @@ import './BlogPost.css';
 import fallbackBlogs from '../blogs.json';
 import { API_BASE } from '../config/api';
 
+// Inline parser for bold, italic, and links
+const renderInline = (text: string): React.ReactNode[] => {
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const token = match[0];
+    if (token.startsWith('**') && token.endsWith('**')) {
+      parts.push(<strong key={key++}>{token.slice(2, -2)}</strong>);
+    } else if (token.startsWith('*') && token.endsWith('*')) {
+      parts.push(<em key={key++}>{token.slice(1, -1)}</em>);
+    } else if (token.startsWith('[') && token.includes('](') && token.endsWith(')')) {
+      const closeBracket = token.indexOf('](');
+      const linkText = token.slice(1, closeBracket);
+      const linkUrl = token.slice(closeBracket + 2, -1);
+      parts.push(
+        <a key={key++} href={linkUrl} target="_blank" rel="noopener noreferrer" className="article-inline-link">
+          {linkText}
+        </a>
+      );
+    }
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : [text];
+};
+
+// Full block-level markdown renderer
+const renderMarkdownContent = (content: string, postTitle?: string): React.ReactNode => {
+  if (!content) return null;
+
+  const lines = content.replace(/\r\n/g, '\n').split('\n');
+  const elements: React.ReactNode[] = [];
+  let key = 0;
+
+  let currentList: string[] = [];
+  let currentTable: string[] = [];
+
+  const flushList = () => {
+    if (currentList.length > 0) {
+      elements.push(
+        <ul key={key++} className="article-list">
+          {currentList.map((item, idx) => (
+            <li key={idx}>{renderInline(item)}</li>
+          ))}
+        </ul>
+      );
+      currentList = [];
+    }
+  };
+
+  const flushTable = () => {
+    if (currentTable.length >= 2) {
+      const headerLine = currentTable[0];
+      const headers = headerLine.split('|').map(s => s.trim()).filter(Boolean);
+      // Data rows starting from line 2 (skipping divider line 1)
+      const dataRows = currentTable.slice(2).map(row => 
+        row.split('|').map(s => s.trim()).filter(Boolean)
+      );
+
+      elements.push(
+        <div key={key++} className="article-table-wrapper">
+          <table className="article-table">
+            <thead>
+              <tr>
+                {headers.map((h, i) => (
+                  <th key={i}>{renderInline(h)}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {dataRows.map((row, rIdx) => (
+                <tr key={rIdx}>
+                  {row.map((cell, cIdx) => (
+                    <td key={cIdx}>{renderInline(cell)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    currentTable = [];
+  };
+
+  for (let i = 0; i < lines.length; i++) {
+    const rawLine = lines[i];
+    const line = rawLine.trim();
+
+    // Check if table row
+    if (line.startsWith('|') && line.endsWith('|')) {
+      flushList();
+      currentTable.push(line);
+      continue;
+    } else if (currentTable.length > 0) {
+      flushTable();
+    }
+
+    // Check if list item
+    if (line.startsWith('- ') || line.startsWith('* ') || /^(\d+)\.\s+/.test(line)) {
+      const itemText = line.replace(/^[-*]\s+|\d+\.\s+/, '');
+      currentList.push(itemText);
+      continue;
+    } else if (currentList.length > 0) {
+      flushList();
+    }
+
+    // Empty line
+    if (!line) {
+      continue;
+    }
+
+    // Horizontal rule
+    if (line === '---' || line === '***' || line === '___') {
+      elements.push(<hr key={key++} className="article-divider" />);
+      continue;
+    }
+
+    // Headings
+    if (line.startsWith('# ')) {
+      const h1Text = line.replace(/^#\s+/, '').trim();
+      // If matches article title, don't repeat it
+      if (postTitle && h1Text.toLowerCase().includes(postTitle.slice(0, 20).toLowerCase())) {
+        continue;
+      }
+      elements.push(<h2 key={key++} className="article-h2">{renderInline(h1Text)}</h2>);
+      continue;
+    }
+
+    if (line.startsWith('## ')) {
+      elements.push(<h2 key={key++} className="article-h2">{renderInline(line.replace(/^##\s+/, ''))}</h2>);
+      continue;
+    }
+
+    if (line.startsWith('### ')) {
+      elements.push(<h3 key={key++} className="article-h3">{renderInline(line.replace(/^###\s+/, ''))}</h3>);
+      continue;
+    }
+
+    // Blockquote
+    if (line.startsWith('> ')) {
+      elements.push(<blockquote key={key++} className="article-quote">{renderInline(line.replace(/^>\s+/, ''))}</blockquote>);
+      continue;
+    }
+
+    // Normal paragraph
+    elements.push(<p key={key++} className="article-p">{renderInline(line)}</p>);
+  }
+
+  flushList();
+  flushTable();
+
+  return elements;
+};
+
 const BlogPost: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -89,12 +253,6 @@ const BlogPost: React.FC = () => {
   }, [id]);
 
   const post = backendPost;
-
-  // Split content into sentences
-  const contentSentences = post && post.content ? post.content.split('. ').filter((s: string) => s.trim().length > 0).map((s: string) => s.trim() + (s.endsWith('.') ? '' : '.')) : [];
-  const halfPoint = Math.ceil(contentSentences.length / 2);
-  const leftContent = contentSentences.slice(0, halfPoint);
-  const rightContent = contentSentences.slice(halfPoint);
 
   const handleShare = async () => {
     if (!post) return;
@@ -218,12 +376,16 @@ const BlogPost: React.FC = () => {
           <div className="article-category">{post.category}</div>
           <h1 className="article-title">{post.title}</h1>
           <div className="article-meta">
-            <span className="article-author"><User size={16} /> By {post.author}</span>
-            <span className="article-date"><Calendar size={16} /> {post.date}</span>
-            <span className="article-read-time">{post.readTime}</span>
-            <button className="article-share-btn" onClick={handleShare}>
+            <div className="article-meta-left">
+              <span className="article-author"><User size={15} /> By {post.author}</span>
+              <span className="meta-dot">•</span>
+              <span className="article-date"><Calendar size={15} /> {post.date}</span>
+              <span className="meta-dot">•</span>
+              <span className="article-read-time">{post.readTime}</span>
+            </div>
+            <button className="article-share-btn" onClick={handleShare} aria-label="Share article">
               {isCopied ? <Check size={16} color="#16a34a" /> : <Share2 size={16} />} 
-              {isCopied ? 'Link Copied!' : 'Share'}
+              <span>{isCopied ? 'Link Copied!' : 'Share'}</span>
             </button>
           </div>
         </header>
@@ -240,18 +402,11 @@ const BlogPost: React.FC = () => {
           </div>
         )}
 
-        {/* Split Content Body */}
-        <div className="article-split-layout">
-          <div className="split-column left-column">
-            {leftContent.map((sentence: string, idx: number) => (
-              <p key={idx}>{sentence}</p>
-            ))}
-          </div>
-          <div className="split-column right-column">
-            {rightContent.map((sentence: string, idx: number) => (
-              <p key={idx}>{sentence}</p>
-            ))}
-          </div>
+        {/* Clean Article Content Body */}
+        <div className="article-content-container">
+          <article className="article-body-content">
+            {renderMarkdownContent(post.content, post.title)}
+          </article>
         </div>
 
         {/* Bottom CTA / Help Box */}
