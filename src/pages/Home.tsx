@@ -151,7 +151,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Parani Mill Stores | Best Agricultural Machinery & Power Generators in Tamil Nadu</title>
+        <title>Parani Mill Stores | Agricultural Machinery, Gensets & Generators in Madurai</title>
         <meta name="description" content="Parani Mill Stores, established in 1960 in Madurai, is Tamil Nadu's trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets, diesel engines, and genuine spares with statewide delivery." />
         <link rel="canonical" href="https://paranimill.com" />
         <meta property="og:type" content="website" />
