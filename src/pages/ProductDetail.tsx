@@ -215,8 +215,8 @@ const ProductDetail: React.FC = () => {
   const categoryLabel = isGenset ? 'Genset & Power Generator' : (selectedProduct.category || 'Agricultural Machinery');
   const pageTitle = `${selectedProduct.name}${isGenset && !selectedProduct.name.toLowerCase().includes('generator') && !selectedProduct.name.toLowerCase().includes('genset') ? ' Genset & Power Generator' : ''} Price in Tamil Nadu | Parani Mill Stores`;
   const primaryImg = getProductImage(selectedProduct.folder, selectedProduct.thumbnail || images[0], selectedProduct.thumbnailUrl);
-  const absoluteImageUrl = primaryImg.startsWith('http') ? primaryImg : `https://paranimill.com${primaryImg}`;
-  const canonicalUrl = `https://paranimill.com/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
+  const absoluteImageUrl = primaryImg.startsWith('http') ? primaryImg : `https://www.paranimillstores.in${primaryImg}`;
+  const canonicalUrl = `https://www.paranimillstores.in/product/${catSlug}/${selectedProduct.slug || selectedProduct.id || selectedProduct._id}`;
   const metaDescription = selectedProduct.description 
     ? `${selectedProduct.description.slice(0, 130)} - Best price & genuine spares in Tamil Nadu at Parani Mill Stores.`
     : `Buy genuine ${selectedProduct.name} ${isGenset ? 'heavy-duty power generator & petrol genset' : categoryLabel} at best price with warranty, doorstep delivery & spare parts across Tamil Nadu from Parani Mill Stores, Madurai.`;

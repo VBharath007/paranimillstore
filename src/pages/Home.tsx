@@ -153,12 +153,12 @@ const Home: React.FC = () => {
       <Helmet>
         <title>Parani Mill Stores | Agricultural Machinery, Gensets & Generators in Madurai</title>
         <meta name="description" content="Parani Mill Stores, established in 1960 in Madurai, is Tamil Nadu's trusted supplier of agricultural sprayers, water pumps, petrol brush cutters, earth augers, power weeders, petrol gensets, diesel engines, and genuine spares with statewide delivery." />
-        <link rel="canonical" href="https://paranimill.com" />
+        <link rel="canonical" href="https://www.paranimillstores.in" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Parani Mill Stores | Best Agricultural Machinery & Power Generators in Tamil Nadu" />
         <meta property="og:description" content="Trusted supplier of agricultural and construction equipment in Madurai & across Tamil Nadu since 1960. 100% genuine spares & expert service." />
-        <meta property="og:url" content="https://paranimill.com" />
-        <meta property="og:image" content="https://paranimill.com/officiallogo.png" />
+        <meta property="og:url" content="https://www.paranimillstores.in" />
+        <meta property="og:image" content="https://www.paranimillstores.in/officiallogo.png" />
         <script type="application/ld+json">
           {`
             {

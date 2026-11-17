@@ -42,7 +42,7 @@ const Blog = () => {
         setHasFetched(true);
       }
     };
-    
+
     const fetchProductOfTheMonth = async () => {
       try {
         const res = await fetch(`${API_BASE}/api/products?isActive=true`);
@@ -79,8 +79,8 @@ const Blog = () => {
     featured: Boolean(b.isFeatured)
   }));
 
-  const displayBlogs = selectedCategory 
-    ? allBlogs.filter(p => p.category === selectedCategory) 
+  const displayBlogs = selectedCategory
+    ? allBlogs.filter(p => p.category === selectedCategory)
     : allBlogs;
 
   const featuredPost = selectedCategory ? null : (displayBlogs.find(p => p.featured) || displayBlogs[0]);
@@ -138,12 +138,12 @@ const Blog = () => {
       <Helmet>
         <title>Blogs & Updates | Agricultural Guides & Maintenance | Parani Mill Stores</title>
         <meta name="description" content="Read the latest updates, buying guides, and maintenance tips for your agricultural sprayers, power weeders, petrol brush cutters, and engines from Parani Mill Stores." />
-        <link rel="canonical" href="https://paranimill.com/blogs" />
+        <link rel="canonical" href="https://www.paranimillstores.in/blogs" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Blogs & Updates | Parani Mill Stores" />
         <meta property="og:description" content="Read the latest updates, buying guides, and maintenance tips for agricultural machinery and engines." />
-        <meta property="og:url" content="https://paranimill.com/blogs" />
-        <meta property="og:image" content="https://paranimill.com/Blogherodummy.webp" />
+        <meta property="og:url" content="https://www.paranimillstores.in/blogs" />
+        <meta property="og:image" content="https://www.paranimillstores.in/Blogherodummy.webp" />
       </Helmet>
       {/* Editorial Header */}
       <section className="blog-hero-image">
@@ -154,7 +154,7 @@ const Blog = () => {
         {isLoading && blogs.length === 0 ? (
           /* Luxury Shimmer Skeleton Feed - No crude spinner or flash */
           <div className="blog-skeleton-feed" style={{ padding: '20px 0' }}>
-            
+
             {/* Featured Card Skeleton */}
             <div className="skeleton-featured-wrapper">
               <div className="blog-skeleton-bone" style={{ height: '360px' }}></div>
@@ -220,7 +220,7 @@ const Blog = () => {
                   </h3>
                   <div className="heading-line"></div>
                 </div>
-                
+
                 <div className="article-cards">
                   {regularPosts.length > 0 ? regularPosts.map(post => (
                     <article className="article-card" key={post.id} onClick={() => navigate(`/blog/${post.id}`)} style={{ cursor: 'pointer' }}>
@@ -260,8 +260,8 @@ const Blog = () => {
                   <h4>Topics</h4>
                   <ul className="category-list">
                     <li>
-                      <a 
-                        href="#" 
+                      <a
+                        href="#"
                         onClick={(e) => { e.preventDefault(); setSelectedCategory(null); }}
                         className={!selectedCategory ? 'active-topic' : ''}
                       >
@@ -270,8 +270,8 @@ const Blog = () => {
                     </li>
                     {categories.map(([name, count]) => (
                       <li key={name}>
-                        <a 
-                          href="#" 
+                        <a
+                          href="#"
                           onClick={(e) => { e.preventDefault(); setSelectedCategory(name); }}
                           className={selectedCategory === name ? 'active-topic' : ''}
                         >
@@ -286,11 +286,11 @@ const Blog = () => {
                 {productOfTheMonth && (
                   <div className="sidebar-widget product-widget">
                     <div className="widget-badge">Product of the Month</div>
-                    <img 
-                      loading="lazy" 
-                      src={getProductImage(productOfTheMonth)} 
-                      alt={productOfTheMonth.name} 
-                      className="widget-product-img" 
+                    <img
+                      loading="lazy"
+                      src={getProductImage(productOfTheMonth)}
+                      alt={productOfTheMonth.name}
+                      className="widget-product-img"
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (target.src !== '/Blogherodummy.webp') {
@@ -298,8 +298,8 @@ const Blog = () => {
                         }
                       }}
                     />
-                    <h4 
-                      className="widget-product-title" 
+                    <h4
+                      className="widget-product-title"
                       style={{ textTransform: 'uppercase', cursor: 'pointer' }}
                       onClick={() => navigate(`/product/${productOfTheMonth.slug || productOfTheMonth.id || productOfTheMonth._id}`)}
                       title="Click to view product specifications"
@@ -307,8 +307,8 @@ const Blog = () => {
                       {productOfTheMonth.name}
                     </h4>
                     <p className="widget-product-desc">{productOfTheMonth.description || "Discover our highly recommended equipment of the month, chosen for its exceptional durability and farm performance."}</p>
-                    <button 
-                      className="widget-cta-btn" 
+                    <button
+                      className="widget-cta-btn"
                       onClick={() => {
                         const text = encodeURIComponent(`Hello Parani Mill Stores,\n\nI saw the "Product of the Month" (${productOfTheMonth.name}) on your blog page.\n\nCould you please provide more details and pricing?`);
                         window.open(`https://wa.me/917094341807?text=${text}`, '_blank');
@@ -323,10 +323,10 @@ const Blog = () => {
 
             {/* Standalone Catchy WhatsApp Button */}
             <div className="blog-whatsapp-wrapper">
-              <a 
+              <a
                 href={`https://wa.me/917094341807?text=${encodeURIComponent(`Hello Parani Mill Stores,\n\nI was browsing your blogs and equipment guides.\n\nCould you please help me with equipment advice and pricing?`)}`}
-                target="_blank" 
-                rel="noopener noreferrer" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-whatsapp-catchy"
               >
                 <div className="wa-icon-container">

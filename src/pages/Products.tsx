@@ -869,7 +869,7 @@ const Products = () => {
   };
 
   const seoMeta = getCategorySeoMeta(activeCategory, currentCategoryName);
-  const categoryCanonicalUrl = `https://paranimill.com/products?category=${activeCategory}`;
+  const categoryCanonicalUrl = `https://www.paranimillstores.in/products?category=${activeCategory}`;
 
   return (
     <div className="products-page">
@@ -881,7 +881,7 @@ const Products = () => {
         <meta property="og:title" content={seoMeta.title} />
         <meta property="og:description" content={seoMeta.desc} />
         <meta property="og:url" content={categoryCanonicalUrl} />
-        <meta property="og:image" content="https://paranimill.com/ph2.webp" />
+        <meta property="og:image" content="https://www.paranimillstores.in/ph2.webp" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -892,7 +892,7 @@ const Products = () => {
             "isPartOf": {
               "@type": "WebSite",
               "name": "Parani Mill Stores",
-              "url": "https://paranimill.com"
+              "url": "https://www.paranimillstores.in"
             },
             "about": {
               "@type": "Thing",

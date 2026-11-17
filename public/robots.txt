@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Index
-Sitemap: https://paranimill.com/sitemap.xml
+Sitemap: https://www.paranimillstores.in/sitemap.xml

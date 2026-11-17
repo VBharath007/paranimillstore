@@ -319,8 +319,8 @@ const BlogPost: React.FC = () => {
   }
 
   const pageTitle = `${post.title} | Parani Mill Stores Blog`;
-  const pageUrl = `https://paranimill.com/blog/${id}`;
-  const imageUrl = post.image.startsWith('http') ? post.image : `https://paranimill.com${post.image}`;
+  const pageUrl = `https://www.paranimillstores.in/blog/${id}`;
+  const imageUrl = post.image.startsWith('http') ? post.image : `https://www.paranimillstores.in${post.image}`;
   const metaDesc = post.excerpt ? post.excerpt.slice(0, 160) : `Read ${post.title} on Parani Mill Stores blog.`;
 
   return (
@@ -356,7 +356,7 @@ const BlogPost: React.FC = () => {
               "name": "Parani Mill Stores",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://paranimill.com/officiallogo.png"
+                "url": "https://www.paranimillstores.in/officiallogo.png"
               }
             },
             "mainEntityOfPage": pageUrl
